@@ -1,0 +1,4 @@
+base:
+  'rey':
+    - opensuse
+    - laptop
