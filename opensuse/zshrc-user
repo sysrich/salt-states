@@ -1,0 +1,63 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt share_history autocd beep extendedglob nomatch correctall
+unsetopt notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+source /etc/zsh_command_not_found
+
+autoload -U is-at-least
+if is-at-least 4.3.9; then
+
+source /opt/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fi 
+
+source /opt/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# bind UP and DOWN arrow keys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+autoload -U colors && colors
+PROMPT="%{$fg_bold[green]%}%n@%m% :%{$reset_color%}%~% > %"
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Setup zsh-autosuggestions
+source /opt/zsh-users/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+
+alias iosc="osc -A https://build.suse.de"
