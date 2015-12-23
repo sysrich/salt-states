@@ -6,21 +6,21 @@ opensusedefault.packages:
       - zsh
       - man
 
-git-zsh-users-history-substring-search
+git-zsh-users-history-substring-search:
   git.latest:
     - name: https://github.com/zsh-users/zsh-history-substring-search.git
     - target: /opt/zsh-users/zsh-history-substring-search
     - require:
       - pkg: git-core
 
-git-zsh-users-history-syntax-highlighting
+git-zsh-users-history-syntax-highlighting:
   git.latest:
     - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
     - target: /opt/zsh-users/zsh-syntax-highlighting
     - require:
       - pkg: git-core
 
-git-zsh-users-autosuggestions
+git-zsh-users-autosuggestions:
   git.latest:
     - name: https://github.com/tarruda/zsh-autosuggestions.git
     - target: /opt/zsh-users/zsh-autosuggestions
@@ -41,7 +41,7 @@ root:
     - require:
       - pkg: zsh
 
-/home/ilmehtar/.zshrc
+/home/ilmehtar/.zshrc:
   file.managed:
     - source: salt://opensuse/zshrc-user
     - user: ilmehtar
@@ -49,7 +49,7 @@ root:
     - require:
       - user: ilmehtar
 
-/root/.zshrc
+/root/.zshrc:
   file.managed:
     - source: salt://opensuse/zshrc-root
     - user: root
@@ -57,7 +57,7 @@ root:
     - require:
       - user: root
 
-ca-certificates-suse
+ca-certificates-suse:
   pkg.installed:
     - require:
       - file: /etc/zypp/repos.d/SUSE-CA.repo
