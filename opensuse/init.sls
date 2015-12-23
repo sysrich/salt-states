@@ -1,4 +1,4 @@
-opensusedefault.packages:
+myopensuse.packages:
   pkg.installed:
     - pkgs:
       - htop
@@ -11,21 +11,21 @@ git-zsh-users-history-substring-search:
     - name: https://github.com/zsh-users/zsh-history-substring-search.git
     - target: /opt/zsh-users/zsh-history-substring-search
     - require:
-      - pkg: git-core
+      - pkg: myopensuse.packages
 
 git-zsh-users-history-syntax-highlighting:
   git.latest:
     - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
     - target: /opt/zsh-users/zsh-syntax-highlighting
     - require:
-      - pkg: git-core
+      - pkg: myopensuse.packages
 
 git-zsh-users-autosuggestions:
   git.latest:
     - name: https://github.com/tarruda/zsh-autosuggestions.git
     - target: /opt/zsh-users/zsh-autosuggestions
     - require:
-      - pkg: git-core
+      - pkg: myopensuse.packages
 
 ilmehtar:
   user.present:
@@ -33,13 +33,13 @@ ilmehtar:
     - shell: /bin/zsh
     - home: /home/ilmehtar
     - require:
-       - pkg: zsh
+       - pkg: myopensuse.packages
 
 root:
   user.present:
     - shell: /bin/zsh
     - require:
-      - pkg: zsh
+      - pkg: myopensuse.packages
 
 /home/ilmehtar/.zshrc:
   file.managed:
