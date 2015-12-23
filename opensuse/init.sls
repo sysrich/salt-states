@@ -1,4 +1,4 @@
-opensuse.packages:
+opensuse.packages
   pkg.installed:
     - pkgs:
       - htop
