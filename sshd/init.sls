@@ -13,5 +13,5 @@ sshd:
 :
   ssh_auth.present:
     - user: ilmehtar
-    - enc: ssh-dss
+    - enc: ssh-rsa
     - comment: ilmehtar@rootco.de
