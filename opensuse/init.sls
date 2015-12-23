@@ -4,6 +4,8 @@ myopensuse.packages:
       - htop
       - git-core
       - zsh
+      - command-not-found
+      - salt-zsh-completion
       - man
 
 git-zsh-users-history-substring-search:
