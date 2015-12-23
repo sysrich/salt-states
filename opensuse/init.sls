@@ -60,4 +60,4 @@ root:
 ca-certificates-suse:
   pkg.installed:
     - require:
-      - file: /etc/zypp/repos.d/SUSE-CA.repo
+      - file.exists: /etc/zypp/repos.d/SUSE-CA.repo
