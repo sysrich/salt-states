@@ -56,7 +56,3 @@ root:
     - group: root
     - require:
       - user: root
-
-ca-certificates-suse:
-  pkg.installed:
-    - fromrepo: SUSE-CA
