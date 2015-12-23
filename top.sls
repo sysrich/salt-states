@@ -4,3 +4,4 @@ base:
     - opensuse.laptop
   'luke.rootco.de':
     - opensuse.leap421
+    - sshd
