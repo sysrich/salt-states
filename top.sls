@@ -5,3 +5,4 @@ base:
   'luke.rootco.de':
     - opensuse.leap421
     - sshd
+    - salt.master

@@ -1,6 +1,6 @@
 /etc/ssh/sshd_config:
   file.managed:
-    source: salt://sshd/sshd_config
+    - source: salt://sshd/sshd_config
 
 sshd:
   service.running:

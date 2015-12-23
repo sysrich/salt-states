@@ -4,6 +4,7 @@ opensuse.packages:
       - htop
       - git-core
       - zsh
+      - man
 
 git-zsh-users-history-substring-search
   git.latest:
