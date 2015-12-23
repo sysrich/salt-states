@@ -36,6 +36,12 @@ ilmehtar:
     - require:
        - pkg: zsh
 
+root:
+  user.present:
+    - shell: /bin/zsh
+    - require:
+      - pkg: zsh
+
 /home/ilmehtar/.zshrc
   file.managed:
     - source: salt://opensuse/zshrc-user
@@ -43,6 +49,14 @@ ilmehtar:
     - group: users
     - require:
       - user: ilmehtar
+
+/root/.zshrc
+  file.managed:
+    - source: salt://opensuse/zshrc-root
+    - user: root
+    - group: root
+    - require:
+      - user: root
 
 ca-certificates-suse
   pkg.installed:

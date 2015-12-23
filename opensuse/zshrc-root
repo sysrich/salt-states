@@ -1,0 +1,79 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt share_history autocd beep extendedglob nomatch correctall
+unsetopt notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+source /etc/zsh_command_not_found
+
+autoload -U is-at-least
+if is-at-least 4.3.9; then
+
+source /opt/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fi 
+
+source /opt/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+
+# bind UP and DOWN arrow keys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+autoload -U colors && colors
+PROMPT="%{$fg_bold[red]%}%m% :%{$reset_color%}%~%  # "
+
+if [ -d "/etc/corosync" ]; then
+		HA=" + HA"
+	fi
+
+if [ -f "/etc/SuSE-release" ]; then
+	for ((i=1;; i++)); do
+	    read "d$i" || break;
+	done < /etc/SuSE-release
+	
+	RELEASE=${d1/SUSE Linux Enterprise Server/SLES}
+	SP=${d3/PATCHLEVEL = /SP}
+	RPROMPT="%{$fg_bold[green]%}$RELEASE $SP$HA%{$reset_color%}"
+fi
+
+if [ -f "/etc/os-release" ]; then
+	source /etc/os-release
+	RPROMPT="%{$fg_bold[green]%}$NAME $VERSION_ID$HA%{$reset_color%}"
+fi
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+if is-at-least 4.3.9; then
+# Setup zsh-autosuggestions
+source /opt/zsh-users/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+fi
