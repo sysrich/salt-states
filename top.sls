@@ -1,4 +1,6 @@
 base:
   'rey.rootco.de':
     - opensuse.tumbleweed
-    - laptop
+    - opensuse.laptop
+  'luke.rootco.de':
+    - opensuse.leap421
