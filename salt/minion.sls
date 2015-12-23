@@ -1,5 +1,5 @@
 saltminion.packages:
   pkg.installed:
-    pkgs:
+    - pkgs:
       - salt-minion
       - virt-what

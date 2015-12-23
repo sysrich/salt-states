@@ -1,5 +1,5 @@
 saltmaster.packages:
-  - pkg.installed:
+  pkg.installed:
     - pkgs:
       - salt-master
       - salt-minion
