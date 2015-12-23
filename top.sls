@@ -1,4 +1,7 @@
 base:
+  '*.rootco.de':
+    - opensuse
+    - salt.minion
   'rey.rootco.de':
     - opensuse.tumbleweed
     - opensuse.laptop
