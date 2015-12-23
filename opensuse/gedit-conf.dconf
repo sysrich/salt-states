@@ -1,0 +1,34 @@
+[preferences/editor]
+display-right-margin=true
+highlight-current-line=true
+display-overview-map=false
+bracket-matching=true
+auto-save=true
+scheme='cobalt'
+tabs-size=uint32 2
+display-line-numbers=true
+insert-spaces=true
+background-pattern='none'
+wrap-last-split-mode='word'
+auto-indent=true
+
+[preferences/ui]
+show-tabs-mode='auto'
+
+[plugins/filebrowser]
+virtual-root='file:///run/media/ilmehtar/Samsung/22novbackup/ilmehtar/backup/old%20Stick'
+tree-view=false
+root='file:///'
+
+[plugins/drawspaces]
+draw-spaces=['space', 'tab', 'newline', 'nbsp', 'leading', 'trailing']
+
+[plugins]
+active-plugins=['drawspaces', 'bracketcompletion', 'codecomment', 'wordcompletion', 'codeassistance', 'time', 'spell', 'sort', 'modelines', 'filebrowser', 'docinfo']
+
+[state/window]
+size=(900, 700)
+state=128
+bottom-panel-size=140
+side-panel-size=200
+side-panel-active-page='GeditWindowDocumentsPanel'

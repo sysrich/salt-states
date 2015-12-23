@@ -1,4 +1,4 @@
 base:
-  'rey':
-    - opensuse
+  'rey.rootco.de':
+    - opensuse.tumbleweed
     - laptop
