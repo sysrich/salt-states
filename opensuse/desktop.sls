@@ -30,7 +30,7 @@ gedit-packages:
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "wrap-last-split-mode", "word") }}
 
 {{ gsettings("ilmehtar", "org.gnome.gedit.plugins", "active-plugins", "'['drawspaces', 'bracketcompletion', 'codecomment', 'wordcompletion', 'codeassistance', 'time', 'spell', 'sort', 'modelines', 'filebrowser', 'docinfo']'") }}
-{{ gsettings("ilmehtar", "org.gnome.gedit.plugins.drawspaces", "draw-spaces", "'['space', 'tab', 'newline', 'nbsp', 'leading', 'trailing']") }}
+{{ gsettings("ilmehtar", "org.gnome.gedit.plugins.drawspaces", "draw-spaces", "'['space', 'tab', 'newline', 'nbsp', 'leading', 'trailing']'") }}
 
 # Shell config
 {{ gsettings("ilmehtar", "org.gnome.shell.calendar", "show-weekdate", "true") }}
