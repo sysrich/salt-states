@@ -16,11 +16,9 @@ gedit-packages:
       - gedit-plugin-drawspaces
 
 gedit-config:
-  cmd.wait:
-    - name: /usr/bin/dconf load / < /home/ilmehtar/.default-settings.dconf
+  cmd.wait_script:
+    - source: salt://opensuse/default-dconf.sh
     - user: ilmehtar
-    - env:
-        - DISPLAY: ':0'
     - watch:
       - file: /home/ilmehtar/.default-settings.dconf
     - require:
