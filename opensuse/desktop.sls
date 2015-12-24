@@ -17,7 +17,7 @@ gedit-packages:
 
 dconf-defaults:
   file.managed:
-    - name: /home/ilmehtar/.default-settings.dconf
+    - name: /home/ilmehtar/.defaultsettings.dconf
     - source: salt://opensuse/settings.dconf
     require:
       - user: ilmehtar
