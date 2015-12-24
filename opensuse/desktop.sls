@@ -19,6 +19,8 @@ gedit-config:
   cmd.wait:
     - name: /usr/bin/dconf load / < /home/ilmehtar/.default-settings.dconf
     - user: ilmehtar
+    - env:
+        - DISPLAY: ':0'
     - watch:
       - file: /home/ilmehtar/.default-settings.dconf
     - require:
