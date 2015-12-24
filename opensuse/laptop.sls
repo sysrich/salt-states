@@ -1,5 +1,5 @@
 include:
-  - desktop
+  - opensuse.desktop
 
 laptop.packages:
   pkg.installed:
