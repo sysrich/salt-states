@@ -42,5 +42,6 @@ terminator-config:
   file.managed:
     - name: /home/ilmehtar/.config/terminator/config
     - source: salt://opensuse/terminator-config
+    - makedirs: true
     - require:
       - pkg: desktop-packages
