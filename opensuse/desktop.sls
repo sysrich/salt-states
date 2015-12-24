@@ -1,4 +1,4 @@
-desktop.packages:
+desktop-packages:
   pkg.installed:
     - pkgs:
       - terminator
@@ -15,20 +15,32 @@ gedit-packages:
       - gedit-plugin-wordcompletion
       - gedit-plugin-drawspaces
 
-desktop-autostart:
-  require:
-    - user: ilmehtar
-    - pkg: gedit-packages
-    - pkg: desktop-packages
+dconf-defaults:
   file.managed:
     - name: /home/ilmehtar/.default-settings.dconf
     - source: salt://opensuse/settings.dconf
+    require:
+      - user: ilmehtar
+      - pkg: gedit-packages
+
+autostart-script:
   file.managed:
     - name: /home/ilmehtar/.autostart.sh
     - source: salt://opensuse/autostart.sh
+    require:
+      - file: dconf-defaults
+
+autostart-desktop:
   file.managed:
     - name: /home/ilmehtar/.config/autostart/startup.desktop
     - source: salt://opensuse/startup.desktop
+    require:
+      - file: autostart-script
+      - file: terminator-config
+
+terminator-config:
   file.managed:
     - name: /home/ilmehtar/.config/terminator/config
     - source: salt://opensuse/terminator-config
+    require:
+      - pkg: desktop-packages
