@@ -27,6 +27,7 @@ autostart-script:
   file.managed:
     - name: /home/ilmehtar/.autostart.sh
     - source: salt://opensuse/autostart.sh
+    - mode: 744
     - require:
       - file: dconf-defaults
 
@@ -34,6 +35,7 @@ autostart-desktop:
   file.managed:
     - name: /home/ilmehtar/.config/autostart/startup.desktop
     - source: salt://opensuse/startup.desktop
+    - mode: 744
     - require:
       - file: autostart-script
       - file: terminator-config
@@ -44,4 +46,5 @@ terminator-config:
     - source: salt://opensuse/terminator-config
     - makedirs: true
     - require:
+      - user: ilmehtar
       - pkg: desktop-packages
