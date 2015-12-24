@@ -1,0 +1,31 @@
+[org/gnome/shell/calendar]
+show-weekdate=true
+
+[org/gnome/gedit/preferences/editor]
+highlight-current-line=true
+display-right-margin=true
+bracket-matching=true
+auto-save=true
+scheme='cobalt'
+tabs-size=uint32 2
+display-line-numbers=true
+wrap-mode='none'
+insert-spaces=true
+wrap-last-split-mode='word'
+auto-indent=true
+
+[org/gnome/gedit/plugins/drawspaces]
+draw-spaces=['space', 'tab', 'newline', 'nbsp', 'leading', 'trailing']
+
+[org/gnome/gedit/plugins]
+active-plugins=['drawspaces', 'bracketcompletion', 'codecomment', 'wordcompletion', 'codeassistance', 'time', 'spell', 'sort', 'modelines', 'filebrowser', 'docinfo']
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+
+[org/gnome/desktop/interface]
+clock-show-date=true
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'gb'), ('xkb', 'de')]
+xkb-options=['terminate:ctrl_alt_bksp']
