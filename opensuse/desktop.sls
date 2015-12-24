@@ -2,6 +2,7 @@ desktop-packages:
   pkg.installed:
     - pkgs:
       - terminator
+      - python-notify
       - osc
       - dconf-editor
 
