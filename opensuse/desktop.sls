@@ -18,7 +18,7 @@ gedit-packages:
       - gedit-plugin-drawspaces
 
 # Gedit config
-{{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "auto-intent", "true") }}
+{{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "auto-indent", "true") }}
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "auto-save", "true") }}
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "bracket-matching", "true") }}
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "display-line-numbers", "true") }}
@@ -26,7 +26,7 @@ gedit-packages:
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "highlight-current-line", "true") }}
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "insert-spaces", "true") }}
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "scheme", "cobalt") }}
-{{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "tabs-size", "uint32 2") }}
+{{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "tabs-size", 'uint32 2') }}
 {{ gsettings("ilmehtar", "org.gnome.gedit.preferences.editor", "wrap-last-split-mode", "word") }}
 
 {{ gsettings("ilmehtar", "org.gnome.gedit.plugins", "active-plugins", "['drawspaces', 'bracketcompletion', 'codecomment', 'wordcompletion', 'codeassistance', 'time', 'spell', 'sort', 'modelines', 'filebrowser', 'docinfo']") }}
