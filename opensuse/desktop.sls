@@ -3,6 +3,7 @@ desktop.packages:
     - pkgs:
       - terminator
       - osc
+      - dconf-editor
 
 gedit-packages:
   pkg.installed:
