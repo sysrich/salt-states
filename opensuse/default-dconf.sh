@@ -7,6 +7,8 @@ echo $DBUS_SESSION_BUS_ADDRESS
 echo "Imported bus address"
 echo $DBUS_SESSION_BUS_ADDRESS
 
+echo "DISPLAY"
+echo $DISPLAY
 # Import default dconf settings
 /usr/bin/dconf load / < /home/ilmehtar/.default-settings.dconf
 
