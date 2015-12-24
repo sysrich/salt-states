@@ -4,4 +4,4 @@ gsettings set {{ path }} {{ key }} {{ value }}:
   cmd.run:
     - user: {{ user }}
     - unless: gsettings get {{ path }} {{ key }} | grep {{ value }}
-{%- end macro %}
+{%- endmacro %}
