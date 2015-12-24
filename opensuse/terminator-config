@@ -1,0 +1,84 @@
+[global_config]
+  enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  always_on_top = True
+[keybindings]
+  hide_window = F12
+[profiles]
+  [[default]]
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+  [[startup]]
+    [[[child0]]]
+      position = 0:0
+      type = Window
+      order = 0
+      parent = ""
+      size = 1080, 1883
+    [[[child1]]]
+      labels = None, None, None
+      type = Notebook
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 925
+      type = VPaned
+      order = 0
+      parent = child1
+    [[[child5]]]
+      position = 1390
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[child6]]]
+      position = 925
+      type = VPaned
+      order = 0
+      parent = child5
+    [[[child7]]]
+      position = 460
+      type = VPaned
+      order = 0
+      parent = child6
+    [[[terminal11]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child5
+    [[[terminal10]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child6
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child2
+    [[[terminal12]]]
+      profile = default
+      type = Terminal
+      order = 2
+      parent = child1
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child2
+    [[[terminal9]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child7
+    [[[terminal8]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child7
+[plugins]

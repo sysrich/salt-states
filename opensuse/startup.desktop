@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Startup Script
+Comment=Sets up GNOME exactly how I like it
+Exec=/home/ilmehtar/.autostart.sh
+Icon=terminator
+Type=Application
+Categories=Utility;System;
+Name[en_GB]=startup

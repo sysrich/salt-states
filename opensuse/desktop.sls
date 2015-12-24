@@ -15,15 +15,20 @@ gedit-packages:
       - gedit-plugin-wordcompletion
       - gedit-plugin-drawspaces
 
-gedit-config:
-  cmd.wait_script:
-    - source: salt://opensuse/default-dconf.sh
+desktop-autostart:
+  require:
     - user: ilmehtar
-    - watch:
-      - file: /home/ilmehtar/.default-settings.dconf
-    - require:
-      - user: ilmehtar
-      - pkg: gedit-packages
+    - pkg: gedit-packages
+    - pkg: desktop-packages
   file.managed:
     - name: /home/ilmehtar/.default-settings.dconf
     - source: salt://opensuse/settings.dconf
+  file.managed:
+    - name: /home/ilmehtar/.autostart.sh
+    - source: salt://opensuse/autostart.sh
+  file.managed:
+    - name: /home/ilmehtar/.config/autostart/startup.desktop
+    - source: salt://opensuse/startup.desktop
+  file.managed:
+    - name: /home/ilmehtar/.config/terminator/config
+    - source: salt://opensuse/terminator-config
