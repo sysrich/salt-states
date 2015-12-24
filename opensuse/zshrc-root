@@ -77,3 +77,6 @@ zle -N zle-line-init
 # zsh-autosuggestions is designed to be unobtrusive)
 bindkey '^T' autosuggest-toggle
 fi
+
+# zsh salt completion
+zstyle ':completion:*:salt(|-cp|-call):*' use-cache true

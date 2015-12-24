@@ -61,3 +61,6 @@ zle -N zle-line-init
 bindkey '^T' autosuggest-toggle
 
 alias iosc="osc -A https://build.suse.de"
+
+# zsh salt completion
+zstyle ':completion:*:salt(|-cp|-call):*' use-cache true
