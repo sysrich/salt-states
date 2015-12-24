@@ -17,9 +17,9 @@ gedit-packages:
 
 dconf-defaults:
   file.managed:
-    - name: '/home/ilmehtar/.defaultsettings.dconf'
+    - name: /home/ilmehtar/.defaultsettings.dconf
     - source: salt://opensuse/settings.dconf
-    require:
+    - require:
       - user: ilmehtar
       - pkg: gedit-packages
 
@@ -27,14 +27,14 @@ autostart-script:
   file.managed:
     - name: /home/ilmehtar/.autostart.sh
     - source: salt://opensuse/autostart.sh
-    require:
+    - require:
       - file: dconf-defaults
 
 autostart-desktop:
   file.managed:
     - name: /home/ilmehtar/.config/autostart/startup.desktop
     - source: salt://opensuse/startup.desktop
-    require:
+    - require:
       - file: autostart-script
       - file: terminator-config
 
@@ -42,5 +42,5 @@ terminator-config:
   file.managed:
     - name: /home/ilmehtar/.config/terminator/config
     - source: salt://opensuse/terminator-config
-    require:
+    - require:
       - pkg: desktop-packages
