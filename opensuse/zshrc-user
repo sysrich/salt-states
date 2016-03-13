@@ -49,11 +49,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Setup zsh-autosuggestions
 source /opt/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-
 zle -N zle-line-init
 
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
