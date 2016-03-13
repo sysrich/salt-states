@@ -15,3 +15,10 @@ sshd:
     - user: ilmehtar
     - enc: ssh-rsa
     - comment: ilmehtar@rootco.de
+
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQClgRngpbnTfNq18oTGhPQValEi1PEUB0FuTHzKhvliJOkbB0PYc0m2Y3AtAkGwFOksAitZSzECNIWlQS3uYYNky2yNuIBzfzyFaY0dmMJZo3TFvgvPxVak2+sLH2CLcxThPvLYI28Dgz6DnyJjTlqvetyfcoaW/lNOAW+KPg65hOgnpmk40QO5l3Tnuc0UDm2dMzFMVs1+nKaVEBvAN1kCm665kIJhK23fBDBbujbPK64nHDDEdcUDvmJzSDUb0DWbNyBe4lMsJvAhkqKQu/KsYNwhOYOmD6L+TPzpnoDuQTyU/ShmMGubplH5mM/uanMRyU3MyQrWQnW7pWdMMzrB
+:
+  ssh_auth.present:
+    - user: ilmehtar
+    - enc: ssh-rsa
+    - comment: ilmehtar@obiwan.local.rootco.de
