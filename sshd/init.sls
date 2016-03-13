@@ -21,4 +21,4 @@ sshd:
   ssh_auth.present:
     - user: ilmehtar
     - enc: ssh-rsa
-    - comment: ilmehtar@obiwan.local.rootco.de
+    - comment: ilmehtar@obiwan.rootco.de
