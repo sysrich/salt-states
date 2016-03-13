@@ -64,7 +64,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 
 if is-at-least 4.3.9; then
 # Setup zsh-autosuggestions
-source /opt/zsh-users/zsh-autosuggestions/autosuggestions.zsh
+source /opt/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Enable autosuggestions automatically
 zle-line-init() {
