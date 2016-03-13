@@ -66,8 +66,6 @@ if is-at-least 4.3.9; then
 # Setup zsh-autosuggestions
 source /opt/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-zle -N zle-line-init
-
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # zsh-autosuggestions is designed to be unobtrusive)
 bindkey '^T' autosuggest-toggle
