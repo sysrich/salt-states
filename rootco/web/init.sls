@@ -10,8 +10,8 @@ rootco.de-web:
 
 jekyll_site:
   file.copy:
-    - name: /srv/www/htdocs
-    - source: /srv/www/source/_site
+    - name: /srv/www/htdocs/
+    - source: /srv/www/source/_site/
     - makedirs: true
     - user: wwwrun
     - group: www
