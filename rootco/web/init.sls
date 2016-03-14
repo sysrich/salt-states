@@ -8,8 +8,9 @@ rootco.de-web:
     - require:
       - pkg: apache2
 
-/srv/www/htdocs:
+jekyll_site:
   file.copy:
+    - name: /srv/www/htdocs
     - source: /srv/www/source/_site
     - force: true
     - preserve: true
