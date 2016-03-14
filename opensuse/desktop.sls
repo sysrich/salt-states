@@ -43,6 +43,7 @@ autostart-desktop:
     - mode: 744
     - user: ilmehtar
     - group: users
+    - makedirs : true
     - require:
       - file: autostart-script
       - file: terminator-config
