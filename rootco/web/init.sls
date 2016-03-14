@@ -7,9 +7,5 @@ rootco.de-web:
     - target: /srv/www/source
     - require:
       - pkg: apache2
+      - file: /srv/www/htdocs
 
-/srv/www/htdocs:
-  file.symlink:
-    - target: /srv/www/source/_site
-    - require:
-      - git: rootco.de-web
