@@ -9,7 +9,7 @@ apache2:
   file.directory:
     - user: wwwrun
     - group: www
-    - dir_mode: 444
+    - dir_mode: 755
     - file_mod: 444
     - recurse:
       - user
