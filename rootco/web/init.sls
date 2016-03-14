@@ -15,5 +15,4 @@ jekyll_site:
     - force: true
     - preserve: true
     - require:
-      - file: /srv/www/htdocs
       - git: rootco.de-web
