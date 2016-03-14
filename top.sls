@@ -9,3 +9,4 @@ base:
   'luke.rootco.de':
     - sshd
     - salt.master
+    - rootco.de.web
