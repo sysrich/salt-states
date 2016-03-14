@@ -8,13 +8,8 @@ rootco.de-web:
     - require:
       - pkg: apache2
 
-jekyll_site:
-  file.copy:
-    - name: /srv/www/htdocs/
-    - source: /srv/www/source/_site/
-    - makedirs: true
-    - user: wwwrun
-    - group: www
-    - mode: 444
+/srv/www/htdocs:
+  file.symlink:
+    - target: /srv/www/source/_site
     - require:
       - git: rootco.de-web
