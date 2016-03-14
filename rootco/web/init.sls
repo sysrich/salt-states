@@ -12,9 +12,6 @@ jekyll_site:
   file.copy:
     - name: /srv/www/htdocs
     - source: /srv/www/source/_site
-    - user: wwwrun
-    - group: www
-    - mode: 444
     - makedirs
     - require:
       - git: rootco.de-web
