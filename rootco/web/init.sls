@@ -13,6 +13,6 @@ rootco.de-web:
 git -C /srv/www/source pull:
   cron.present:
     - user: wwwrun
-    - minute: '*/15'
+    - minute: '*/5'
     - require:
       - git: rootco.de-web
