@@ -7,6 +7,7 @@ myopensuse.packages:
       - command-not-found
       - salt-zsh-completion
       - man
+      - ruby-devel
 
 git-zsh-users-history-substring-search:
   git.latest:
@@ -26,6 +27,12 @@ git-zsh-users-autosuggestions:
   git.latest:
     - name: https://github.com/tarruda/zsh-autosuggestions.git
     - target: /opt/zsh-users/zsh-autosuggestions
+    - require:
+      - pkg: myopensuse.packages
+
+jekyll:
+  gem.installed:
+    - user: root
     - require:
       - pkg: myopensuse.packages
 
