@@ -35,9 +35,7 @@ git-zsh-users-autosuggestions:
 
 jekyll:
   gem.installed:
-    - user: ilmehtar
-    - require:
-      - user: ilmehtar
+    - user: root
 
 ilmehtar:
   user.present:
