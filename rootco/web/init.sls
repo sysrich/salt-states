@@ -15,4 +15,4 @@ rootco.de-web:
     - name: https://github.com/sysrich/rootco.de-web.git
     - target: /srv/www/
     - require:
-      - pkg: rubygem-jekyll
+      - pkg: ruby2.1-rubygem-jekyll
