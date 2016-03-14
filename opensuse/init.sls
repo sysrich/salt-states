@@ -7,7 +7,10 @@ myopensuse.packages:
       - command-not-found
       - salt-zsh-completion
       - man
-      - ruby-devel
+      - ruby-devel # needed for jekyll
+      - make # needed for jekyll
+      - gcc # needed for jekyll
+      - autoconf # needed for jekyll
 
 git-zsh-users-history-substring-search:
   git.latest:
