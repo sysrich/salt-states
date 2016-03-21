@@ -10,7 +10,6 @@ gedit-packages:
   pkg.installed:
     - pkgs:
       - gedit-plugins
-      - gedit-plugin-bracketcompletion
       - gedit-plugin-code-assistance
       - gedit-plugin-codecomment
       - gedit-plugin-wordcompletion
