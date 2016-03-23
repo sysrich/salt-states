@@ -4,4 +4,4 @@
 # Import default dconf settings
 /usr/bin/dconf load / < /home/ilmehtar/.defaultsettings.dconf
 
-/usr/bin/terminator -H -l startup &
+/usr/bin/terminator -H -f &
