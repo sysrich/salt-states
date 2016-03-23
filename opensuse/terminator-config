@@ -1,6 +1,5 @@
 [global_config]
   enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
-  always_on_top = True
 [keybindings]
   hide_window = F12
 [profiles]
