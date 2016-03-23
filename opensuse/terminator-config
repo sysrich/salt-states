@@ -1,5 +1,6 @@
 [global_config]
   enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  title_transmit_bg_color = "#007900" 
 [keybindings]
   hide_window = F12
 [profiles]
