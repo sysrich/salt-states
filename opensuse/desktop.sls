@@ -61,3 +61,51 @@ terminator-config:
     - require:
       - user: ilmehtar
       - pkg: desktop-packages
+
+/home/ilmehtar/Code/gh/sysrich:
+  file.directory:
+    - user: ilmehtar
+    - group: users
+    - makedirs: true
+    - require:
+      - user: ilmehtar
+
+/home/ilmehtar/Code/gh/openSUSE:
+  file.directory:
+    - user: ilmehtar
+    - group: users
+    - makedirs: true
+    - require:
+      - user: ilmehtar
+
+/home/ilmehtar/Code/grd:
+  file.directory:
+    - user: ilmehtar
+    - group: users
+    - makedirs: true
+    - require:
+      - user: ilmehtar
+
+/home/ilmehtar/Code/gsd:
+  file.directory:
+    - user: ilmehtar
+    - group: users
+    - makedirs: true
+    - require:
+      - user: ilmehtar
+
+/home/ilmehtar/Code/boo:
+  file.directory:
+    - user: ilmehtar
+    - group: users
+    - makedirs: true
+    - require:
+      - user: ilmehtar
+
+/home/ilmehtar/Code/bsd:
+  file.directory:
+    - user: ilmehtar
+    - group: users
+    - makedirs: true
+    - require:
+      - user: ilmehtar
