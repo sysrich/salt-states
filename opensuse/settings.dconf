@@ -29,3 +29,6 @@ clock-show-date=true
 [org/gnome/desktop/input-sources]
 sources=[('xkb', 'gb'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
+
+[org/gnome/shell]
+favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'terminator.desktop', 'empathy.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
