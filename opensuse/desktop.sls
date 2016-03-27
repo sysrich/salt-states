@@ -5,6 +5,7 @@ desktop-packages:
       - python-notify
       - osc
       - dconf-editor
+      - gnome-boxes
     - require:
       - pkg: myopensuse.packages
 
