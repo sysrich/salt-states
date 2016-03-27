@@ -63,6 +63,12 @@ terminator-config:
       - user: ilmehtar
       - pkg: desktop-packages
 
+libvirtd:
+  service.running:
+    - enable: True
+    - require:
+      - pkg: desktop-packages
+
 /home/ilmehtar/Code/gh/sysrich:
   file.directory:
     - user: ilmehtar
