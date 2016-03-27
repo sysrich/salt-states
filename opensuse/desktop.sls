@@ -5,6 +5,8 @@ desktop-packages:
       - python-notify
       - osc
       - dconf-editor
+    - require:
+      - pkg: myopensuse.packages
 
 gedit-packages:
   pkg.installed:
@@ -14,6 +16,8 @@ gedit-packages:
       - gedit-plugin-codecomment
       - gedit-plugin-wordcompletion
       - gedit-plugin-drawspaces
+    - require:
+      - pkg: desktop-packages
 
 dconf-defaults:
   file.managed:

@@ -36,6 +36,8 @@ git-zsh-users-autosuggestions:
 jekyll:
   gem.installed:
     - user: root
+    - require:
+      - pkg: myopensuse.packages
 
 ilmehtar:
   user.present:

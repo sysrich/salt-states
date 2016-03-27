@@ -6,3 +6,5 @@ laptop.packages:
     - pkgs:
       - tlp
       - powertop
+    - require:
+      - pkg: gedit-packages
