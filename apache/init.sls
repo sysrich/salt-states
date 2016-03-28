@@ -4,6 +4,7 @@ apache2:
     - require:
       - pkg: apache2
       - file: /srv/www/htdocs
+      - pkg: myopensuse.packages
 
 /srv/www/htdocs:
   file.directory:
