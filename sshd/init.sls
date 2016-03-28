@@ -16,13 +16,6 @@ sshd:
     - enc: ssh-rsa
     - comment: ilmehtar@rootco.de
 
-? AAAAB3NzaC1yc2EAAAADAQABAAABAQClgRngpbnTfNq18oTGhPQValEi1PEUB0FuTHzKhvliJOkbB0PYc0m2Y3AtAkGwFOksAitZSzECNIWlQS3uYYNky2yNuIBzfzyFaY0dmMJZo3TFvgvPxVak2+sLH2CLcxThPvLYI28Dgz6DnyJjTlqvetyfcoaW/lNOAW+KPg65hOgnpmk40QO5l3Tnuc0UDm2dMzFMVs1+nKaVEBvAN1kCm665kIJhK23fBDBbujbPK64nHDDEdcUDvmJzSDUb0DWbNyBe4lMsJvAhkqKQu/KsYNwhOYOmD6L+TPzpnoDuQTyU/ShmMGubplH5mM/uanMRyU3MyQrWQnW7pWdMMzrB
-:
-  ssh_auth.present:
-    - user: ilmehtar
-    - enc: ssh-rsa
-    - comment: ilmehtar@obiwan.rootco.de
-
 ? AAAAB3NzaC1yc2EAAAADAQABAAABAQD6aJWXd6N1Ui6ahEMQIL8vLaQr2S00u9yZC0+o+VKgHdWloImRDn8EJv9bAkP05/NpElkzmOsC8Ia3kEcFjg0sCsyNOOwwynvhg9vuSxh4S+XvVsm4m/a7fhWPCGLs+205i1xwl28N4G5Z+gJX6ktfCX3idgpw3lPXocEm0R6+YjzyIBxXT0gDTlb1pTXPm9OG/LKgGlO1uHl5kcAnJRYAm0zzjkCJ8GK5n2+m80dkox/MAv0sLEpmf9eHfz57Csidjpw778qpjDri99N3gEGrUpX8x7o9rFrRRifWtqUJOVuAPvTHzt5aG0rzcmBJD+nKwxYAUb3Nm31LuNwSilKZ
 :
   ssh_auth.present:

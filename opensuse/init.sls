@@ -11,6 +11,8 @@ myopensuse.packages:
       - make # needed for jekyll
       - gcc # needed for jekyll
       - autoconf # needed for jekyll
+    - require_in:
+      - pkg: apache2
 
 git-zsh-users-history-substring-search:
   git.latest:
