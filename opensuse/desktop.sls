@@ -6,6 +6,7 @@ desktop-packages:
       - osc
       - dconf-editor
       - gnome-boxes
+      - mumble
     - require:
       - pkg: myopensuse.packages
 
