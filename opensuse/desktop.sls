@@ -26,6 +26,15 @@ packman-repo:
     - require:
       - pkg: myopensuse.packages
 
+packman-packages:
+  pkg.installed:
+    - refresh: True
+    - pkgs:
+      - gstreamer-plugins-bad-orig-addon
+      - gstreamer-plugins-bad-orig-addon
+      - gstreamer-plugins-libav
+    - fromrepo: packman-repo
+
 gedit-packages:
   pkg.installed:
     - pkgs:
