@@ -33,7 +33,7 @@ packman-packages:
       - gstreamer-plugins-bad-orig-addon
       - gstreamer-plugins-bad-orig-addon
       - gstreamer-plugins-libav
-      - w32codec-all
+# Currently broken - w32codec-all
     - fromrepo: packman-repo
 
 gedit-packages:
