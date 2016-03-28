@@ -39,6 +39,12 @@ jekyll:
     - require:
       - pkg: myopensuse.packages
 
+jekyll-paginate:
+  gem.installed:
+    - user: root
+    - require:
+      - gem: jekyll
+
 ilmehtar:
   user.present:
     - fullname: Richard Brown
