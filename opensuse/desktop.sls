@@ -10,11 +10,11 @@ desktop-packages:
       - pkg: myopensuse.packages
 
 {% if 'Tumbleweed' in grains['oscodename'] %}
-{% set opensuserepopath = 'openSUSE_Tumbleweed' %}
+{% set opensuserepopath = "openSUSE_Tumbleweed" %}
 {% elif 'Leap' in grains['oscodename'] %}
-{% set opensuserepopath = 'openSUSE_Leap_{{ grains['osrelease'] }}' %}
+{% set opensuserepopath = "openSUSE_Leap_{{ grains['osrelease'] }}" %}
 {% else %}
-{% set opensuserepopath = 'openSUSE_{{ grains['osrelease'] }}' %}
+{% set opensuserepopath = "openSUSE_{{ grains['osrelease'] }}" %}
 {% endif %}
 
 packman-repo:
