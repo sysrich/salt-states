@@ -22,7 +22,7 @@ packman-repo:
     - humanname: Packman Essentials - {{ opensuserepopath }}
     - baseurl: http://ftp.gwdg.de/pub/linux/misc/packman/suse/{{ opensuserepopath }}/Essentials/
     - gpgcheck: 0
-    - autorefresh: 1
+    - refresh: 1
     - require:
       - pkg: myopensuse.packages
 
