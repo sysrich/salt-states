@@ -31,7 +31,7 @@ packman-packages:
     - refresh: True
     - pkgs:
       - gstreamer-plugins-bad-orig-addon
-      - gstreamer-plugins-bad-orig-addon
+      - gstreamer-plugins-ugly-orig-addon
       - gstreamer-plugins-libav
     - fromrepo: packman-repo
 
