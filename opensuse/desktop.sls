@@ -9,6 +9,22 @@ desktop-packages:
     - require:
       - pkg: myopensuse.packages
 
+{% if 'Tumbleweed' in grains['oscodename'] %}
+{% set opensuserepopath = 'openSUSE_Tumbleweed' %}
+{% elif 'Leap' in grains['oscodename'] %}
+{% set opensuserepopath = 'openSUSE_Leap_{{ grains['osrelease'] }}' %}
+{% else %}
+{% set opensuserepopath = 'openSUSE_{{ grains['osrelease'] }}' %}
+{% endif %}
+
+packman-repo:
+  pkgrepo.managed:
+    - humanname: Packman Essentials - {{ opensuserepopath }}
+    - baseurl: http://ftp.gwdg.de/pub/linux/misc/packman/suse/{{ opensuserepopath }}/Essentials/
+    - gpgcheck: 0
+    - require:
+      - pkg: myopensuse.packages
+
 gedit-packages:
   pkg.installed:
     - pkgs:
