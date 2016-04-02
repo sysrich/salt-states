@@ -45,6 +45,12 @@ jekyll-paginate:
     - require:
       - gem: jekyll
 
+redcarpet:
+  gem.installed:
+    - user: root
+    - require:
+      - gem: jekyll
+
 ilmehtar:
   user.present:
     - fullname: Richard Brown
