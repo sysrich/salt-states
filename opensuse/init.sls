@@ -65,6 +65,16 @@ root:
     - require:
       - pkg: myopensuse.packages
 
+/home/ilmehtar/.ssh/config:
+  file.managed:
+    - user: ilmehtar
+    - group: users
+    - content:
+      - Host rootco.de
+      - Port 8282
+    - require:
+      - user: ilmehtar
+
 /home/ilmehtar/.zshrc:
   file.managed:
     - source: salt://opensuse/zshrc-user
