@@ -35,7 +35,7 @@ git-ssh-ilm-rcd:
 git-ssh-rbr-oo:  
   ssh_auth.present:
      - names:
-       - AAAAB3NzaC1yc2EAAAADAQABAAABAQD6aJWXd6N1Ui6ahEMQIL8vLaQr2S00u9yZC0+o+VKgHdWloImRDn8EJv9bAkP05/NpElkzmOsC8Ia3kEcFjg0sCsyNOOwwynvhg9vuSxh4S+XvVsm4m/a7fhWPCGLs+205i1xwl28N4G5Z+gJX6ktfCX3idgpw3lPXocEm0R6+YjzyIBxXT0gDTlb1pTXPm9OG/LKgGlO1uHl5kcAnJRYAm0zzjkCJ8GK5n2+m80dkox/MAv0sLEpmf9eHfz57Csidjpw778qpjDri99N3gEGrUpX8x7o9rFrRRifWtqUJOVuAPvTHzt5aG0rzcmBJD+nKwxYAUb3Nm31LuNwSilK
+       - "AAAAB3NzaC1yc2EAAAADAQABAAABAQD6aJWXd6N1Ui6ahEMQIL8vLaQr2S00u9yZC0+o+VKgHdWloImRDn8EJv9bAkP05/NpElkzmOsC8Ia3kEcFjg0sCsyNOOwwynvhg9vuSxh4S+XvVsm4m/a7fhWPCGLs+205i1xwl28N4G5Z+gJX6ktfCX3idgpw3lPXocEm0R6+YjzyIBxXT0gDTlb1pTXPm9OG/LKgGlO1uHl5kcAnJRYAm0zzjkCJ8GK5n2+m80dkox/MAv0sLEpmf9eHfz57Csidjpw778qpjDri99N3gEGrUpX8x7o9rFrRRifWtqUJOVuAPvTHzt5aG0rzcmBJD+nKwxYAUb3Nm31LuNwSilK"
      - user: git
      - enc: ssh-rsa
      - comment: rbrownccb@opensuse.org
