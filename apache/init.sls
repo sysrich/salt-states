@@ -25,7 +25,7 @@ apache2:
     - mode: 644
     - contents:
       - <Directory "/srv/www/htdocs">
-      - AllowOverride None
+      - AllowOverride All
       - </Directory>
     - require:
       - pkg: apache2
