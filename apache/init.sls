@@ -18,7 +18,7 @@ apache2:
       - mode
       - ignore_dirs
 
-/etc/apache2/default-server.conf
+/etc/apache2/default-server.conf:
   apache.configfile:
     - config:
       - Directory:
