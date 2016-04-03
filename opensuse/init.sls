@@ -69,7 +69,8 @@ root:
   file.managed:
     - user: ilmehtar
     - group: users
-    - content:
+    - mode: 600
+    - contents:
       - Host rootco.de
       - Port 8282
     - require:
