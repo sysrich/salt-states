@@ -24,10 +24,10 @@ git:
     - require:
       - file: /srv/git/git-shell-commands
 
-git-ssh-ilm-rcd:
-  ssh_auth.present:
-    - user: git
-    - source: salt://sshd/ilmehtar.id_rsa.pub
+#git-ssh-ilm-rcd:
+#  ssh_auth.present:
+#    - user: git
+#    - source: salt://sshd/ilmehtar.id_rsa.pub
 
 git-ssh-rbr-oo:  
   ssh_auth.present:
