@@ -7,6 +7,13 @@ git:
     - require:
       - pkg: myopensuse.packages
 
+/srv/git:
+  file.directory:
+    - user: git
+    - group: users
+    - require:
+      - user: git
+
 /srv/git/git-shell-commands:
   file.directory:
     - user: git
