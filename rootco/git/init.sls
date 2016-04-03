@@ -24,6 +24,11 @@ git:
     - require:
       - file: /srv/git/git-shell-commands
 
+/srv/git/test.git:
+  git.present:
+    - user: git
+    - base: True
+
 git-ssh-keys:
   ssh_auth.present:
     - user: git
