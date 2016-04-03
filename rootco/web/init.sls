@@ -4,13 +4,13 @@ include:
 rootco.de-web:
   git.latest:
     - name: https://github.com/sysrich/rootco.de-web.git
-    - target: /srv/www/source
+    - target: /srv/git/rootco.de-web
     - user: wwwrun
     - require:
       - pkg: apache2
       - file: /srv/www/htdocs
 
-git -C /srv/www/source pull:
+git -C /srv/git/rootco.de-web pull:
   cron.present:
     - user: wwwrun
     - minute: '*/5'
