@@ -17,3 +17,12 @@ apache2:
       - group
       - mode
       - ignore_dirs
+
+/etc/apache2/default-server.conf
+  apache.configfile:
+    - config:
+      - Directory:
+        this: /srv/www/htdocs
+        AllowOverride: All
+    - require:
+      - pkg: apache2
