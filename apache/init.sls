@@ -17,3 +17,15 @@ apache2:
       - group
       - mode
       - ignore_dirs
+
+/etc/apache2/conf.d/htdocs-allow-override.conf:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - contents:
+      - <Directory "/srv/www/htdocs">
+      - AllowOverride None
+      - </Directory>
+    - require:
+      - pkg: apache2
