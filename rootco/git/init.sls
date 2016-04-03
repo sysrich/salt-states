@@ -14,6 +14,13 @@ git:
     - require:
       - user: git
 
+/srv/git-priv:
+  file.directory:
+    - user: git
+    - group: users
+    - require:
+      - user: git
+
 /srv/git/git-shell-commands:
   file.directory:
     - user: git
@@ -31,9 +38,11 @@ git:
     - require:
       - file: /srv/git/git-shell-commands
 
-/srv/git/test.git:
+/srv/git-priv/todo.git:
   git.present:
     - user: git
+    - require:
+      - file: /srv/git-priv
 
 git-ssh-keys:
   ssh_auth.present:
