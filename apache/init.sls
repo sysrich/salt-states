@@ -2,7 +2,7 @@ apache2:
   pkg.installed: []
   service.running:
     - watch:
-      - /etc/apache2/conf.d/htdocs-allow-override.conf    
+      - file: /etc/apache2/conf.d/htdocs-allow-override.conf    
     - require:
       - pkg: apache2
       - file: /srv/www/htdocs
