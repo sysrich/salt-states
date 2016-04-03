@@ -24,13 +24,7 @@ git:
     - require:
       - file: /srv/git/git-shell-commands
 
-#git-ssh-ilm-rcd:
-#  ssh_auth.present:
-#    - user: git
-#    - source: salt://sshd/ilmehtar.id_rsa.pub
-
-git-ssh-rbr-oo:  
+git-ssh-keys:
   ssh_auth.present:
     - user: git
-    - source: salt://sshd/rbrown.id_rsa.pub
-
+    - source: salt://sshd/keys.id_rsa.pub
