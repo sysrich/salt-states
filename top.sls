@@ -6,6 +6,7 @@ base:
     - sshd
     - salt.master
     - rootco.web
+    - rootco.git
   'rey.rootco.de':
     - opensuse.laptop
   'obiwan.rootco.de':
