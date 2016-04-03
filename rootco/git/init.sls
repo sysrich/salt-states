@@ -27,7 +27,6 @@ git:
 /srv/git/test.git:
   git.present:
     - user: git
-    - base: True
 
 git-ssh-keys:
   ssh_auth.present:
