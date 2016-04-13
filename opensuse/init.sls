@@ -70,6 +70,7 @@ root:
     - user: ilmehtar
     - group: users
     - mode: 600
+    - makedirs: True
     - contents:
       - Host rootco.de
       - Port 8282
