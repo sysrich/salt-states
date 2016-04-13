@@ -14,3 +14,4 @@ base:
     - opensuse.desktop
   'ibrokeit.suse.de':
     - opensuse.desktop
+    - znc
