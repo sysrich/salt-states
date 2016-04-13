@@ -7,6 +7,7 @@ base:
     - salt.master
     - rootco.web
     - rootco.git
+    - znc
   'rey.rootco.de':
     - opensuse.laptop
   'obiwan.rootco.de':
