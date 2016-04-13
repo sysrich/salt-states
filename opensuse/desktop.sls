@@ -7,6 +7,7 @@ desktop-packages:
       - dconf-editor
       - gnome-boxes
       - mumble
+      - hexchat
     - require:
       - pkg: myopensuse.packages
 
