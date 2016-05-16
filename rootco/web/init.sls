@@ -10,7 +10,7 @@ rootco.de-web:
       - pkg: apache2
       - file: /srv/www/htdocs
 
-git -C /srv/git/rootco.de-web pull:
+git -C /srv/git/rootco.de-web pull -q:
   cron.present:
     - user: wwwrun
     - minute: '*/5'

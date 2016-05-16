@@ -3,7 +3,7 @@ saltmaster.packages:
     - pkgs:
       - salt-master
 
-git -C /srv/salt pull:
+git -C /srv/salt pull -q:
   cron.present:
     - user: root
     - minute: '*/5'
