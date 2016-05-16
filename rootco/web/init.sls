@@ -16,3 +16,9 @@ git -C /srv/git/rootco.de-web pull:
     - minute: '*/5'
     - require:
       - git: rootco.de-web
+
+certbot:
+  git.latest:
+    - name: https://github.com/certbot/certbot
+    - target: /opt/certbot
+    - user: root
