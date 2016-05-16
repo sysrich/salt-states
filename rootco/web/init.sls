@@ -22,3 +22,13 @@ certbot:
     - name: https://github.com/certbot/certbot
     - target: /opt/certbot
     - user: root
+
+/etc/apache2/vhosts.d/SSL-rootco.de.conf:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/web/SSL-rootco.de.conf
+    - require:
+      - pkg: apache2
+
