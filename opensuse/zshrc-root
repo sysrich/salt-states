@@ -71,5 +71,7 @@ source /opt/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^T' autosuggest-toggle
 fi
 
+alias zypper-twup="sudo screen zypper dup --no-allow-vendor-change"
+
 # zsh salt completion
 zstyle ':completion:*:salt(|-cp|-call):*' use-cache true
