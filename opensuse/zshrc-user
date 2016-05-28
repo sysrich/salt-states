@@ -53,6 +53,7 @@ source /opt/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh-autosuggestions is designed to be unobtrusive)
 bindkey '^T' autosuggest-toggle
 
+alias screen="systemd-run --scope --user -q screen"
 alias iosc="osc -A https://build.suse.de"
 alias zypper-twup="sudo screen zypper dup --no-allow-vendor-change"
 
