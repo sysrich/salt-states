@@ -35,7 +35,10 @@ certbot:
 /opt/certbot/certbot-auto renew >/dev/null 2>&1:
   cron.present:
     - user: root
-    - daymonth: '*/60'
+    - minute: 0
+    - hour: 0
+    - daymonth: 1
+    - month: */2
     - require:
       - git: certbot
 
