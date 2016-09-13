@@ -9,6 +9,7 @@ desktop-packages:
       - mumble
       - hexchat
       - virt-manager
+      - qemu-ovmf-x86_64
     - require:
       - pkg: myopensuse.packages
 
