@@ -8,6 +8,7 @@ desktop-packages:
       - gnome-boxes
       - mumble
       - hexchat
+      - virt-manager
     - require:
       - pkg: myopensuse.packages
 
