@@ -14,3 +14,8 @@ tlp:
     - enable: True
     - require:
       - pkg: laptop.packages
+
+tlp-sleep:
+  service.enabled:
+    - require:
+      - pkg: laptop.packages
