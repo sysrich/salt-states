@@ -16,6 +16,7 @@ git-zsh-users-history-substring-search:
   git.latest:
     - name: https://github.com/zsh-users/zsh-history-substring-search.git
     - target: /opt/zsh-users/zsh-history-substring-search
+    - force_reset: True
     - require:
       - pkg: myopensuse.packages
 
