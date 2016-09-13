@@ -8,3 +8,9 @@ laptop.packages:
       - powertop
     - require:
       - pkg: gedit-packages
+
+tlp:
+  service.running:
+    - enable: True
+    - require:
+      - pkg: laptop.packages
