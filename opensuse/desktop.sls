@@ -10,6 +10,7 @@ desktop-packages:
       - hexchat
       - virt-manager
       - qemu-ovmf-x86_64
+      - chromium
     - require:
       - pkg: myopensuse.packages
 
@@ -37,7 +38,10 @@ packman-packages:
       - gstreamer-plugins-bad-orig-addon
       - gstreamer-plugins-ugly-orig-addon
       - gstreamer-plugins-libav
+      - chromium-pepper-flash
     - fromrepo: packman-repo
+    - require:
+      - pkg: desktop-packages
 
 gedit-packages:
   pkg.installed:
@@ -48,7 +52,7 @@ gedit-packages:
       - gedit-plugin-wordcompletion
       - gedit-plugin-drawspaces
     - require:
-      - pkg: desktop-packages
+      - pkg: packman-packages
 
 dconf-defaults:
   file.managed:
