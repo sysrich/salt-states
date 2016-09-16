@@ -2,6 +2,7 @@ myopensuse.packages:
   pkg.installed:
     - pkgs:
       - htop
+      - screen
       - git-core
       - zsh
       - command-not-found
