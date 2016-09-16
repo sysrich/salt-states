@@ -76,3 +76,7 @@ alias zypper-twup="sudo screen zypper dup --no-allow-vendor-change"
 
 # zsh salt completion
 zstyle ':completion:*:salt(|-cp|-call):*' use-cache true
+
+# zsh Home & End
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
