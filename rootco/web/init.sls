@@ -38,7 +38,7 @@ certbot:
     - minute: 0
     - hour: 0
     - daymonth: 1
-    - month: */2
+    - month: '*/2'
     - require:
       - git: certbot
 
