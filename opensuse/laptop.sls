@@ -10,6 +10,12 @@ laptop.packages:
     - require:
       - pkg: gedit-packages
 
+iio-sensor-proxy:
+  service.running:
+    - enable: True
+    - require:
+      - pkg: laptop.packages
+
 tlp:
   service.running:
     - enable: True
