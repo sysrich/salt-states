@@ -28,8 +28,8 @@ source /opt/zsh-users/zsh-history-substring-search/zsh-history-substring-search.
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "${terminfo[kcuu1]}" history-substring-search-up
+bindkey "${terminfo[kcud1]}" history-substring-search-down
 
 # bind P and N for EMACS mode
 bindkey -M emacs '^P' history-substring-search-up
@@ -76,6 +76,9 @@ alias zypper-twup="sudo screen zypper dup --no-allow-vendor-change"
 # zsh salt completion
 zstyle ':completion:*:salt(|-cp|-call):*' use-cache true
 
-# zsh Home & End
+# zsh Keybinding
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
+bindkey "${terminfo[kpp]}" history-substring-search-up #pgup
+bindkey "${terminfo[knp]}" history-substring-search-down #pgdn
+bindkey "${terminfo[kdch1]}" delete-char
