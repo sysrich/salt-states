@@ -19,3 +19,4 @@ base:
   'bb8.rootco.de':
     - opensuse.jeos
     - sshd
+    - rootco.piap
