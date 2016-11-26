@@ -22,7 +22,7 @@ network:
     - watch:
       - file: /etc/sysconfig/network/ifcfg-wlan1
 
-/etc/hostapd.conf
+/etc/hostapd.conf:
   file.managed:
     - source: salt://rootco/piap/hostapd.conf
     - mode: 600
