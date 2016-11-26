@@ -4,7 +4,5 @@
     - mode: 644
     - user: root
     - group: root
-    - require:
-      - user: root
     - require_in:
       - pkg: myopensuse.packages
