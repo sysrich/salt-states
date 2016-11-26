@@ -78,6 +78,6 @@ root:
   file.managed:
     - mode: 600
     - contents:
-    - 'ilmehtar ALL=(ALL) NOPASSWD: ALL'
+      - 'ilmehtar ALL=(ALL) NOPASSWD: ALL'
     - require:
       - user: ilmehtar
