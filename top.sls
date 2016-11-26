@@ -16,3 +16,6 @@ base:
   'ibrokeit.suse.de':
     - opensuse.desktop
     - znc
+  'bb8.suse.de':
+    - opensuse.jeos
+    - sshd
