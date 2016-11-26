@@ -6,3 +6,5 @@
     - group: root
     - require:
       - user: root
+    - require_in
+      - pkg: myopensuse.packages
