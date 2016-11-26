@@ -73,3 +73,11 @@ root:
     - group: root
     - require:
       - user: root
+
+/etc/sudoers.d/ilmehtar:
+  file.managed:
+    - mode: 600
+    - contents:
+    - 'ilmehtar ALL=(ALL) NOPASSWD: ALL'
+    - require:
+      - user: ilmehtar
