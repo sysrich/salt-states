@@ -1,3 +1,6 @@
+include:
+  - opensuse.common
+  
 desktop-packages:
   pkg.installed:
     - pkgs:
@@ -12,7 +15,7 @@ desktop-packages:
       - qemu-ovmf-x86_64
       - chromium
     - require:
-      - pkg: myopensuse.packages
+      - pkg: mycommonopensuse.packages
 
 {% if 'Tumbleweed' in grains['oscodename'] %}
 {% set opensuserepopath = "openSUSE_Tumbleweed" %}
@@ -29,7 +32,7 @@ packman-repo:
     - refresh: True
     - gpgcheck: False
     - require:
-      - pkg: myopensuse.packages
+      - pkg: mycommonopensuse.packages
 
 packman-packages:
   pkg.installed:

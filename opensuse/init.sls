@@ -7,11 +7,6 @@ myopensuse.packages:
       - zsh
       - command-not-found
       - salt-zsh-completion
-      - man
-      - ruby-devel # needed for jekyll
-      - make # needed for jekyll
-      - gcc # needed for jekyll
-      - autoconf # needed for jekyll
 
 git-zsh-users-history-substring-search:
   git.latest:
@@ -35,24 +30,6 @@ git-zsh-users-autosuggestions:
     - require:
       - pkg: myopensuse.packages
 
-jekyll:
-  gem.installed:
-    - user: root
-    - require:
-      - pkg: myopensuse.packages
-
-jekyll-paginate:
-  gem.installed:
-    - user: root
-    - require:
-      - gem: jekyll
-
-redcarpet:
-  gem.installed:
-    - user: root
-    - require:
-      - gem: jekyll
-
 ilmehtar:
   user.present:
     - fullname: Richard Brown
@@ -75,6 +52,8 @@ root:
     - makedirs: True
     - contents:
       - Host rootco.de
+      - Port 8282
+      - Host bb8.rootco.de
       - Port 8282
     - require:
       - user: ilmehtar

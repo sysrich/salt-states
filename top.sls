@@ -3,6 +3,7 @@ base:
     - opensuse
     - salt.minion
   'luke.rootco.de':
+    - opensuse.server
     - sshd
     - salt.master
     - rootco.web
