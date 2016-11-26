@@ -82,7 +82,7 @@ root:
     - require:
       - user: ilmehtar
 
-{% if grains['manufacturer'] == 'raspberrypi' %}
+{% if grains['productname'] == 'rpi' %}
 /lib/firmware/brcm/brcmfmac43430-sdio-raspberrypi3b.txt:
   file.line:
     - mode: replace
