@@ -1,4 +1,4 @@
-piap.packages
+piap.packages:
   pkg.installed:
     - pkgs:
       - hostapd
