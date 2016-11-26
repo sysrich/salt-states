@@ -5,3 +5,4 @@
     - content: "solver.onlyRequires = true"
     - require_in:
       - pkg: myopensuse.packages
+

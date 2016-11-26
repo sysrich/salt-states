@@ -81,3 +81,11 @@ root:
       - 'ilmehtar ALL=(ALL) NOPASSWD: ALL'
     - require:
       - user: ilmehtar
+
+{% if grains['manufacturer'] == 'raspberrypi' %}
+/lib/firmware/brcm/brcmfmac43430-sdio-raspberrypi3b.txt:
+  file.line:
+    - mode: replace
+    - match: "ccode=ALL"
+    - content: "ccode=DE"
+{% endif %}
