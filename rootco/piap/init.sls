@@ -21,3 +21,19 @@ network:
     - reload: True
     - watch:
       - file: /etc/sysconfig/network/ifcfg-wlan1
+
+/etc/hostapd.conf
+  file.managed:
+    - source: salt://rootco/piap/hostapd.conf
+    - mode: 600
+    - user: root
+    - group: root
+    - require:
+      - pkg: piap.packages
+
+hostapd:
+  service.running:
+    - enable: True
+    - reload: True
+    - watch:
+      - file: /etc/hostapd.conf
