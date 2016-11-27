@@ -34,6 +34,6 @@ network:
 hostapd:
   service.running:
     - enable: True
-    - reload: True
+    - full_restart: True
     - watch:
       - file: /etc/hostapd.conf
