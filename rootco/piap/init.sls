@@ -72,7 +72,7 @@ iptables-masquerade:
   iptables.append:
     - table: nat
     - chain: POSTROUTING
-    - out-interface: eth0
+    - out-interface: wlan0
     - jump: MASQUERADE
     - save: True
 
@@ -80,7 +80,7 @@ iptables-incoming:
   iptables.append:
     - table: filter
     - chain: FORWARD
-    - in-interface: eth0
+    - in-interface: wlan0
     - out-interface: wlan1
     - jump: ACCEPT
     - match: state
@@ -92,6 +92,6 @@ iptables-outgoing:
     - table: filter
     - chain: FORWARD
     - in-interface: wlan1
-    - out-interface: eth0
+    - out-interface: wlan0
     - jump: ACCEPT
     - save: True
