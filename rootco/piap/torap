@@ -5,16 +5,16 @@
 
 case "$1" in
   start)
-    echo –n "Starting tor"
+    echo -n "Starting tor"
     sudo systemctl start tor
     echo "."
-    echo -n "Enabling wlan0 routing through tor"
+    echo -n "Enabling wlan0 routing through tor".
     sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53
     sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
     echo "."
   ;;
   stop)
-    echo –n "Stopping tor"
+    echo -n "Stopping tor"
     sudo systemctl stop stop
     echo "."
     echo -n "Disabling wlan0 routing through tor"
@@ -23,12 +23,12 @@ case "$1" in
     echo "."
   ;;
   restart)
-    echo –n "Restarting tor"
+    echo -n "Restarting tor"
     sudo systemctl restart tor
     echo "."
   ;;
   reload)
-    echo –n "Reloading tor"
+    echo -n "Reloading tor"
     sudo systemctl reload tor
     echo "."
   ;;
