@@ -72,4 +72,22 @@ Enable IP forwarding now:
     - onchanges:
       - file: /etc/sysctl.d/ipforward.conf
 
+/etc/tor/torrc:
+  file.managed:
+    - source: salt://rootco/piap/torrc
+    - mode: 600
+    - user: root
+    - group: root
+    - require:
+      - pkg: piap.packages
+
+/opt/piap/torap:
+  file.managed:
+    - source: salt://rootco/piap/torap
+    - mode: 755
+    - user: root
+    - group: root
+    - makedirs: True
+    - require:
+      - pkg: piap.packages
 

@@ -6,6 +6,18 @@ iptables-masquerade:
     - jump: MASQUERADE
     - save: True
 
+# Tor iptables will be toggled at load time, but we want to make sure SSH always works
+iptables-tor-ensuressh:
+  iptables.append:
+    - table: nat
+    - chain: PREROUTING
+    - in-interface: wlan0
+    - proto: tcp
+    - dport: 22
+    - jump: REDIRECT
+    - to-ports: 22
+    - save: True
+
 iptables-incoming:
   iptables.append:
     - table: filter

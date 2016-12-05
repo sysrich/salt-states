@@ -1,0 +1,8 @@
+Log notice file /var/log/tor/notices.log
+VirtualAddrNetwork 10.0.0.1/24
+AutomapHostsSuffixes .onion,.exit
+AutomapHostsOnResolve 1
+TransPort 9040
+TransListenAddress 10.0.0.1
+DNSPort 53
+DNSListenAddress 10.0.0.1
