@@ -67,3 +67,31 @@ Enable IP forwarding now:
     - cwd: /
     - onchanges:
       - file: /etc/sysctl.d/ipforward.conf
+
+iptables-masquerade:
+  iptables.append:
+    - table: nat
+    - chain: POSTROUTING
+    - out-interface: eth0
+    - jump: MASQUERADE
+    - save: True
+
+iptables-incoming:
+  iptables.append:
+    - table: filter
+    - chain: FORWARD
+    - in-interface: eth0
+    - out-interface: wlan1
+    - jump: ACCEPT
+    - match: state
+    - connstate: RELATED,ESTABLISHED
+    - save: True
+
+iptables-outgoing:
+  iptables.append:
+    - table: filter
+    - chain: FORWARD
+    - in-interface: wlan1
+    - out-interface: eth0
+    - jump: ACCEPT
+    - save: True
