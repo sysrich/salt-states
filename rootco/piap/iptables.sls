@@ -11,7 +11,7 @@ iptables-tor-ensuressh:
   iptables.append:
     - table: nat
     - chain: PREROUTING
-    - in-interface: wlan0
+    - in-interface: wlan1
     - proto: tcp
     - dport: 22
     - jump: REDIRECT
