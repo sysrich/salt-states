@@ -37,3 +37,19 @@ hostapd:
     - full_restart: True
     - watch:
       - file: /etc/hostapd.conf
+
+/etc/dnsmasq.d/dnsmasqpiap.conf:
+  file.managed:
+    - source: salt://rootco/piap/dnsmasqpiap.conf
+    - mode: 600
+    - user: root
+    - group: root
+    - require:
+      - pkg: piap.packages
+
+dnsmasq:
+  service.running:
+    - enable: True
+    - full_restart: True
+    - watch:
+      - file: /etc/dnsmasq.d/dnsmasqpiap.conf
