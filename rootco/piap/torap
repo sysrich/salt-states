@@ -3,8 +3,6 @@
 ## Starts and stops Tor, adding and removing related IPTables rules to route automatically through Tor
 ## FIXME - To be obsoleted by the use of the RealTek USB Dongle as a MultiSSID AP instead of the RPi3 built in which only supports a single SSID, so needs Tor to be toggled
 
-test –f /usr/lib/systemd/system/tor.service || exit 0
-
 case "$1" in
   start)
     echo –n "Starting tor"
