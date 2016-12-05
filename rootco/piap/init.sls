@@ -19,22 +19,12 @@ piap.packages:
     - require:
       - user: root
 
-/etc/sysconfig/network/ifcfg-wlan1_1:
-  file.managed:
-    - source: salt://rootco/piap/ifcfg-wlan1_1
-    - mode: 600
-    - user: root
-    - group: root
-    - require:
-      - user: root
-
 network:
   service.running:
     - enable: True
     - reload: True
     - watch:
       - file: /etc/sysconfig/network/ifcfg-wlan1
-      - file: /etc/sysconfig/network/ifcfg-wlan1_1
 
 /etc/hostapd.conf:
   file.managed:
