@@ -1,5 +1,4 @@
-Log notice file /var/log/tor/notices.log
-VirtualAddrNetwork 10.192.0.0/10
+VirtualAddrNetworkIPv4 10.192.0.0/10
 AutomapHostsSuffixes .onion,.exit
 AutomapHostsOnResolve 1
 TransPort 9040

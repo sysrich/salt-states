@@ -9,9 +9,9 @@ case "$1" in
     sudo systemctl start tor
     echo "."
     echo -n "Enabling wlan0 routing through tor".
-    sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 5353
-    sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport 5353 -j REDIRECT --to-ports 5353
-    sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
+    sudo iptables -t nat -A PREROUTING -i wlan0 -o wlan0 -p udp --dport 53 -j REDIRECT --to-ports 5353
+    sudo iptables -t nat -A PREROUTING -i wlan0 -o wlan0 -p udp --dport 5353 -j REDIRECT --to-ports 5353
+    sudo iptables -t nat -A PREROUTING -i wlan0 -o wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
     echo "."
   ;;
   stop)
@@ -19,9 +19,9 @@ case "$1" in
     sudo systemctl stop tor
     echo "."
     echo -n "Disabling wlan0 routing through tor"
-    sudo iptables -t nat -D PREROUTING -i wlan0 -p udp --dport 53 -j REDIRECT --to-ports 5353
-    sudo iptables -t nat -D PREROUTING -i wlan0 -p udp --dport 5353 -j REDIRECT --to-ports 5353
-    sudo iptables -t nat -D PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
+    sudo iptables -t nat -D PREROUTING -i wlan0 -o wlan0 -p udp --dport 53 -j REDIRECT --to-ports 5353
+    sudo iptables -t nat -D PREROUTING -i wlan0 -o wlan0 -p udp --dport 5353 -j REDIRECT --to-ports 5353
+    sudo iptables -t nat -D PREROUTING -i wlan0 -o wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
     echo "."
   ;;
   restart)
