@@ -38,9 +38,9 @@ hostapd:
     - watch:
       - file: /etc/hostapd.conf
 
-/etc/dnsmasq.d/dnsmasqpiap.conf:
+/etc/dnsmasq.conf:
   file.managed:
-    - source: salt://rootco/piap/dnsmasqpiap.conf
+    - source: salt://rootco/piap/dnsmasq.conf
     - mode: 600
     - user: root
     - group: root
@@ -52,7 +52,7 @@ dnsmasq:
     - enable: True
     - full_restart: True
     - watch:
-      - file: /etc/dnsmasq.d/dnsmasqpiap.conf
+      - file: /etc/dnsmasq.conf
 
 /etc/sysctl.d/ipforward.conf:
   file.managed:
