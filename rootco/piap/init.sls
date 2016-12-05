@@ -53,3 +53,17 @@ dnsmasq:
     - full_restart: True
     - watch:
       - file: /etc/dnsmasq.d/dnsmasqpiap.conf
+
+/etc/sysctl.d/ipforward.conf:
+  file.managed:
+    - source: salt://rootco/piap/ipforward.conf
+    - mode: 600
+    - user: root
+    - group: root
+
+Enable IP forwarding now:
+  cmd.run:
+    - name: echo 1 > /proc/sys/net/ipv4/ip_forward
+    - cwd: /
+    - onchanges:
+      - file: /etc/sysctl.d/ipforward.conf
