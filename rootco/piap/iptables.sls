@@ -13,9 +13,9 @@ iptables-tor-ensuressh:
     - chain: PREROUTING
     - in-interface: wlan1
     - proto: tcp
-    - dport: 22
+    - dport: 8282
     - jump: REDIRECT
-    - to-ports: 22
+    - to-ports: 8282
     - save: True
 
 iptables-incoming:
