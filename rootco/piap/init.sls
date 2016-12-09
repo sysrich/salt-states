@@ -7,6 +7,7 @@ piap.packages:
       - hostapd
       - dnsmasq
       - tor
+      - elinks
     - require:
       - pkg: myopensuse.packages
 
