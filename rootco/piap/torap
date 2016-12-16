@@ -18,8 +18,8 @@ case "$1" in
     sudo systemctl stop tor
     echo "."
     echo -n "Disabling wlan0 routing through tor"
-    sudo iptables -t nat -D PREROUTING -i wlan1 -o wlan0 -p udp --dport 53 -j REDIRECT --to-ports 53
-    sudo iptables -t nat -D PREROUTING -i wlan1 -o wlan0 -p tcp --syn -j REDIRECT --to-ports 9040
+    sudo iptables -t nat -D PREROUTING -i wlan1 -p udp --dport 53 -j REDIRECT --to-ports 53
+    sudo iptables -t nat -D PREROUTING -i wlan1 -p tcp --syn -j REDIRECT --to-ports 9040
     echo "."
   ;;
   restart)
