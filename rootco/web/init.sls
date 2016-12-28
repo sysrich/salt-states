@@ -32,13 +32,11 @@ certbot:
     - require:
       - pkg: apache2
 
-/opt/certbot/certbot-auto renew >/dev/null 2>&1:
+/opt/certbot/certbot-auto renew --quiet --no-self-upgrade:
   cron.present:
     - user: root
-    - minute: 0
-    - hour: 0
-    - daymonth: 1
-    - month: '*/2'
+    - minute: 23
+    - hour: 11,23
     - require:
       - git: certbot
 
