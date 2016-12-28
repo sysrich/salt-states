@@ -32,7 +32,7 @@ certbot:
     - require:
       - pkg: apache2
 
-/opt/certbot/certbot-auto renew --quiet --no-self-upgrade:
+/opt/certbot/certbot-auto renew --quiet --no-self-upgrade --post-hook "systemctl restart apache2":
   cron.present:
     - user: root
     - minute: 23
