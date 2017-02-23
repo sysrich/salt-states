@@ -18,7 +18,7 @@ auto-indent=true
 draw-spaces=['space', 'tab', 'newline', 'nbsp', 'leading', 'trailing']
 
 [org/gnome/gedit/plugins]
-active-plugins=['drawspaces', 'codecomment', 'wordcompletion', 'codeassistance', 'time', 'spell', 'sort', 'modelines', 'filebrowser', 'docinfo']
+active-plugins=['drawspaces', 'codecomment', 'wordcompletion', 'time', 'spell', 'sort', 'modelines', 'filebrowser', 'docinfo']
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='list-view'
