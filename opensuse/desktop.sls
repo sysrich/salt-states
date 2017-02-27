@@ -41,7 +41,6 @@ packman-packages:
       - gstreamer-plugins-bad-orig-addon
       - gstreamer-plugins-ugly-orig-addon
       - gstreamer-plugins-libav
-      - chromium-pepper-flash
     - fromrepo: packman-repo
     - require:
       - pkg: desktop-packages
