@@ -6,3 +6,10 @@
     - require_in:
       - pkg: myopensuse.packages
 
+myopensusejeos.packages:
+  pkg.installed:
+    - pkgs:
+      - crda
+      - wireless-regdb
+    - require:
+      - pkg: myopensuse.packages
