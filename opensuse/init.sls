@@ -81,3 +81,16 @@ root:
       - 'ilmehtar ALL=(ALL) NOPASSWD: ALL'
     - require:
       - user: ilmehtar
+
+{% if grains['productname'] == 'rpi' %}
+/etc/dracut.conf.d/raspberrypi_modules.conf:
+  file.line:
+    - mode: replace
+    - match: 'add_drivers+=" sdhci-iproc bcm2835-sdhost bcm2835_dma mmc_block "'
+    - content: 'add_drivers+=" bcm2835-sdhost bcm2835_dma mmc_block "'
+
+/sbin/mkinitrd -f:
+  cmd.wait:
+    - watch:
+      - file: /etc/dracut.conf.d/raspberrypi_modules.conf
+{% endif %}
