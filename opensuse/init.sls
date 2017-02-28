@@ -86,8 +86,8 @@ root:
 /etc/dracut.conf.d/raspberrypi_modules.conf:
   file.line:
     - mode: replace
-    - match: 'add_drivers+=" sdhci-iproc bcm2835-sdhost bcm2835_dma mmc_block "'
-    - content: 'add_drivers+=" bcm2835-sdhost bcm2835_dma mmc_block "'
+    - match: '#omit_drivers+=" sdhci-iproc"'
+    - content: 'omit_drivers+=" sdhci-iproc"'
 
 /sbin/mkinitrd -f:
   cmd.wait:
