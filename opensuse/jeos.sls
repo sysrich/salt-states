@@ -6,7 +6,7 @@
     - require_in:
       - pkg: myopensuse.packages
 
-{% if grains['productname'] == 'rpi' %}
+{% if salt['grains.get']('productname', 'none') == 'rpi' %}
 mypijeos.packages:
   pkg.installed:
     - pkgs:

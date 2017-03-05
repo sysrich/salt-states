@@ -82,7 +82,7 @@ root:
     - require:
       - user: ilmehtar
 
-{% if grains['productname'] == 'rpi' %}
+{% if salt['grains.get']('productname', 'none') == 'rpi' %}
 /etc/dracut.conf.d/raspberrypi_modules.conf:
   file.line:
     - mode: replace
