@@ -21,5 +21,6 @@ base:
   'k2so.dyn.rootco.de':
     - opensuse.jeos
     - sshd
+    - rootco.backer
 # 'rey.rootco.de':	    # stolen
 #   - opensuse.laptop
