@@ -9,8 +9,6 @@ base:
     - rootco.web
     - rootco.git
     - znc
-# 'rey.rootco.de':	    # stolen
-#   - opensuse.laptop
   'obiwan.rootco.de':
     - opensuse.desktop
   'ibrokeit.suse.de':
@@ -23,3 +21,5 @@ base:
   'k2so.dyn.rootco.de':
     - opensuse.jeos
     - sshd
+# 'rey.rootco.de':	    # stolen
+#   - opensuse.laptop
