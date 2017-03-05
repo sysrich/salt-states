@@ -6,10 +6,12 @@
     - require_in:
       - pkg: myopensuse.packages
 
-myopensusejeos.packages:
+% if grains['productname'] == 'rpi' %}
+mypijeos.packages:
   pkg.installed:
     - pkgs:
       - crda
       - wireless-regdb
     - require:
       - pkg: myopensuse.packages
+{% endif %}
