@@ -5,6 +5,8 @@ myopensuse.packages:
       - screen
       - git-core
       - zsh
+      - csync
+      - libcsync-plugin-sftp
       - command-not-found
       - salt-zsh-completion
 

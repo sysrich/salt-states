@@ -11,6 +11,6 @@ backer.packages:
   file.directory:
     - user: ilmehtar
     - group: users
-    - mode: 660
+    - mode: 770
     - require:
       - user: ilmehtar
