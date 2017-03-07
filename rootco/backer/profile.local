@@ -1,0 +1,5 @@
+#!/bin/sh
+if ! grep -qs /backups /proc/mounts
+  then
+    echo -e "\e[31;1mWARNING: \e[0m/backups not mounted, run sudo /usr/local/sbin/backer-unlock"
+fi

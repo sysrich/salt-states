@@ -43,3 +43,10 @@ backer.packages:
     - group: root
     - mode: 755
     - source: salt://rootco/backer/lxc-hook-sdb
+
+/etc/profile.local:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/backer/profile.local

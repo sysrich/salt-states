@@ -1,6 +1,7 @@
 #!/bin/bash
 # Mount script for backer
 # Assumes /dev/sdb1 is /backups device
+cryptsetup close backups
 cryptsetup open --type luks /dev/sdb1 backups
 mount /dev/mapper/backups /backups
 echo "255 255 255" > /sys/class/leds/omnia-led\:user1/color
