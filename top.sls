@@ -22,5 +22,7 @@ base:
     - opensuse.jeos
     - sshd
     - rootco.backer
+  'iwreckit.suse.de':
+    - opensuse.laptop
 # 'rey.rootco.de':	    # stolen
 #   - opensuse.laptop
