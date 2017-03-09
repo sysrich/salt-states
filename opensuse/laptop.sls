@@ -7,6 +7,7 @@ laptop.packages:
       - tlp
       - powertop
 #      - iio-sensor-proxy
+      - bbswitch
     - require:
       - pkg: gedit-packages
 
