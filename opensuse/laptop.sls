@@ -6,7 +6,7 @@ laptop.packages:
     - pkgs:
       - tlp
       - powertop
-      - iio-sensor-proxy
+#      - iio-sensor-proxy
     - require:
       - pkg: gedit-packages
 
