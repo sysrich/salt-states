@@ -10,11 +10,12 @@ laptop.packages:
     - require:
       - pkg: gedit-packages
 
-iio-sensor-proxy:
-  service.running:
-    - enable: True
-    - require:
-      - pkg: laptop.packages
+# no longer own a laptop with a light sensor
+#iio-sensor-proxy:
+#  service.running:
+#    - enable: True
+#    - require:
+#      - pkg: laptop.packages
 
 tlp:
   service.running:
