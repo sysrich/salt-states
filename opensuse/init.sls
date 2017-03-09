@@ -90,10 +90,10 @@ root:
     - mode: replace
     - match: '#omit_drivers+=" sdhci-iproc"'
     - content: 'omit_drivers+=" sdhci-iproc"'
-{% endif %}
 
 /sbin/mkinitrd -f:
   cmd.wait:
     - watch:
       - file: /etc/dracut.conf.d/raspberrypi_modules.conf
-      - file: /etc/modprobe.d/49-disablenouveau.conf
+{% endif %}
+

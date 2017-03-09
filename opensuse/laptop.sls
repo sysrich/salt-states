@@ -39,3 +39,8 @@ tlp-sleep:
     - require:
       - pkg: laptop.packages
 
+/sbin/mkinitrd -f:
+  cmd.wait:
+    - watch:
+      - file: /etc/modprobe.d/49-disablenouveau.conf
+
