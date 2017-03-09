@@ -30,7 +30,7 @@ tlp-sleep:
       - pkg: laptop.packages
 
 /etc/modprobe.d/49-disablenouveau.conf:
-  file:managed:
+  file.managed:
     - user: root
     - group: root
     - mode: 644
