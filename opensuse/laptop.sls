@@ -28,3 +28,14 @@ tlp-sleep:
   service.enabled:
     - require:
       - pkg: laptop.packages
+
+/etc/modprobe.d/49-disablenouveau.conf:
+  file:managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - contents:
+      - blacklist nouveau
+    - require:
+      - pkg: laptop.packages
+
