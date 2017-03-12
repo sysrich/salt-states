@@ -14,6 +14,9 @@ desktop-packages:
       - virt-manager
       - qemu-ovmf-x86_64
       - chromium
+# Camera requires exfat
+      - exfat-utils
+      - fuse-exfat
     - require:
       - pkg: mycommonopensuse.packages
 
