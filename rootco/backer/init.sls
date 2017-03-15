@@ -4,6 +4,7 @@ backer.packages:
       - snapper
       - btrfsprogs
       - cryptsetup
+      - duperemove
     - require:
       - pkg: myopensuse.packages
 
