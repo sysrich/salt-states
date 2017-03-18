@@ -15,6 +15,10 @@ backer.packages:
     - mode: 770
     - require:
       - user: ilmehtar
+  mount.mounted:
+    - device: /dev/mapper/backups
+    - fstype: btrfs
+    - mount: False
 
 /etc/snapper/configs/backups:
   file.managed:
@@ -62,3 +66,20 @@ backer.packages:
     - user: root
     - minute: '*/1'
 
+backerc:
+  user.present:
+    - fullname: Backer Csync User
+    - shell: /bin/false
+    - home: /backups/csync
+    - createhome: True
+    - require:
+       - mount: /backups
+
+backerr:
+  user.present:
+    - fullname: Backer Rsync User
+    - shell: /bin/false
+    - home: /backups/rsync
+    - createhome: True
+    - require:
+       - mount: /backups
