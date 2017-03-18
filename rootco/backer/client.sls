@@ -2,10 +2,16 @@ backerclient:
   user.present:
     - fullname: Backer Client User
     - shell: /bin/false
+    - uid: 0
+    - gid: 0
     - home: /home/backerclient
     - createhome: True
-    - groups:
-      - wheel
+
+/home/backerclient:
+  file.directory:
+    - dir_mode: 700
+    - require:
+      - user: backerclient
 
 /home/backerclient/.ssh/config:
   file.managed:
