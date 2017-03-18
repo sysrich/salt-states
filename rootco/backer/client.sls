@@ -27,8 +27,9 @@ backerclient:
     - mode: 600
     - makedirs: True
     - dirmode: 700
-    - contents:
-      - "[k2so.dyn.rootco.de]:8282 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCCsRvNPNCo2UWN5hOOCt70UqJdGKuKpkP5Y3EAMzWEMv+9L8NsjmfWCDD4VkL3raSuSFxJ4qDJVC8emCj6OXPE="
+  file.line:
+    - mode: ensure
+    - content: "[k2so.dyn.rootco.de]:8282 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCCsRvNPNCo2UWN5hOOCt70UqJdGKuKpkP5Y3EAMzWEMv+9L8NsjmfWCDD4VkL3raSuSFxJ4qDJVC8emCj6OXPE="
     - require:
       - user: backerclient
 
