@@ -1,7 +1,0 @@
-[Unit]
-Description=Backup /home/ilmehtar/Documents and /home/ilmehtar/Pictures to k2so.dyn.rootco.de
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/csync /home/ilmehtar/Documents sftp://ilmehtar@k2so.dyn.rootco.de:8282/backups/home/Documents
-ExecStart=/usr/bin/csync /home/ilmehtar/Pictures sftp://ilmehtar@k2so.dyn.rootco.de:8282/backups/home/Pictures
