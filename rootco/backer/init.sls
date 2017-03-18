@@ -10,11 +10,11 @@ backer.packages:
 
 /backups:
   file.directory:
-    - user: ilmehtar
+    - user: backer
     - group: users
     - mode: 770
     - require:
-      - user: ilmehtar
+      - user: backer
   mount.mounted:
     - device: /dev/mapper/backups
     - fstype: btrfs
