@@ -91,7 +91,7 @@ backerr:
     - makedirs: True
     - dirmode: 700
     - contents:
-{% for host, host_key in salt ['mine.get']('*', 'backer_client_host_key', expr_form='grain') %}
+{% for host, host_key in salt ['mine.get']('*', 'backer_client_host_key', expr_form='compound') %}
       - {{ host_key }}
 {% endfor %}
     - require:
@@ -104,7 +104,7 @@ backerr:
     - makedirs: True
     - dirmode: 700
     - contents:
-{% for host, host_key in salt ['mine.get']('*', 'backer_client_host_key', expr_form='grain') %}
+{% for host, host_key in salt ['mine.get']('*', 'backer_client_host_key', expr_form='compound') %}
       - {{ host_key }}
 {% endfor %}
     - require:
