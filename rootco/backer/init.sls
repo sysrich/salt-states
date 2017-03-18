@@ -66,47 +66,25 @@ backer.packages:
     - user: root
     - minute: '*/1'
 
-backerc:
+backer:
   user.present:
-    - fullname: Backer Csync User
+    - fullname: Backer Server User
     - shell: /bin/false
-    - home: /backups/csync
+    - home: /backups
     - createhome: True
     - require:
        - mount: /backups
 
-backerr:
-  user.present:
-    - fullname: Backer Rsync User
-    - shell: /bin/false
-    - home: /backups/rsync
-    - createhome: True
-    - require:
-       - mount: /backups
-
-/backups/rsync/.ssh/authorized_keys:
+/backups/.ssh/authorized_keys:
   file.managed:
-    - user: backerr
+    - user: backer
     - mode: 600
     - makedirs: True
     - dirmode: 700
     - contents:
 {% for host_key in salt ['mine.get']('*', 'backer_client_host_key').items() %}
-      - command="/usr/bin/rsync",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
+      - no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
 {% endfor %}
     - require:
-      - user: backerr
-
-/backups/csync/.ssh/authorized_keys:
-  file.managed:
-    - user: backerc
-    - mode: 600
-    - makedirs: True
-    - dirmode: 700
-    - contents:
-{% for host_key in salt ['mine.get']('*', 'backer_client_host_key').items() %}
-      - command="/usr/lib/ssh/sftp-server",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
-{% endfor %}
-    - require:
-      - user: backerc
+      - user: backer
 
