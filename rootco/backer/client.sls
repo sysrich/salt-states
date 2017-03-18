@@ -39,3 +39,27 @@ ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
     - require:
       - file: /home/backerclient/.ssh/config
 
+/etc/systemd/system/rootco-etc-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/backer/rootco-etc-backup.service
+    - template: jinja
+    - require:
+      - user: backerclient
+
+/etc/systemd/system/rootco-etc-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/backer/rootco-etc-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-etc-backup.service
+
+rootco-etc-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-etc-backup.timer
