@@ -155,3 +155,26 @@ libvirtd:
     - makedirs: true
     - require:
       - user: ilmehtar
+
+/etc/systemd/system/rootco-desktop-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://opensuse/rootco-desktop-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-desktop-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://opensuse/rootco-desktop-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-desktop-backup.service
+
+rootco-desktop-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-desktop-backup.timer

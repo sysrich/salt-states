@@ -1,0 +1,8 @@
+[Unit]
+Description= Timer for Backup /home/ilmehtar/Documents and /home/ilmehtar/Pictures to k2so.dyn.rootco.de
+
+[Timer]
+OnBootSec=60s
+OnCalendar=daily
+RandomizedDelaySec=600s
+Persistent=true
