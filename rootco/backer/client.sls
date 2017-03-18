@@ -43,7 +43,7 @@ ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
     - require:
       - file: /home/backerclient/.ssh/config
 
-/etc/sudoers.d/backerclient
+/etc/sudoers.d/backerclient:
   file.managed:
     - name: /etc/sudoers.d/backerclient
     - mode: 600
