@@ -1,0 +1,8 @@
+#!/bin/sh
+if ! grep -qs /backups /proc/mounts
+  then
+    echo "0" > /sys/class/leds/omnia-led\:user1/autonomous
+    echo "0 0 255" > /sys/class/leds/omnia-led\:user1/color
+    echo "timer" > /sys/class/leds/omnia-led\:user1/trigger
+    echo "1" > /sys/class/leds/omnia-led\:user1/brightness
+fi

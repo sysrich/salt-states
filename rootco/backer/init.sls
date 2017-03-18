@@ -51,3 +51,14 @@ backer.packages:
     - group: root
     - mode: 644
     - source: salt://rootco/backer/profile.local
+
+/usr/local/sbin/backer-unmount-alarm:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 755
+    - source: salt://rootco/backer/backer-unmount-alarm
+  cron.present:
+    - user: root
+    - minute: '*/1'
+

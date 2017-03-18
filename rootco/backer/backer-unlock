@@ -4,6 +4,7 @@
 cryptsetup close backups
 cryptsetup open --type luks /dev/sdb1 backups
 mount /dev/mapper/backups /backups
+echo "0" > /sys/class/leds/omnia-led\:user1/autonomous
 echo "255 255 255" > /sys/class/leds/omnia-led\:user1/color
 echo "none" > /sys/class/leds/omnia-led\:user1/trigger
 echo "1" > /sys/class/leds/omnia-led\:user1/brightness
