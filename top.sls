@@ -9,7 +9,7 @@ base:
     - rootco.web
     - rootco.git
     - znc
-  'obiwan.rootco.de':
+  'obiwan.dyn.rootco.de':
     - opensuse.desktop
   'ibrokeit.suse.de':
     - opensuse.desktop
