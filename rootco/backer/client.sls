@@ -17,5 +17,8 @@ backerclient:
 
 ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
   cmd.run:
+    - user: backerclient
     - creates: /home/backerclient/.ssh/id_rsa
+    - require:
+      - user: backerclient
 
