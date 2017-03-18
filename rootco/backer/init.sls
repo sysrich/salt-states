@@ -83,3 +83,15 @@ backerr:
     - createhome: True
     - require:
        - mount: /backups
+
+{% for client_id, host_key in salt ['mine.get']('*', 'backer_client_host_key') %}
+
+{{ host_key }}:
+  ssh_auth.present:
+    - user: backerr
+    - user: backerc
+  - require:
+    - user: backerr
+    - user: backerc
+
+{% endfor %}

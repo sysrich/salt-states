@@ -1,3 +1,6 @@
+include:
+  - rootco.backer.client
+
 myopensuse.packages:
   pkg.installed:
     - pkgs:
