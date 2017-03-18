@@ -3,5 +3,4 @@ Description=Backup /etc to k2so.dyn.rootco.de
 
 [Service]
 Type=oneshot
-User=backerclient
-ExecStart=/usr/bin/sudo /usr/bin/rsync -a /etc backer@k2so.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
+ExecStart=/usr/bin/rsync -a /etc backer@k2so.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

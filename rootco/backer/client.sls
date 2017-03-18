@@ -1,62 +1,37 @@
-backerclient:
-  user.present:
-    - fullname: Backer Client User
-    - shell: /bin/false
-    - home: /home/backerclient
-    - createhome: True
-
-/home/backerclient:
-  file.directory:
-    - dir_mode: 700
-    - require:
-      - user: backerclient
-
-/home/backerclient/.ssh/config:
+/root/.ssh/config:
   file.managed:
-    - user: backerclient
-    - group: users
+    - user: root
+    - group: root
     - mode: 600
     - makedirs: True
     - dirmode: 700
     - contents:
       - Host k2so.dyn.rootco.de
       - Port 8282
-    - require:
-      - user: backerclient
 
-/home/backerclient/.ssh/known_hosts:
+/root/.ssh/known_hosts:
   file.managed:
-    - user: backerclient
-    - group: users
+    - user: root
+    - group: root
     - mode: 600
     - makedirs: True
     - dirmode: 700
     - contents:
       - "[k2so.dyn.rootco.de]:8282 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCCsRvNPNCo2UWN5hOOCt70UqJdGKuKpkP5Y3EAMzWEMv+9L8NsjmfWCDD4VkL3raSuSFxJ4qDJVC8emCj6OXPE="
-    - require:
-      - user: backerclient
 
-touch /home/backerclient/.ssh/id_rsa.pub:
+touch /root/.ssh/id_rsa.pub:
   cmd.run:
-    - user: backerclient
-    - creates: /home/backerclient/.ssh/id_rsa.pub
+    - user: root
+    - creates: /root/.ssh/id_rsa.pub
     - require:
-      - file: /home/backerclient/.ssh/config
+      - file: /root/.ssh/config
 
-ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
+ssh-keygen -N "" -f /root/.ssh/id_rsa:
   cmd.run:
-    - user: backerclient
-    - unless: grep -q ssh /home/backerclient/.ssh/id_rsa.pub
+    - user: root
+    - unless: grep -q ssh /root/.ssh/id_rsa.pub
     - require:
-      - file: /home/backerclient/.ssh/config
-
-/etc/sudoers.d/backerclient:
-  file.managed:
-    - name: /etc/sudoers.d/backerclient
-    - mode: 600
-    - contents:
-      - 'backerclient ALL=(ALL) NOPASSWD: /usr/bin/rsync'
-      - 'backerclient ALL=(ALL) NOPASSWD: /usr/bin/csync'
+      - file: /root/.ssh/config
 
 /etc/systemd/system/rootco-etc-backup.service:
   file.managed:
