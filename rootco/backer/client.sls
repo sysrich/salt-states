@@ -4,6 +4,7 @@ backerclient:
     - shell: /bin/false
     - uid: 0
     - gid: 0
+    - unique: False
     - home: /home/backerclient
     - createhome: True
 
