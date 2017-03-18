@@ -27,11 +27,16 @@ backerclient:
     - mode: 600
     - makedirs: True
     - dirmode: 700
+    - require:
+      - user: backerclient
+
+known_hosts_k2so:
   file.line:
+    - name: /home/backerclient/.ssh/known_hosts
     - mode: ensure
     - content: "[k2so.dyn.rootco.de]:8282 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCCsRvNPNCo2UWN5hOOCt70UqJdGKuKpkP5Y3EAMzWEMv+9L8NsjmfWCDD4VkL3raSuSFxJ4qDJVC8emCj6OXPE="
     - require:
-      - user: backerclient
+      - file: /home/backerclient/.ssh/known_hosts
 
 ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
   cmd.run:
