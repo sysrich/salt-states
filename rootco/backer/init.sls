@@ -69,7 +69,7 @@ backer.packages:
 backer:
   user.present:
     - fullname: Backer Server User
-    - shell: /bin/false
+    - shell: /bin/bash
     - home: /backups/.backerhome
     - createhome: True
     - require:
