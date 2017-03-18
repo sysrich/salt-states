@@ -36,10 +36,17 @@ backerclient:
     - require:
       - user: backerclient
 
+touch /home/backerclient/.ssh/id_rsa.pub:
+  cmd.run:
+    - user: backerclient
+    - creates: /home/backerclient/.ssh/id_rsa.pub
+    - require:
+      - file: /home/backerclient/.ssh/config
+
 ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
   cmd.run:
     - user: backerclient
-    - creates: /home/backerclient/.ssh/id_rsa
+    - unless: grep -q ssh /home/backerclient/.ssh/id_rsa.pub
     - require:
       - file: /home/backerclient/.ssh/config
 
