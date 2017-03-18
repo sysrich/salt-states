@@ -16,8 +16,8 @@ backerclient:
 
 /home/backerclient/.ssh/config:
   file.managed:
-    - user: backerclient
-    - group: users
+    - user: root
+    - group: root
     - mode: 600
     - makedirs: True
     - dirmode: 700
@@ -29,8 +29,8 @@ backerclient:
 
 /home/backerclient/.ssh/known_hosts:
   file.managed:
-    - user: backerclient
-    - group: users
+    - user: root
+    - group: root
     - mode: 600
     - makedirs: True
     - dirmode: 700
