@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup /srv/www  to k2so.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rsync -a /srv/www root@k2so.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

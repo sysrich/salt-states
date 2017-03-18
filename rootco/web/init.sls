@@ -40,3 +40,25 @@ certbot:
     - require:
       - git: certbot
 
+/etc/systemd/system/rootco-web-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/web/rootco-web-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-web-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/web/rootco-web-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-web-backup.service
+
+rootco-web-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-web-backup.timer

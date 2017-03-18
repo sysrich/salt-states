@@ -1,0 +1,8 @@
+[Unit]
+Description= Timer for Backup /srv/www to k2so.dyn.rootco.de
+
+[Timer]
+OnBootSec=60s
+OnCalendar=daily
+RandomizedDelaySec=300s
+Persistent=true
