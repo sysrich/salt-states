@@ -84,14 +84,29 @@ backerr:
     - require:
        - mount: /backups
 
+/backer/rsync/.ssh/authorized_keys:
+  file.managed:
+    - user: backerr
+    - mode: 600
+    - makedirs: True
+    - dirmode: 700
+    - contents:
 {% for host_key in salt ['mine.get']('*', 'backer_client_host_key') %}
-
-{{ host_key }}:
-  ssh_auth.present:
-    - user: backerr
-    - user: backerc
-  - require:
-    - user: backerr
-    - user: backerc
-
+      - {{ host_key }}
 {% endfor %}
+    - require:
+      - user: backerr
+
+/backer/csync/.ssh/authorized_keys:
+  file.managed:
+    - user: backerc
+    - mode: 600
+    - makedirs: True
+    - dirmode: 700
+    - contents:
+{% for host_key in salt ['mine.get']('*', 'backer_client_host_key') %}
+      - {{ host_key }}
+{% endfor %}
+    - require:
+      - user: backerc
+
