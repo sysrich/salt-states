@@ -10,11 +10,11 @@ backer.packages:
 
 /backups:
   file.directory:
-    - user: backer
+    - user: ilmehtar
     - group: users
     - mode: 770
     - require:
-      - user: backer
+      - user: ilmehtar
   mount.mounted:
     - device: /dev/mapper/backups
     - fstype: btrfs
@@ -66,18 +66,9 @@ backer.packages:
     - user: root
     - minute: '*/1'
 
-backer:
-  user.present:
-    - fullname: Backer Server User
-    - shell: /bin/bash
-    - home: /backups/.backerhome
-    - createhome: True
-    - require:
-       - mount: /backups
-
-/backups/.backerhome/.ssh/authorized_keys:
+/root/.ssh/authorized_keys:
   file.managed:
-    - user: backer
+    - user: root
     - mode: 600
     - makedirs: True
     - dirmode: 700
@@ -85,6 +76,12 @@ backer:
 {% for host_key in salt ['mine.get']('*', 'backer_client_host_key').items() %}
       - no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
 {% endfor %}
-    - require:
-      - user: backer
+
+exclude:
+  - id: /etc/ssh/sshd_config
+
+back_sshd_config:
+  file.managed:
+    - name: /etc/ssh/sshd_config
+    - source: salt://rootco/backer/sshd_config
 
