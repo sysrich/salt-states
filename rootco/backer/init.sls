@@ -92,7 +92,7 @@ backerr:
     - dirmode: 700
     - contents:
 {% for host_key in salt ['mine.get']('*', 'backer_client_host_key').items() %}
-      - {{ host_key[1] }}
+      - command="/usr/bin/rsync",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
 {% endfor %}
     - require:
       - user: backerr
@@ -105,7 +105,7 @@ backerr:
     - dirmode: 700
     - contents:
 {% for host_key in salt ['mine.get']('*', 'backer_client_host_key').items() %}
-      - {{ host_key[1] }}
+      - command="/usr/lib/ssh/sftp-server",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
 {% endfor %}
     - require:
       - user: backerc
