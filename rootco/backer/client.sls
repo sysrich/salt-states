@@ -2,9 +2,6 @@ backerclient:
   user.present:
     - fullname: Backer Client User
     - shell: /bin/false
-    - uid: 0
-    - gid: 0
-    - unique: False
     - home: /home/backerclient
     - createhome: True
 
@@ -16,8 +13,8 @@ backerclient:
 
 /home/backerclient/.ssh/config:
   file.managed:
-    - user: root
-    - group: root
+    - user: backerclient
+    - group: users
     - mode: 600
     - makedirs: True
     - dirmode: 700
@@ -29,8 +26,8 @@ backerclient:
 
 /home/backerclient/.ssh/known_hosts:
   file.managed:
-    - user: root
-    - group: root
+    - user: backerclient
+    - group: users
     - mode: 600
     - makedirs: True
     - dirmode: 700
@@ -45,6 +42,14 @@ ssh-keygen -N "" -f /home/backerclient/.ssh/id_rsa:
     - creates: /home/backerclient/.ssh/id_rsa
     - require:
       - file: /home/backerclient/.ssh/config
+
+/etc/sudoers.d/backerclient
+  file.managed:
+    - name: /etc/sudoers.d/backerclient
+    - mode: 600
+    - contents:
+      - 'backerclient ALL=(ALL) NOPASSWD: /usr/bin/rsync'
+      - 'backerclient ALL=(ALL) NOPASSWD: /usr/bin/csync'
 
 /etc/systemd/system/rootco-etc-backup.service:
   file.managed:
