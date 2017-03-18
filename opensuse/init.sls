@@ -58,7 +58,7 @@ root:
     - contents:
       - Host rootco.de
       - Port 8282
-      - Host bb8.rootco.de
+      - Host k2so.dyn.rootco.de
       - Port 8282
     - require:
       - user: ilmehtar
