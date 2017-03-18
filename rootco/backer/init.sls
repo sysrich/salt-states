@@ -70,12 +70,12 @@ backer:
   user.present:
     - fullname: Backer Server User
     - shell: /bin/false
-    - home: /backups
+    - home: /backups/.backerhome
     - createhome: True
     - require:
        - mount: /backups
 
-/backups/.ssh/authorized_keys:
+/backups/.backerhome/.ssh/authorized_keys:
   file.managed:
     - user: backer
     - mode: 600
