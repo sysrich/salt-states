@@ -40,8 +40,6 @@ ssh-keygen -N "" -f /root/.ssh/id_rsa:
     - mode: 644
     - source: salt://rootco/backer/rootco-etc-backup.service
     - template: jinja
-    - require:
-      - user: backerclient
 
 /etc/systemd/system/rootco-etc-backup.timer:
   file.managed:
