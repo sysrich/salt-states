@@ -14,10 +14,10 @@ base:
   'ibrokeit.suse.de':
     - opensuse.desktop
     - znc
-  'bb8.rootco.de':
-    - opensuse.jeos
-    - sshd
-    - rootco.piap
+#  'bb8.rootco.de':     # disabled as not in use
+#    - opensuse.jeos
+#    - sshd
+#    - rootco.piap
   'k2so.dyn.rootco.de':
     - opensuse.jeos
     - sshd
