@@ -3,10 +3,10 @@
 
 # Run csyncs take care of Documents/Pictures/Music as ilmehtar
 # Rsync remainder of homedir
-/usr/bin/rsync -a --exclude 'Documents' --exclude 'Pictures' --exclude 'Music' /home/ilmehtar root@k2so.dyn.rootco.de:/backups/home
+/usr/bin/rsync -a --exclude 'Documents' --exclude 'Pictures' --exclude 'Music' /home/ilmehtar/ root@k2so.dyn.rootco.de:/backups/home
 
 # Rsync windows data
-/usr/bin/rsync -a /windows/D/Files root@k2so.dyn.rootco.de:/backups/oldben.dyn.rootco.de/
+/usr/bin/rsync -a /windows/D/Files/ root@k2so.dyn.rootco.de:/backups/oldben.dyn.rootco.de
 
 # Shutdown if no users are logged in
 if [ $(who | wc -l) = 0 ]
