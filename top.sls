@@ -10,7 +10,7 @@ base:
     - rootco.git
     - znc
   'obiwan.dyn.rootco.de':
-    - opensuse.desktop
+    - opensuse.obiwan
   'ibrokeit.suse.de':
     - opensuse.desktop
     - znc

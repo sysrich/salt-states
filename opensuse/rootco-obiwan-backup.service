@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup obiwans home dirs to k2so.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/rootco-obiwan-backup
