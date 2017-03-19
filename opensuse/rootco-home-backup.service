@@ -1,6 +1,0 @@
-[Unit]
-Description=Backup home Docs/Music/Pic to k2so.dyn.rootco.de
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/sbin/rootco-home-backup

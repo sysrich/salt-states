@@ -1,11 +1,7 @@
 #!/bin/sh
 ## Full obiwan home backup script
 
-# Run regular csyncs as ilmehtar
-sudo -u ilmehtar /usr/bin/csync /home/ilmehtar/Documents sftp://ilmehtar@k2so.dyn.rootco.de:8282/backups/home/Documents
-sudo -u ilmehtar /usr/bin/csync /home/ilmehtar/Pictures sftp://ilmehtar@k2so.dyn.rootco.de:8282/backups/home/Pictures
-sudo -u ilmehtar /usr/bin/csync /home/ilmehtar/Music sftp://ilmehtar@k2so.dyn.rootco.de:8282/backups/home/Music
-
+# Run csyncs take care of Documents/Pictures/Music as ilmehtar
 # Rsync remainder of homedir
 /usr/bin/rsync -a --exclude 'Documents' --exclude 'Pictures' --exclude 'Music' /home/ilmehtar root@k2so.dyn.rootco.de:/backups/home
 

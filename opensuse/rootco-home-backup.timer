@@ -1,8 +1,0 @@
-[Unit]
-Description= Timer for Backup obiwans home dirs to k2so.dyn.rootco.de
-
-[Timer]
-OnBootSec=60s
-OnCalendar=daily
-RandomizedDelaySec=300s
-Persistent=true
