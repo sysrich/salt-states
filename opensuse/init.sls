@@ -61,7 +61,6 @@ root:
       - Host k2so.dyn.rootco.de
       - Port 8282
       - Host r2d2.dyn.rootco.de
-      - ProxyJump k2so.dyn.rootco.de
       - Port 8282
     - require:
       - user: ilmehtar
