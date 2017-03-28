@@ -38,10 +38,9 @@ git:
     - require:
       - file: /srv/git/git-shell-commands
 
-/srv/git-priv/todo:
+/srv/git-priv/todo.git:
   git.present:
     - user: git
-    - bare: False
     - require:
       - file: /srv/git-priv
 
