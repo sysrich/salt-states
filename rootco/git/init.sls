@@ -44,6 +44,12 @@ git:
     - require:
       - file: /srv/git-priv
 
+/srv/git-priv/todo:
+  git.present:
+    - user: git
+    - require:
+      - file: /srv/git-priv
+
 git-ssh-keys:
   ssh_auth.present:
     - user: git
