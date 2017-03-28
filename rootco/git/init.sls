@@ -47,7 +47,7 @@ git:
 /srv/git-priv/todo:
   git.present:
     - user: git
-    - bare: true
+    - bare: False
     - require:
       - file: /srv/git-priv
 
