@@ -14,6 +14,7 @@ desktop-packages:
       - virt-manager
       - qemu-ovmf-x86_64
       - chromium
+      - gnome-builder
 # Camera requires exfat
       - exfat-utils
       - fuse-exfat
