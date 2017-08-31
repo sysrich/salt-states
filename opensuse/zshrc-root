@@ -60,7 +60,7 @@ fi
 zstyle ':completion:*' menu select
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path ~/.zshcache
 
 if is-at-least 4.3.9; then
 # Setup zsh-autosuggestions
