@@ -44,7 +44,7 @@ PROMPT="%{$fg_bold[green]%}%n@%m% :%{$reset_color%}%~% > %"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path ~/.zshcache
 
 # Setup zsh-autosuggestions
 source /opt/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
