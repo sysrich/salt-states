@@ -6,3 +6,6 @@ OnBootSec=60s
 OnCalendar=daily
 RandomizedDelaySec=300s
 Persistent=true
+
+[Install]
+WantedBy=default.target

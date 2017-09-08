@@ -4,3 +4,6 @@ Description= Timer for Backup obiwans home dirs to k2so.dyn.rootco.de
 [Timer]
 OnCalendar=*-*-* 04:00:00
 Persistent=true
+
+[Install]
+WantedBy=default.target
