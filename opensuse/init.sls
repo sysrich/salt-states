@@ -12,6 +12,7 @@ myopensuse.packages:
       - libcsync-plugin-sftp
       - command-not-found
       - salt-zsh-completion
+      - ca-certificates-cacert
 
 git-zsh-users-history-substring-search:
   git.latest:
