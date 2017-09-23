@@ -9,3 +9,5 @@ echo "255 255 255" > /sys/class/leds/omnia-led\:user1/color
 echo "none" > /sys/class/leds/omnia-led\:user1/trigger
 echo "1" > /sys/class/leds/omnia-led\:user1/brightness
 
+#cryptsetup tweaks fstab, which then breaks on reboot
+sed -i '/^\/dev\/mapper\/backups/d' /etc/fstab
