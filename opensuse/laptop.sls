@@ -8,6 +8,7 @@ laptop.packages:
       - powertop
 #      - iio-sensor-proxy
       - bbswitch
+      - patterns-desktop-laptop
     - require:
       - pkg: gedit-packages
 
