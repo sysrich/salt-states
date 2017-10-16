@@ -29,3 +29,5 @@ base:
     - opensuse.laptop
 # 'rey.rootco.de':      # stolen
 #   - opensuse.laptop
+  'bb8.dyn.rootco.de':
+    - opensuse.laptop
