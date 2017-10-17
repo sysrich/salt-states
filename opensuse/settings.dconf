@@ -30,10 +30,12 @@ clock-show-date=true
 {% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
 sources=[('xkb', 'us'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
+
 {% else -%}
 sources=[('xkb', 'gb'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
-{%- endif -%}
+
+{% endif -%}
 
 
 [org/gnome/shell]
