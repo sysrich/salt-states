@@ -59,6 +59,18 @@ kernel-default:
     - version: '>=4.14'
     - fromrepo: kernel_HEAD
 
+kernel-firmware:
+  pkg.installed:
+    - refresh: True
+    - version: '>=20171009'
+    - fromrepo: kernel_HEAD
+
+ucode-amd:
+  pkg.installed:
+    - refresh: True
+    - version: '>=20171009'
+    - fromrepo: kernel_HEAD
+
 /lib/firmware/brcm/brcmfmac4356-pcie.bin:
   file.managed:
     - source: salt://opensuse/brcmfmac4356-pcie.bin
