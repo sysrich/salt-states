@@ -64,6 +64,7 @@ dconf-defaults:
   file.managed:
     - name: /home/ilmehtar/.defaultsettings.dconf
     - source: salt://opensuse/settings.dconf
+    - template: jinja
     - user: ilmehtar
     - group: users
     - require:

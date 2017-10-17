@@ -44,3 +44,34 @@ tlp-sleep:
   cmd.wait:
     - watch:
       - file: /etc/modprobe.d/49-disablenouveau.conf
+
+{% if grains['nodename'] == 'bb8.dyn.rootco.de' %}
+kernel_HEAD:
+  pkgrepo.managed:
+    - humanname: Kernel HEAD
+    - baseurl: http://download.opensuse.org/repositories/Kernel:/HEAD/standard/
+    - gpgcheck: False
+    - refresh: True
+
+kernel-default:
+  pkg.installed:
+    - refresh: True
+    - version: '>=4.14'
+    - fromrepo: kernel_HEAD
+
+/lib/firmware/brcm/brcmfmac4356-pcie.bin:
+  file.managed:
+    - source: salt://opensuse/brcmfmac4356-pcie.bin
+
+/lib/firmware/brcm/brcmfmac4356-pcie.txt:
+  file.managed:
+    - source: salt://opensuse/brcmfmac4356-pcie.txt
+
+/usr/share/alsa/ucm/chtrt5645/chtrt5645.conf:
+  file.managed:
+    - source: salt://opensuse/chtrt5645.conf
+
+/usr/share/alsa/ucm/chtrt5645/HiFi.conf:
+  file.managed:
+    - source: salt://opensuse/HiFi.conf
+{% endif %}

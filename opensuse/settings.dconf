@@ -27,8 +27,18 @@ default-folder-viewer='list-view'
 clock-show-date=true
 
 [org/gnome/desktop/input-sources]
+{% if grains['nodename'] == 'bb8.dyn.rootco.de' %}
+sources=[('xkb', 'us'), ('xkb', 'de')]
+xkb-options=['terminate:ctrl_alt_bksp']
+{% else %}
 sources=[('xkb', 'gb'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
+{% endif %}
 
 [org/gnome/shell]
 favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'terminator.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
+
+{% if grains['nodename'] == 'bb8.dyn.rootco.de' %}
+[org/gnome/desktop/interface]
+text-scaling-factor=1.5
+{% endif %}
