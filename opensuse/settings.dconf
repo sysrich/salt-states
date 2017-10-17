@@ -30,12 +30,11 @@ clock-show-date=true
 {% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
 sources=[('xkb', 'us'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
-
-{%- else -%}
+{% else %}
 sources=[('xkb', 'gb'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
-
 {%- endif -%}
+
 
 [org/gnome/shell]
 favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'terminator.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
