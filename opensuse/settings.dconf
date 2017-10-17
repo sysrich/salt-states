@@ -33,7 +33,7 @@ xkb-options=['terminate:ctrl_alt_bksp']
 {% else -%}
 sources=[('xkb', 'gb'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
-{%- endif %}
+{%- endif -%}
 
 [org/gnome/shell]
 favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'terminator.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
@@ -41,4 +41,4 @@ favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop'
 {% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
 [org/gnome/desktop/interface]
 text-scaling-factor=1.5
-{% endif %}
+{%- endif -%}
