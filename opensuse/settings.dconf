@@ -31,7 +31,7 @@ clock-show-date=true
 sources=[('xkb', 'us'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
 
-{% else -%}
+{%- else -%}
 sources=[('xkb', 'gb'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
 
@@ -43,4 +43,5 @@ favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop'
 {% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
 [org/gnome/desktop/interface]
 text-scaling-factor=1.5
+
 {%- endif -%}
