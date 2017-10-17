@@ -88,14 +88,14 @@ ucode-amd:
     - source: salt://opensuse/HiFi.conf
 
 /etc/pulse/default.pa:
-  file.managed:
+  file.append:
     - text:
       - set-card-profile alsa_card.platform-cht-bsw-rt5645 HiFi
       - set-default-sink alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645__sink
       - set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645__sink [Out] Speaker
 
 /etc/pulse/daemon.conf:
-  file.managed:
+  file.append:
     - text:
       - realtime-scheduling = no
 {% endif %}
