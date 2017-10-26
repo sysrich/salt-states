@@ -23,7 +23,7 @@ backer.packages:
 /etc/crypttab:
   file.managed:
     - contents:
-      - backups		/dev/mapper/backups	none	noauto,nofail
+      - backups  /dev/mapper/backups  none  noauto,nofail
 
 /etc/snapper/configs/backups:
   file.managed:
