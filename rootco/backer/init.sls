@@ -20,6 +20,11 @@ backer.packages:
     - fstype: btrfs
     - mount: False
 
+/etc/crypttab:
+  file.managed:
+    - contents:
+      - backups		/dev/mapper/backups	none	noauto,nofail
+
 /etc/snapper/configs/backups:
   file.managed:
     - user: root
