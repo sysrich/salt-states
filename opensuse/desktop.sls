@@ -42,6 +42,7 @@ packman-packages:
       - gstreamer-plugins-bad-orig-addon
       - gstreamer-plugins-ugly-orig-addon
       - gstreamer-plugins-libav
+      - gstreamer-plugins-vaapi
       # Camera requires exfat
       - exfat-utils
       - fuse-exfat
