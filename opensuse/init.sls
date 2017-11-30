@@ -32,6 +32,7 @@ git-zsh-users-autosuggestions:
   git.latest:
     - name: https://github.com/tarruda/zsh-autosuggestions.git
     - rev: v0.4.0
+    - force_reset: True
     - target: /opt/zsh-users/zsh-autosuggestions
     - require:
       - pkg: myopensuse.packages
