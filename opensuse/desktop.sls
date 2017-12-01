@@ -15,6 +15,7 @@ desktop-packages:
       - qemu-ovmf-x86_64
       - chromium
       - gnome-builder
+      - gstreamer-plugins-vaapi
     - require:
       - pkg: mycommonopensuse.packages
 
@@ -42,7 +43,6 @@ packman-packages:
       - gstreamer-plugins-bad-orig-addon
       - gstreamer-plugins-ugly-orig-addon
       - gstreamer-plugins-libav
-      - gstreamer-plugins-vaapi
       # Camera requires exfat
       - exfat-utils
       - fuse-exfat
