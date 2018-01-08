@@ -12,6 +12,8 @@ myopensuse.packages:
       - libcsync-plugin-sftp
       - command-not-found
       - salt-zsh-completion
+      - no-more-secrets
+      - screenfetch
 
 git-zsh-users-history-substring-search:
   git.latest:
@@ -74,6 +76,14 @@ root:
 /home/ilmehtar/.zshrc:
   file.managed:
     - source: salt://opensuse/zshrc-user
+    - user: ilmehtar
+    - group: users
+    - require:
+      - user: ilmehtar
+      
+/home/ilmehtar/.zprofile:
+  file.managed:
+    - source: salt://opensuse/zprofile
     - user: ilmehtar
     - group: users
     - require:
