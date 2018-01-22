@@ -1,8 +1,8 @@
-(if zypper lu | grep -q 'No updates found'; then echo 0 > ~/.updateneeded; else echo 1 > ~/.updateneeded; fi &)
-screenfetch -N | nms -a
-
-if cat ~/.updateneeded | grep -q 0; then
-  echo -e '\e[32;1mINFO: \e[0mNo Updates Pending'
-else
-  echo -e '\e[31;1mWARNING: \e[0mUpdates Pending'
-fi
+#(if zypper lu | grep -q 'No updates found'; then echo 0 > ~/.updateneeded; else echo 1 > ~/.updateneeded; fi &)
+#screenfetch -N | nms -a
+#
+#if cat ~/.updateneeded | grep -q 0; then
+#  echo -e '\e[32;1mINFO: \e[0mNo Updates Pending'
+#else
+#  echo -e '\e[31;1mWARNING: \e[0mUpdates Pending'
+#fi
