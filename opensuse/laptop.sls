@@ -46,30 +46,6 @@ tlp-sleep:
       - file: /etc/modprobe.d/49-disablenouveau.conf
 
 {% if grains['nodename'] == 'bb8.dyn.rootco.de' %}
-kernel_HEAD:
-  pkgrepo.managed:
-    - humanname: Kernel HEAD
-    - baseurl: http://download.opensuse.org/repositories/Kernel:/HEAD/standard/
-    - gpgcheck: False
-    - refresh: True
-
-kernel-default:
-  pkg.installed:
-    - refresh: True
-    - version: '>=4.14'
-    - fromrepo: kernel_HEAD
-
-kernel-firmware:
-  pkg.installed:
-    - refresh: True
-    - version: '>=20171009'
-    - fromrepo: kernel_HEAD
-
-ucode-amd:
-  pkg.installed:
-    - refresh: True
-    - version: '>=20171009'
-    - fromrepo: kernel_HEAD
 
 /lib/firmware/brcm/brcmfmac4356-pcie.bin:
   file.managed:
