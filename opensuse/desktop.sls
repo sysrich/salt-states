@@ -4,8 +4,7 @@ include:
 desktop-packages:
   pkg.installed:
     - pkgs:
-      - terminator
-      - python-notify
+      - tilix
       - osc
       - dconf-editor
       - gnome-boxes
@@ -20,6 +19,11 @@ desktop-packages:
       - fuse-exfat
     - require:
       - pkg: mycommonopensuse.packages
+
+terminator:
+  pkg.removed:
+    - require:
+      - pkg: desktop-packages
 
 {% if 'Tumbleweed' in grains['oscodename'] %}
 {% set opensuserepopath = "openSUSE_Tumbleweed" %}
@@ -91,18 +95,6 @@ autostart-desktop:
     - makedirs : true
     - require:
       - file: autostart-script
-      - file: terminator-config
-
-terminator-config:
-  file.managed:
-    - name: /home/ilmehtar/.config/terminator/config
-    - source: salt://opensuse/terminator-config
-    - makedirs: true
-    - user: ilmehtar
-    - group: users
-    - require:
-      - user: ilmehtar
-      - pkg: desktop-packages
 
 libvirtd:
   service.running:

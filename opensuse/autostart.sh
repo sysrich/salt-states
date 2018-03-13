@@ -4,8 +4,6 @@
 # Import default dconf settings
 /usr/bin/dconf load / < /home/ilmehtar/.defaultsettings.dconf
 
-/usr/bin/terminator -H -f &
-
 # Notify what's going on
 zenity --info --text "Backing up Docs/Pictures/Home to k2so\n\nPlease ensure network is connected then click Ok" --width=500
 # Run regular csyncs as ilmehtar

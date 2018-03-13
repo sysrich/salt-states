@@ -38,7 +38,35 @@ xkb-options=['terminate:ctrl_alt_bksp']
 {% endif -%}
 
 [org/gnome/shell]
-favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'terminator.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
+favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'com.gexperts.Tilix.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+command='tilix --quake'
+binding='F12'
+name='Tilix'
+
+[com/gexperts/Tilix/]
+prompt-on-new-session=true
+quake-height-percent=50
+app-title='${appName}: ${sessionName} | Session ${sessionNumber} of ${sessionCount}'
+
+[com/gexperts/Tilix/keybindings]
+session-synchronize-input='F10'
+
+[com/gexperts/Tilix/keybindings/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+foreground-color='#F8F8F2'
+visible-name='Default'
+palette=['#272822', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F8F8F2', '#75715E', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F9F8F5']
+badge-color-set=false
+cursor-shape='block'
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+bold-color-set=false
+scrollback-unlimited=true
+terminal-title='${id}: ${directory}'
+background-color='#272822'
+
 
 {% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
 [org/gnome/desktop/interface]
