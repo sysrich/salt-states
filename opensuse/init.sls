@@ -27,6 +27,7 @@ git-zsh-users-history-syntax-highlighting:
   git.latest:
     - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
     - target: /opt/zsh-users/zsh-syntax-highlighting
+    - force_fetch: True
     - require:
       - pkg: myopensuse.packages
 
