@@ -45,7 +45,7 @@ command='tilix --quake'
 binding='F12'
 name='Tilix'
 
-[com/gexperts/Tilix/]
+[com/gexperts/Tilix]
 prompt-on-new-session=true
 quake-height-percent=50
 app-title='${appName}: ${sessionName} | Session ${sessionNumber} of ${sessionCount}'
