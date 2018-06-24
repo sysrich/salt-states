@@ -27,3 +27,9 @@ redcarpet:
     - user: root
     - require:
       - gem: jekyll
+
+bundler:
+  gem.installed:
+    - user: root
+    - require:
+      - gem: jekyll
