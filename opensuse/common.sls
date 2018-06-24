@@ -5,6 +5,7 @@ mycommonopensuse.packages:
       - ruby-devel # needed for jekyll
       - make # needed for jekyll
       - gcc # needed for jekyll
+      - gcc-c++ # needled for jekyll
       - autoconf # needed for jekyll
     - require:
       - pkg: myopensuse.packages
