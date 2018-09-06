@@ -66,10 +66,3 @@ bold-color-set=false
 scrollback-unlimited=true
 terminal-title='${id}: ${directory}'
 background-color='#272822'
-
-
-{% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
-[org/gnome/desktop/interface]
-text-scaling-factor=1.5
-
-{% endif -%}
