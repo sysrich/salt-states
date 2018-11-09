@@ -35,7 +35,7 @@ certbot:
     - minute: 23
     - hour: 11,23
     - require:
-      - git: certbot
+      - pkg: certbot
 
 /etc/systemd/system/rootco-web-backup.service:
   file.managed:
