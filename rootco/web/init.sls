@@ -18,10 +18,7 @@ git -C /srv/git/rootco.de-web pull -q:
       - git: rootco.de-web
 
 certbot:
-  git.latest:
-    - name: https://github.com/certbot/certbot
-    - target: /opt/certbot
-    - user: root
+  pkg.installed: []
 
 /etc/apache2/vhosts.d/SSL-rootco.de.conf:
   file.managed:
@@ -32,7 +29,7 @@ certbot:
     - require:
       - pkg: apache2
 
-/opt/certbot/certbot-auto renew --quiet --no-self-upgrade --post-hook "systemctl restart apache2":
+/usr/bin/certbot/certbot-auto renew --quiet --no-self-upgrade --post-hook "systemctl restart apache2":
   cron.present:
     - user: root
     - minute: 23
