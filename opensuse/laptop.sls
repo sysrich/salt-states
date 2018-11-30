@@ -45,7 +45,7 @@ tlp-sleep:
     - watch:
       - file: /etc/modprobe.d/49-disablenouveau.conf
 
-{% if grains['nodename'] == 'bb8.dyn.rootco.de' %}
+{% if grains['nodename'] == 'oldbb8.dyn.rootco.de' %}
 
 /lib/firmware/brcm/brcmfmac4356-pcie.bin:
   file.managed:
