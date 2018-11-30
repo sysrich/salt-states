@@ -27,7 +27,7 @@ default-folder-viewer='list-view'
 clock-show-date=true
 
 [org/gnome/desktop/input-sources]
-{% if grains['nodename'] == 'bb8.dyn.rootco.de' -%}
+{% if grains['nodename'] == 'oldbb8.dyn.rootco.de' -%}
 sources=[('xkb', 'us'), ('xkb', 'de')]
 xkb-options=['terminate:ctrl_alt_bksp']
 
