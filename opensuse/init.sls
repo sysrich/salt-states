@@ -61,6 +61,9 @@ root:
     - mode: 600
     - makedirs: True
     - contents:
+      - Host openqa.opensuse.org
+      - HostName proxy-opensuse.suse.de
+      - Port 2215
       - Host rootco.de
       - Port 8282
       - Host k2so.dyn.rootco.de
