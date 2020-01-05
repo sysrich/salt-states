@@ -57,7 +57,6 @@ gedit-packages:
   pkg.installed:
     - pkgs:
       - gedit-plugins
-      - gedit-plugin-code-assistance
       - gedit-plugin-codecomment
       - gedit-plugin-wordcompletion
       - gedit-plugin-drawspaces
