@@ -17,7 +17,7 @@ git -C /srv/git/rootco.de-web pull -q:
     - require:
       - git: rootco.de-web
 
-certbot:
+python2-certbot:
   pkg.installed: []
 
 /etc/apache2/vhosts.d/SSL-rootco.de.conf:
