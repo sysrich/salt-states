@@ -9,8 +9,8 @@ base:
     - rootco.web
     - rootco.git
     - znc
-  'obiwan.dyn.rootco.de':
-    - opensuse.obiwan
+#  'obiwan.dyn.rootco.de': # disabled as not in use
+#    - opensuse.obiwan
   'ibrokeit.suse.de':
     - opensuse.desktop
     - znc
@@ -22,9 +22,9 @@ base:
     - opensuse.jeos
     - sshd
     - rootco.backer
-  'r2d2.dyn.rootco.de':
-    - opensuse.jeos
-    - sshd
+#  'r2d2.dyn.rootco.de': # disabled as now MicroOS
+#    - opensuse.jeos
+#    - sshd
   'iwreckit.suse.de':
     - opensuse.laptop
 # 'rey.rootco.de':      # stolen
