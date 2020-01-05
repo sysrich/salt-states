@@ -35,7 +35,7 @@ python2-certbot:
     - minute: 23
     - hour: 11,23
     - require:
-      - pkg: certbot
+      - pkg: python2-certbot
 
 /etc/systemd/system/rootco-web-backup.service:
   file.managed:
