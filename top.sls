@@ -22,6 +22,9 @@ base:
 #    - rootco.backer.r2d2 # TODO: Rules for backing up various /var/opt snippits from containers hosted on r2d2 to backer container and for salt://rootco/backer/backups.conf snapper conf, /backups disk mounts, and rsync services to hetzner
 #    - rootco.containerhost.r2d2 # TODO: All the /etc/systemd/system config for my rootco containers on r2d2
     - sshd
+   'nc.rootco.de':
+    - opensuse.microos
+    - sshd
 #  'newluke.rootco.de': # DOESNT EXIST YET
 #    - opensuse.microos
 #    - rootco.containerhost.luke
