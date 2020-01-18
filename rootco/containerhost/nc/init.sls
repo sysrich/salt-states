@@ -89,3 +89,26 @@ nextcloud.service:
 certbot.timer:
   service.running:
     - enable: True
+
+/etc/systemd/system/minecraft.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/nc/minecraft.service
+
+minecraft.service:
+  service.running:
+    - enable: True
+
+/etc/systemd/system/urbanterror.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/nc/urbanterror.service
+
+urbanterror.service:
+  service.running:
+    - enable: True
+

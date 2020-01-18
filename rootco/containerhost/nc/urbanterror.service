@@ -1,0 +1,11 @@
+[Unit]
+Description=Urban Terror
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/podman run --rm -p 27960-27969:27960-27969/udp -v /var/opt/q3ut4:/q3ut4 tomdesinto/urbanterror:latest
+ExecStop=/usr/bin/podman stop urbanterror
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
