@@ -9,7 +9,7 @@
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/nginx.conf
+    - source: salt://rootco/containerhost/r2d2/nginx.conf
     - require:
       - file: /var/opt/ncserver
 
@@ -34,14 +34,14 @@
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/nextcloud.service
+    - source: salt://rootco/containerhost/r2d2/nextcloud.service
 
 /etc/systemd/system/ncnginx.service:
   file.managed:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/ncginx.service
+    - source: salt://rootco/containerhost/r2d2/ncginx.service
     - require:
       - file: /var/opt/ncserver/nginx/nginx.conf
 
@@ -50,7 +50,7 @@
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/ncserver.service
+    - source: salt://rootco/containerhost/r2d2/ncserver.service
     - require:
       - file: /var/opt/ncserver/nextcloud
 
@@ -59,7 +59,7 @@
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/ncdb.service
+    - source: salt://rootco/containerhost/r2d2/ncdb.service
     - require:
       - file: /var/opt/ncserver/db
 
@@ -77,14 +77,14 @@ nextcloud.service:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/certbot.service
+    - source: salt://rootco/containerhost/r2d2/certbot.service
 
 /etc/systemd/system/certbot.timer:
   file.managed:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/certbot.timer
+    - source: salt://rootco/containerhost/r2d2/certbot.timer
 
 certbot.timer:
   service.running:

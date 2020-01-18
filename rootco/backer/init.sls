@@ -13,7 +13,7 @@
     - device: UUID=9e576eca-0750-4f5f-a78d-b95823ea8348
     - fstype: btrfs
 
-/disk/backups:   # TODO sync to hetzner
+/disk/backer:   # TODO sync to hetzner
   file.exists:
     - require:
       - mount: /disk
@@ -43,8 +43,7 @@
     - source: salt://rootco/backer/r2d2/rootco-backer-srv.service
     - require:
       - file: /var/opt/backer/keys
-      - file: /disk/backups
-      - file: /var/opt/backer/salt/minion_id
+      - file: /disk/backer
 
 rootco-backer-srv.service:
   service.running:

@@ -23,9 +23,9 @@ ilmehtar:
       - Port 8282
       - Host k2so.dyn.rootco.de
       - Port 8282
-      - Host r2d2.home.rootco.de
-      - Port 8282
       - Host nc.rootco.de
+      - Port 8282
+      - Host r2d2.home.rootco.de
       - Port 8282
       - ProxyCommand ssh ilmehtar@k2so.dyn.rootco.de -W %h:%p
       - Host c3po.home.rootco.de
