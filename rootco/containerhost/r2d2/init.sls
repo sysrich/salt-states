@@ -86,7 +86,7 @@ nextcloud.service:
     - mode: 644
     - source: salt://rootco/backer/r2d2/certbot.timer
 
-certbot.timer
+certbot.timer:
   service.running:
     - enable: True
 
