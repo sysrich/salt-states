@@ -40,7 +40,7 @@
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/backer/r2d2/rootco-backer-srv.service
+    - source: salt://rootco/backer/rootco-backer-srv.service
     - require:
       - file: /var/opt/backer/keys
       - file: /disk/backer
