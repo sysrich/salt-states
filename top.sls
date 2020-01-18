@@ -1,5 +1,4 @@
 base:
-  '*':
   'luke.rootco.de':
     - opensuse.server
     - sshd
