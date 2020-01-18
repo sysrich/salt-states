@@ -95,6 +95,7 @@ certbot.timer:
     - user: root
     - group: root
     - mode: 644
+    - makedirs: true
     - source: salt://rootco/containerhost/r2d2/sslh.cfg
 
 /etc/systemd/system/rootco-sslh.service:
