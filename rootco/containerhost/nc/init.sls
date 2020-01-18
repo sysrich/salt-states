@@ -41,7 +41,7 @@
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/containerhost/nc/ncginx.service
+    - source: salt://rootco/containerhost/nc/ncnginx.service
     - require:
       - file: /var/opt/ncserver/nginx/nginx.conf
 
