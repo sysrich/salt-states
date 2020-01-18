@@ -1,5 +1,5 @@
 [Unit]
-Description= Timer for Backup /etc to k2so.dyn.rootco.de
+Description= Timer for Backup /etc to cloud.dyn.rootco.de
 
 [Timer]
 OnBootSec=60s

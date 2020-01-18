@@ -1,6 +1,6 @@
 [Unit]
-Description=Backup /srv/salt /srv/pillar /srv/spm to k2so.dyn.rootco.de
+Description=Backup /srv/salt /srv/pillar /srv/spm to cloud.dyn.rootco.de
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rsync -a /srv/salt /srv/pillar /srv/spm root@k2so.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
+ExecStart=/usr/bin/rsync -a /srv/salt /srv/pillar /srv/spm root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

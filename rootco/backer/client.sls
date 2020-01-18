@@ -6,8 +6,8 @@
     - makedirs: True
     - dirmode: 700
     - contents:
-      - Host k2so.dyn.rootco.de
-      - Port 8282
+      - Host cloud.dyn.rootco.de
+      - Port 22
 
 /root/.ssh/known_hosts:
   file.managed:
@@ -17,7 +17,7 @@
     - makedirs: True
     - dirmode: 700
     - contents:
-      - "[k2so.dyn.rootco.de]:8282 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCCsRvNPNCo2UWN5hOOCt70UqJdGKuKpkP5Y3EAMzWEMv+9L8NsjmfWCDD4VkL3raSuSFxJ4qDJVC8emCj6OXPE="
+      - "cloud.dyn.rootco.de ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM9mDDugJOLMjA+84IC0yIXAx9ocoK2dj1C+yn0iB6tNjjlQEryVj6dc6RtrvfmtJa+O8d177FvTio2lk6esmA8="
 
 touch /root/.ssh/id_rsa.pub:
   cmd.run:

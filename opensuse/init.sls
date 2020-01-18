@@ -21,16 +21,16 @@ ilmehtar:
       - Port 2215
       - Host rootco.de
       - Port 8282
-      - Host k2so.dyn.rootco.de
-      - Port 8282
+      - Host cloud.dyn.rootco.de
+      - Port 22
       - Host nc.rootco.de
       - Port 8282
       - Host r2d2.home.rootco.de
       - Port 8282
-      - ProxyCommand ssh ilmehtar@k2so.dyn.rootco.de -W %h:%p
+      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
       - Host c3po.home.rootco.de
       - Port 22
-      - ProxyCommand ssh ilmehtar@k2so.dyn.rootco.de -W %h:%p
+      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
     - require:
       - user: ilmehtar
 
