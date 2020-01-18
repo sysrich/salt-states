@@ -24,6 +24,7 @@ base:
     - sshd
    'nc.rootco.de':
     - opensuse.microos
+#    - rootco.containerhost.nc # TODO: All the /etc/systemd/system config for my rootco containers on nc
     - sshd
 #  'newluke.rootco.de': # DOESNT EXIST YET
 #    - opensuse.microos
