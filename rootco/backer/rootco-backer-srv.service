@@ -1,5 +1,5 @@
 [Unit]
-Description=Rootco
+Description=Rootco backup service
 After=network-online.target
 
 [Service]
