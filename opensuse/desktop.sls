@@ -95,12 +95,6 @@ autostart-desktop:
     - require:
       - file: autostart-script
 
-libvirtd:
-  service.running:
-    - enable: True
-    - require:
-      - pkg: desktop-packages
-
 /home/ilmehtar/Code/gh/sysrich:
   file.directory:
     - user: ilmehtar
