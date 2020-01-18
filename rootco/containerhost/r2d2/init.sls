@@ -90,24 +90,25 @@ certbot.timer:
   service.running:
     - enable: True
 
-/var/opt/sslh/sslh.cfg:
-  file.managed:
-    - user: root
-    - group: root
-    - mode: 644
-    - makedirs: true
-    - source: salt://rootco/containerhost/r2d2/sslh.cfg
-
-/etc/systemd/system/rootco-sslh.service:
-  file.managed:
-    - user: root
-    - group: root
-    - mode: 644
-    - source: salt://rootco/containerhost/r2d2/rootco-sslh.service
-
-rootco-sslh.service:
-  service.running:
-    - enable: True
+# TODO fix this broken hot mess
+#/var/opt/sslh/sslh.cfg:
+#  file.managed:
+#    - user: root
+#    - group: root
+#    - mode: 644
+#    - makedirs: true
+#    - source: salt://rootco/containerhost/r2d2/sslh.cfg
+#
+#/etc/systemd/system/rootco-sslh.service:
+#  file.managed:
+#    - user: root
+#    - group: root
+#    - mode: 644
+#    - source: salt://rootco/containerhost/r2d2/rootco-sslh.service
+#
+#rootco-sslh.service:
+#  service.running:
+#    - enable: True
 
 # /var/opt/ncserver - TODO sync to hetzner
 # /var/opt/znc: - TODO backup to backer container
