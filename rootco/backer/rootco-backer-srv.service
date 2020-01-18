@@ -1,0 +1,11 @@
+[Unit]
+Description=Rootco
+After=network-online.target
+
+[Service]
+ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/home/rbrownsuse/containers/containers/backer-srv:latest
+ExecStart=/usr/bin/podman run -d --rm -p 8282:8282 -v /var/opt/backer/salt:/etc/salt -v /disk/backups:/backups -v /var/opt/backer/keys/authorized_keys:/root/.ssh/authorized_keys:ro registry.opensuse.org/home/rbrownsuse/containers/containers/backer-srv:latest
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

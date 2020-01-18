@@ -1,0 +1,14 @@
+[Unit]
+Description=NextCloud Container Service
+PartOf=nextcloud.service
+After=nextcloud.service
+After=ncnginx.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman pull nextcloud:fpm
+ExecStart=/usr/bin/podman run --rm -v /var/opt/ncserver/nextcloud:/var/www/html --net=container:ncnginx --name="ncserver" nextcloud:fpm
+ExecStop=/usr/bin/podman stop ncserver
+Restart=on-failure
+
+[Install]
+WantedBy=nextcloud.service
