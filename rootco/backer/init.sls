@@ -1,12 +1,12 @@
-#/etc/snapper/configs/backups: # TODO - create config manually in snapper first
-#  file.managed:
-#    - user: root
-#    - group: root
-#    - mode: 640
-#    - source: salt://rootco/backer/backups.conf
-#    - create: False
-#    - require:
-#      - file: /disk/backups
+/etc/snapper/configs/backups:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 640
+    - source: salt://rootco/backer/backups.conf
+    - create: False
+    - require:
+      - file: /disk/backer
 
 /disk:
   mount.mounted:
