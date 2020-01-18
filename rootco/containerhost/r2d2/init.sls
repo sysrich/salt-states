@@ -90,7 +90,7 @@ certbot.timer:
   service.running:
     - enable: True
 
-/var/opt/sslh/sslh.conf:
+/var/opt/sslh/sslh.cfg:
   file.managed:
     - user: root
     - group: root
