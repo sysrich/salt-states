@@ -104,7 +104,7 @@ certbot.timer:
     - mode: 644
     - source: salt://rootco/containerhost/r2d2/rootco-sslh.service
 
-rootco-sslh.service
+rootco-sslh.service:
   service.running:
     - enable: True
 
