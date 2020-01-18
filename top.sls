@@ -17,7 +17,7 @@ base:
     - opensuse.jeos
     - sshd
     - rootco.backer
-  'r2d2.dyn.rootco.de':
+  'r2d2.home.rootco.de':
     - opensuse.microos
 #    - rootco.backer.r2d2 # TODO: Rules for backing up various /var/opt snippits from containers hosted on r2d2 to backer container and for salt://rootco/backer/backups.conf snapper conf, /backups disk mounts, and rsync services to hetzner
 #    - rootco.containerhost.r2d2 # TODO: All the /etc/systemd/system config for my rootco containers on r2d2
