@@ -1,6 +1,0 @@
-#!/bin/sh
-mknod -m 644 /dev/sdb b 8 16
-mknod -m 644 /dev/sdb1 b 8 17
-# needed for btrfs
-mknod /dev/btrfs-control c 10 234
-

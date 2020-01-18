@@ -1,58 +1,13 @@
 include:
   - rootco.backer.client
 
-myopensuse.packages:
-  pkg.installed:
-    - pkgs:
-      - htop
-      - screen
-      - git-core
-      - zsh
-      - csync
-      - libcsync-plugin-sftp
-      - command-not-found
-      - salt-zsh-completion
-      - no-more-secrets
-      - screenfetch
-
-git-zsh-users-history-substring-search:
-  git.latest:
-    - name: https://github.com/zsh-users/zsh-history-substring-search.git
-    - target: /opt/zsh-users/zsh-history-substring-search
-    - force_reset: True
-    - require:
-      - pkg: myopensuse.packages
-
-git-zsh-users-history-syntax-highlighting:
-  git.latest:
-    - name: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    - target: /opt/zsh-users/zsh-syntax-highlighting
-    - force_fetch: True
-    - require:
-      - pkg: myopensuse.packages
-
-git-zsh-users-autosuggestions:
-  git.latest:
-    - name: https://github.com/tarruda/zsh-autosuggestions.git
-    - rev: v0.4.0
-    - force_reset: True
-    - target: /opt/zsh-users/zsh-autosuggestions
-    - require:
-      - pkg: myopensuse.packages
+root:
+  user.present
 
 ilmehtar:
   user.present:
     - fullname: Richard Brown
-    - shell: /bin/zsh
     - home: /home/ilmehtar
-    - require:
-       - pkg: myopensuse.packages
-
-root:
-  user.present:
-    - shell: /bin/zsh
-    - require:
-      - pkg: myopensuse.packages
 
 /home/ilmehtar/.ssh/config:
   file.managed:
@@ -84,7 +39,7 @@ root:
     - group: users
     - require:
       - user: ilmehtar
-      
+
 /home/ilmehtar/.zprofile:
   file.managed:
     - source: salt://opensuse/zprofile

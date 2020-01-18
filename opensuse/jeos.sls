@@ -1,3 +1,6 @@
+include:
+  - opensuse
+
 /etc/zypp/zypp.conf:
   file.line:
     - mode: replace
