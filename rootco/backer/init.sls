@@ -4,7 +4,7 @@
     - group: root
     - mode: 640
     - source: salt://rootco/backer/backups.conf
-    - create: False
+    - create: False  #NOTE: If ever installing from scratch you need to create this using `snapper -c backups create-config /disk/backer` first
     - require:
       - file: /disk/backer
 
