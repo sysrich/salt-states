@@ -112,3 +112,4 @@ urbanterror.service:
   service.running:
     - enable: True
 
+#TODO: Backup minecraft and this NC Somewhere

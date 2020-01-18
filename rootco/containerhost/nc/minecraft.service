@@ -1,8 +1,9 @@
 [Unit]
 Description=Minecraft Container Service
-After=network.target
+After=network-online.target
 
 [Service]
+ExecStartPre=-/usr/bin/podman pull itzg/minecraft-server
 ExecStart=/usr/bin/podman run --rm -e EULA=true -e OPS=sysrich -e WHITELIST=sysrich,GammaMan9437 -v /var/opt/minecraft:/data -p 25565:25565 --name "mc" itzg/minecraft-server
 ExecStop=/usr/bin/podman stop mc
 Restart=on-failure
