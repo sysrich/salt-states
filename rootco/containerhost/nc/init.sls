@@ -65,7 +65,7 @@
 
 nextcloud.service:
   service.running:
-    - enable: Tru
+    - enable: True
     - require:
       - file: /etc/systemd/system/nextcloud.service
       - file: /etc/systemd/system/ncnginx.service
