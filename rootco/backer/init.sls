@@ -24,6 +24,12 @@
     - group: root
     - makedirs: true
 
+/var/opt/backer/sshd:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
 /var/opt/backer/keys/authorized_keys:
   file.managed:
     - user: root
@@ -43,6 +49,7 @@
     - source: salt://rootco/backer/rootco-backer-srv.service
     - require:
       - file: /var/opt/backer/keys
+      - file: /var/opt/backer/sshd
       - file: /disk/backer
 
 rootco-backer-srv.service:
