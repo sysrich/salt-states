@@ -1,4 +1,6 @@
 base:
+  '*':
+    - opensuse
   'luke.rootco.de':
     - opensuse.server
     - sshd
@@ -13,10 +15,6 @@ base:
 #    - opensuse.jeos
 #    - sshd
 #    - rootco.piap
-#  'k2so.dyn.rootco.de': # TODO: BEING DECOMISSIONED
-#    - opensuse.jeos
-#    - sshd
-#    - rootco.backer
   'r2d2.home.rootco.de':
     - opensuse.microos
     - rootco.backer
