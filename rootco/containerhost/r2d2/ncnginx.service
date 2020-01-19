@@ -6,7 +6,7 @@ After=nextcloud.service
 [Service]
 ExecStartPre=-/usr/bin/podman container rm ncnginx
 ExecStartPre=-/usr/bin/podman pull nginx
-ExecStart=/usr/bin/podman run --rm -p 80:80 -p 443:443 -v /var/opt/ncserver/nginx/nginx.conf:/etc/nginx/nginx.conf:ro -v /etc/letsencrypt:/etc/certbot:ro -v /var/opt/ncserver/nextcloud:/var/www/html:ro --name="ncnginx" nginx
+ExecStart=/usr/bin/podman run --rm -p 443:443 -v /var/opt/ncserver/nginx/nginx.conf:/etc/nginx/nginx.conf:ro -v /etc/letsencrypt:/etc/certbot:ro -v /var/opt/ncserver/nextcloud:/var/www/html:ro --name="ncnginx" nginx
 ExecStop=/usr/bin/podman stop ncnginx
 Restart=on-failure
 

@@ -22,7 +22,7 @@ ilmehtar:
       - Host rootco.de
       - Port 8282
       - Host cloud.dyn.rootco.de
-      - Port 22
+      - Port 80
       - Host nc.rootco.de
       - Port 8282
       - Host r2d2.home.rootco.de

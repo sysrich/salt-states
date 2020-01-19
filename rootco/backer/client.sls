@@ -7,7 +7,7 @@
     - dirmode: 700
     - contents:
       - Host cloud.dyn.rootco.de
-      - Port 22
+      - Port 80
 
 /root/.ssh/known_hosts:
   file.managed:
@@ -17,7 +17,7 @@
     - makedirs: True
     - dirmode: 700
     - contents:
-      - "cloud.dyn.rootco.de ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM9mDDugJOLMjA+84IC0yIXAx9ocoK2dj1C+yn0iB6tNjjlQEryVj6dc6RtrvfmtJa+O8d177FvTio2lk6esmA8="
+      - "cloud.dyn.rootco.de ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeqEDWXOwIjp16/qE8lR9+U4Mc0sOslggs4I0ayGf9DEfBj2RZ9Gv/s9jE2JhWtcUDyxzHlZBB79dSUzMAet2s="
 
 touch /root/.ssh/id_rsa.pub:
   cmd.run:
