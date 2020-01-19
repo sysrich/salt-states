@@ -27,7 +27,7 @@ ilmehtar:
       - Port 8282
       - Host r2d2.home.rootco.de
       - Port 8282
-      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
+      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W 192.168.1.3:%p #workaround magic firewalling in jumphost
       - Host c3po.home.rootco.de
       - Port 22
       - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
