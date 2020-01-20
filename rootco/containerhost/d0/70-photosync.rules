@@ -1,0 +1,2 @@
+DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0/host1/target1:0:0/1:0:0:0/block/sd[a-z]/sd[a-z][0-9]", ACTION=="add", SYMLINK+="photosync"
+DEVPATH=="/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0/host1/target1:0:0/1:0:0:0/block/sd[a-z]/sd[a-z][0-9]", ACTION=="add", RUN+="/usr/bin/systemctl start rootco-photosync"
