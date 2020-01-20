@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/home/rbrownsuse/containers/containers/backer-srv:latest
-ExecStart=/usr/bin/podman run --rm -p 80:80 --name backer -v /home/ilmehtar/.ssh:/home/ilmehtar/.ssh:ro -v /disk/backer:/backups -v /var/opt/backer/sshd:/etc/ssh/keybridge -v /var/opt/backer/keys/authorized_keys:/root/.ssh/authorized_keys:ro registry.opensuse.org/home/rbrownsuse/containers/containers/backer-srv:latest
+ExecStart=/usr/bin/podman run --rm -p 80:80 --name backer -v /home/ilmehtar/.ssh:/home/ilmehtar/.ssh:ro -v /disk/backer:/backups -v /var/opt/backer/sshd:/etc/ssh/keybridge -v /var/opt/backer/keys/authorized_keys:/root/.ssh/authorized_keys registry.opensuse.org/home/rbrownsuse/containers/containers/backer-srv:latest
 ExecStop=/usr/bin/podman stop backer
 Restart=on-failure
 
