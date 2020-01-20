@@ -26,7 +26,7 @@ minecraft.service:
     - require:
       - file: /etc/systemd/system/rootco-minecraft-backup.service
 
-rootco-etc-backup.timer:
+rootco-minecraft-backup.timer:
   service.running:
     - enable: True
     - require:
