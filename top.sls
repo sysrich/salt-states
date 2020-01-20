@@ -24,10 +24,10 @@ base:
     - opensuse.microos
     - rootco.containerhost.nc
     - sshd
-#  'newluke.rootco.de': # DOESNT EXIST YET
-#    - opensuse.microos
-#    - rootco.containerhost.luke
-#    - sshd
+  'd0.rootco.de':
+    - opensuse.microos
+#    - rootco.containerhost.d0 # TODO: Port services over
+    - sshd
   'iwreckit.suse.de':
     - opensuse.laptop
   'bb8.dyn.rootco.de':
