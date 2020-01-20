@@ -27,10 +27,10 @@ ilmehtar:
       - Port 80
       - Host r2d2.home.rootco.de
       - Port 8282
-      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W 192.168.1.3:%p #workaround magic firewalling in jumphost
+      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W 192.168.1.3:%p #workaround looping because jumphost has this config too
       - Host c3po.home.rootco.de
       - Port 22
-      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
+      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W 192.168.1.1:%p
       - Host github.com
       - Port 22
       - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
