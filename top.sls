@@ -20,10 +20,6 @@ base:
     - rootco.backer
     - rootco.containerhost.r2d2
     - sshd
-  'nc.rootco.de':
-    - opensuse.microos
-    - rootco.containerhost.nc
-    - sshd
   'd0.rootco.de':
     - opensuse.microos
     - rootco.containerhost.d0 # TODO: Port services over
