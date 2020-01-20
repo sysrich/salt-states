@@ -90,17 +90,6 @@ certbot.timer:
   service.running:
     - enable: True
 
-/etc/systemd/system/minecraft.service:
-  file.managed:
-    - user: root
-    - group: root
-    - mode: 644
-    - source: salt://rootco/containerhost/nc/minecraft.service
-
-minecraft.service:
-  service.running:
-    - enable: True
-
 /etc/systemd/system/urbanterror.service:
   file.managed:
     - user: root
@@ -112,4 +101,4 @@ urbanterror.service:
   service.running:
     - enable: True
 
-#TODO: Backup minecraft and this NC Somewhere - but not that urgent given the host is backedup anyway
+#TODO: Backup this NC Somewhere - but not that urgent given the host is backedup anyway
