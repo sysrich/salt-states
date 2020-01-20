@@ -31,6 +31,9 @@ ilmehtar:
       - Host c3po.home.rootco.de
       - Port 22
       - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
+      - Host github.com
+      - Port 22
+      - ProxyCommand ssh ilmehtar@cloud.dyn.rootco.de -W %h:%p
     - require:
       - user: ilmehtar
 
