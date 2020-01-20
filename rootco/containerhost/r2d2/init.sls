@@ -21,13 +21,10 @@
     - require:
       - file: /var/opt/ncserver
 
-/var/opt/ncserver/nextcloud:
-  file.directory:
-    - user: 33
-    - group: root
-    - makedirs: true
+/disk/nextcloud:
+  file.exists:
     - require:
-      - file: /var/opt/ncserver
+      - mount: /disk
 
 /etc/systemd/system/nextcloud.service:
   file.managed:
@@ -44,6 +41,7 @@
     - source: salt://rootco/containerhost/r2d2/ncnginx.service
     - require:
       - file: /var/opt/ncserver/nginx/nginx.conf
+      - file: /disk/nextcloud
 
 /etc/systemd/system/ncserver.service:
   file.managed:
@@ -52,7 +50,7 @@
     - mode: 644
     - source: salt://rootco/containerhost/r2d2/ncserver.service
     - require:
-      - file: /var/opt/ncserver/nextcloud
+      - file: /disk/nextcloud
 
 /etc/systemd/system/ncdb.service:
   file.managed:
