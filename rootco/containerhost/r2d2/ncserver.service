@@ -6,7 +6,7 @@ After=ncnginx.service
 
 [Service]
 ExecStartPre=-/usr/bin/podman pull nextcloud:fpm
-ExecStart=/usr/bin/podman run --rm -v /var/opt/ncserver/nextcloud:/var/www/html --net=container:ncnginx --name="ncserver" nextcloud:fpm
+ExecStart=/usr/bin/podman run --rm -v /disk/nextcloud:/var/www/html --net=container:ncnginx --name="ncserver" nextcloud:fpm
 ExecStop=/usr/bin/podman stop ncserver
 Restart=on-failure
 
