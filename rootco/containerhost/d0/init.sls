@@ -31,3 +31,57 @@ rootco-minecraft-backup.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-minecraft-backup.timer
+
+/var/opt/salt-master/salt:
+  file.directory:
+    - user: root
+    - group: 490
+    - makedirs: true
+
+/var/opt/salt-master/spm:
+  file.directory:
+    - user: root
+    - group: 490
+    - makedirs: true
+
+/var/opt/salt-master/pillar:
+  file.directory:
+    - user: root
+    - group: 490
+    - makedirs: true
+
+/etc/systemd/system/rootco-salt-master.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-salt-master.service
+
+rootco-salt-master.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-salt-master.service
+
+/etc/systemd/system/rootco-salt-master-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-salt-master-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-salt-master-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-salt-master-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-salt-master-backup.service
+
+rootco-salt-master-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-salt-master-backup.timer
