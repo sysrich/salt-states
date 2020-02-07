@@ -32,7 +32,7 @@ rootco-minecraft-backup.timer:
     - require:
       - file: /etc/systemd/system/rootco-minecraft-backup.timer
 
-/var/opt/salt-master
+/var/opt/salt-master:
   file.directory:
     - user: root
     - group: root
