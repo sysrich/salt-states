@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/home/rbrownsuse/containers/containers/salt-master:latest
-ExecStart=/usr/bin/podman run --rm -p 4505-4506:4505-4506 -v /var/opt/salt-master:/etc/salt registry.opensuse.org/home/rbrownsuse/containers/containers/salt-master:latest
+ExecStart=/usr/bin/podman run --rm -p 4505-4506:4505-4506 -v /var/opt/salt-master:/etc/salt --name salt-master registry.opensuse.org/home/rbrownsuse/containers/containers/salt-master:latest
 
 [Install]
 WantedBy=multi-user.target
