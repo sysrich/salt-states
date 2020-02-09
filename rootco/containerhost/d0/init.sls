@@ -158,7 +158,6 @@ rootco-web.service:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-web.service
-      - file: /var/opt/rootco-web/htdocs
 
 /etc/systemd/system/rootco-web-backup.service:
   file.managed:
@@ -187,6 +186,13 @@ systemctl start rootco-certbot.service:
   cmd.run:
     - require:
       - file: /etc/systemd/system/rootco-certbot.service
+
+/etc/systemd/system/rootco-certbot.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-certbot.service
 
 /etc/systemd/system/rootco-certbot.timer:
   file.managed:
