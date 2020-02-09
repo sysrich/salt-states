@@ -209,20 +209,6 @@ rootco-certbot.timer:
     - require:
       - file: /etc/systemd/system/rootco-certbot.timer
 
-/var/opt/rootco-web:
-  file.directory:
-    - user: root
-    - group: root
-    - makedirs: true
-
-/var/opt/rootco-web/certbot:
-  file.directory:
-    - user: root
-    - group: root
-    - makedirs: true
-    - require:
-      - file: /var/opt/rootco-web
-
 /var/opt/rootco-znc:
   file.directory:
     - user: root
