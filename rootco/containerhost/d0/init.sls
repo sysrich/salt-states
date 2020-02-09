@@ -145,6 +145,14 @@ rootco-jekyll-backup.timer:
     - group: root
     - makedirs: true
 
+/var/opt/rootco-web/certbot:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/rootco-web
+
 /var/opt/rootco-web/htdocs:
    file.exists:
     - require:
@@ -180,3 +188,79 @@ rootco-web-backup.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-web-backup.timer
+
+systemctl start rootco-certbot.service:
+  cmd.run:
+    - require:
+      - file: /etc/systemd/system/rootco-certbot.service
+
+/etc/systemd/system/rootco-certbot.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-certbot.timer
+    - require:
+      - file: /etc/systemd/system/rootco-certbot.service
+
+rootco-certbot.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-certbot.timer
+
+/var/opt/rootco-web:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
+/var/opt/rootco-web/certbot:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/rootco-web
+
+/var/opt/rootco-znc:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
+/etc/systemd/system/rootco-znc.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-znc.service
+
+rootco-znc.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-znc.service
+
+/etc/systemd/system/rootco-znc-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-znc-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-znc-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-znc-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-znc-backup.service
+
+rootco-znc-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-znc-backup.timer
