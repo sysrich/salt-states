@@ -77,7 +77,7 @@ rootco-salt-master-backup.timer:
 /var/opt/rootco-jekyll:
   file.directory:
     - user: root
-    - group:root
+    - group: root
     - makedirs: true
 
 /etc/systemd/system/rootco-jekyll.service:
@@ -135,7 +135,7 @@ rootco-jekyll-backup.timer:
 /var/opt/rootco-web:
   file.directory:
     - user: root
-    - group:root
+    - group: root
     - makedirs: true
 
 /var/opt/rootco-web/data:
