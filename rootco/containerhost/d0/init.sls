@@ -89,8 +89,8 @@ rootco-salt-master-backup.timer:
     - require:
       - file: /var/opt/rootco-jekyll
 
-rootco-jekyll.service:
-  service.running:
+systemctl start rootco-jekyll.service:
+  cmd.run:
     - require:
       - file: /etc/systemd/system/rootco-jekyll.service
 
@@ -146,10 +146,10 @@ rootco-jekyll-backup.timer:
     - makedirs: true
 
 /var/opt/rootco-web/htdocs:
-  file.symlink:
-    - target: /var/opt/rootco-jekyll/_site
+   file.exists:
     - require:
       - file: /var/opt/rootco-web
+      - cmd: systemctl start rootco-jekyll.service
 
 rootco-web.service:
   service.running:
@@ -157,7 +157,6 @@ rootco-web.service:
     - require:
       - file: /etc/systemd/system/rootco-web.service
       - file: /var/opt/rootco-web/htdocs
-      - service: rootco-jekyll.service
 
 /etc/systemd/system/rootco-web-backup.service:
   file.managed:
