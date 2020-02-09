@@ -86,6 +86,13 @@ rootco-salt-master-backup.timer:
     - group: root
     - mode: 644
     - source: salt://rootco/containerhost/d0/rootco-jekyll.service
+    - require:
+      - file: /var/opt/rootco-jekyll
+
+rootco-jekyll.service:
+  service.running:
+    - require:
+      - file: /etc/systemd/system/rootco-jekyll.service
 
 /etc/systemd/system/rootco-jekyll.timer:
   file.managed:
@@ -150,6 +157,7 @@ rootco-web.service:
     - require:
       - file: /etc/systemd/system/rootco-web.service
       - file: /var/opt/rootco-web/data
+      - service: rootco-jekyll.service
 
 /etc/systemd/system/rootco-web-backup.service:
   file.managed:
