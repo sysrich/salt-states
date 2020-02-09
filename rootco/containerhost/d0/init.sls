@@ -96,7 +96,7 @@ rootco-salt-master-backup.timer:
     - require:
       - file: /etc/systemd/system/rootco-jekyll.service
 
-rootco-jeykll.timer:
+rootco-jekyll.timer:
   service.running:
     - enable: True
     - require:
@@ -107,7 +107,7 @@ rootco-jeykll.timer:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/containerhost/d0/rootco-jeykll.service
+    - source: salt://rootco/containerhost/d0/rootco-jekyll-backup.service
     - template: jinja
 
 /etc/systemd/system/rootco-jekyll-backup.timer:
@@ -117,7 +117,7 @@ rootco-jeykll.timer:
     - mode: 644
     - source: salt://rootco/containerhost/d0/rootco-jekyll-backup.timer
     - require:
-      - file: /etc/systemd/system/rootco-jeykll-backup.service
+      - file: /etc/systemd/system/rootco-jekyll-backup.service
 
 rootco-jekyll-backup.timer:
   service.running:
