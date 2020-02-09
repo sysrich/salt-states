@@ -93,7 +93,7 @@ systemctl start rootco-jekyll.service:
   cmd.run:
     - require:
       - file: /etc/systemd/system/rootco-jekyll.service
-      - file: /var/opt/rootco-web/data/etc
+      - file: /var/opt/rootco-web/data
 
 /etc/systemd/system/rootco-jekyll.timer:
   file.managed:
@@ -146,7 +146,7 @@ rootco-jekyll-backup.timer:
     - group: root
     - makedirs: true
 
-/var/opt/rootco-web/data/etc:
+/var/opt/rootco-web/data:
   file.directory:
     - user: root
     - group: root
