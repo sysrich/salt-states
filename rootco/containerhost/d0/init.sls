@@ -93,6 +93,7 @@ systemctl start rootco-jekyll.service:
   cmd.run:
     - require:
       - file: /etc/systemd/system/rootco-jekyll.service
+      - file: /var/opt/rootco-web/data/etc
 
 /etc/systemd/system/rootco-jekyll.timer:
   file.managed:
@@ -145,6 +146,19 @@ rootco-jekyll-backup.timer:
     - group: root
     - makedirs: true
 
+/var/opt/rootco-web/data/etc:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/rootco-web
+
+/var/opt/rootco-web/data/htdocs:
+  file.exists:
+    - require:
+      - cmd: systemctl start rootco-jekyll.service
+
 /var/opt/rootco-web/certbot:
   file.directory:
     - user: root
@@ -181,11 +195,6 @@ rootco-web-backup.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-web-backup.timer
-
-systemctl start rootco-certbot.service:
-  cmd.run:
-    - require:
-      - file: /etc/systemd/system/rootco-certbot.service
 
 /etc/systemd/system/rootco-certbot.service:
   file.managed:

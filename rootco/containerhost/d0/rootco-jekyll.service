@@ -10,7 +10,7 @@ ExecStartPre=-/usr/bin/podman run --rm -v /var/opt/rootco-jekyll:/srv/jekyll -it
 ExecStart=/usr/bin/podman run --rm -v /var/opt/rootco-jekyll:/srv/jekyll -it jekyll/jekyll:${JEKYLL_VERSION} git pull
 ExecStart=/usr/bin/podman run --rm -v /var/opt/rootco-jekyll:/srv/jekyll -it jekyll/jekyll:4.0 chown -R 1000:1000 /srv/jekyll
 ExecStart=/usr/bin/podman run --rm -v /var/opt/rootco-jekyll:/srv/jekyll -it jekyll/jekyll:${JEKYLL_VERSION} jekyll build
-
+ExecStart=/usr/bin/rsync -a --delete /var/opt/rootco-jekyll/_site/ /var/opt/rootco-web/htdocs
 
 [Install]
 WantedBy=multi-user.target

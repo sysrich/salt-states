@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/opensuse/nginx:latest
-ExecStart=/usr/bin/podman run --rm --name rootco-web -v /var/opt/rootco-web/etc:/etc/nginx -v /var/opt/rootco-jekyll/_site:/srv/htdocs -v /var/opt/rootco-web/certbot:/etc/certbot -p 80:80/tcp -p 443:443/tcp registry.opensuse.org/opensuse/nginx:latest
+ExecStart=/usr/bin/podman run --rm --name rootco-web -v /var/opt/rootco-web/data:/data -v /var/opt/rootco-web/certbot:/etc/certbot -p 80:80/tcp -p 443:443/tcp registry.opensuse.org/opensuse/nginx:latest
 ExecStop=/usr/bin/podman stop rootco-web
 
 [Install]

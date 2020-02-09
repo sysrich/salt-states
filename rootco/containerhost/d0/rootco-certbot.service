@@ -6,8 +6,7 @@ After=network-online.target
 Type=oneshot
 
 ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/home/rbrownsuse/containers/containers/certbot:latest
-ExecStartPre=-/usr/bin/podman run --rm -v /var/opt/rootco-web/etc:/etc/nginx -v /var/opt/rootco-web/certbot:/etc/certbot -it registry.opensuse.org/home/rbrownsuse/containers/containers/certbot:latest --nginx
-ExecStart=/usr/bin/podman run --rm -v /var/opt/rootco-web/etc:/etc/nginx -v /var/opt/rootco-web/certbot:/etc/certbot -it registry.opensuse.org/home/rbrownsuse/containers/containers/certbot:latest renew
+ExecStart=/usr/bin/podman run --rm -v /var/opt/rootco-web/data/etc:/etc/nginx -v /var/opt/rootco-web/certbot:/etc/certbot -it registry.opensuse.org/home/rbrownsuse/containers/containers/certbot:latest certbot renew
 
 
 [Install]
