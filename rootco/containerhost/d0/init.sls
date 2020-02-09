@@ -151,6 +151,14 @@ rootco-web.service:
       - file: /etc/systemd/system/rootco-web.service
       - file: /var/opt/rootco-web/data
 
+/etc/systemd/system/rootco-web-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-web-backup.service
+    - template: jinja
+
 /etc/systemd/system/rootco-web-backup.timer:
   file.managed:
     - user: root
