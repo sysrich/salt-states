@@ -145,7 +145,7 @@ rootco-jekyll-backup.timer:
     - group: root
     - makedirs: true
 
-/var/opt/rootco-web/data:
+/var/opt/rootco-web/htdocs:
   file.symlink:
     - target: /var/opt/rootco-jekyll/_site
     - require:
