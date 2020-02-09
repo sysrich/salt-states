@@ -153,12 +153,6 @@ rootco-jekyll-backup.timer:
     - require:
       - file: /var/opt/rootco-web
 
-/var/opt/rootco-web/htdocs:
-   file.exists:
-    - require:
-      - file: /var/opt/rootco-web
-      - cmd: systemctl start rootco-jekyll.service
-
 rootco-web.service:
   service.running:
     - enable: True
