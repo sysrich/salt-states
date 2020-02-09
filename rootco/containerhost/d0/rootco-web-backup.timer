@@ -1,0 +1,11 @@
+[Unit]
+Description= Timer for Backup /var/opt/rootco-web to cloud.dyn.rootco.de
+
+[Timer]
+OnBootSec=60s
+OnCalendar=daily
+RandomizedDelaySec=300s
+Persistent=true
+
+[Install]
+WantedBy=default.target

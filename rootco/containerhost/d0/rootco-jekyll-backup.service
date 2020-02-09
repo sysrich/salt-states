@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup /var/opt/rootco-jekyll to cloud.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rsync -a /var/opt/rootco-jekyll root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

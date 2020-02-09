@@ -1,0 +1,11 @@
+[Unit]
+Description= Timer for Building www.rootco.de
+
+[Timer]
+OnBootSec=60s
+OnCalendar=hourly
+RandomizedDelaySec=300s
+Persistent=true
+
+[Install]
+WantedBy=default.target

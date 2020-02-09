@@ -4,7 +4,7 @@ base:
   'luke.rootco.de':
     - opensuse.server
     - sshd
-    - salt.master # TODO: Replace with container
+#    - salt.master # Replaced with container
     - rootco.web # TODO: Replace with container
     - rootco.git # TODO: Decomission, never used it
     - znc # TODO: Replace with container

@@ -73,3 +73,95 @@ rootco-salt-master-backup.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-salt-master-backup.timer
+
+/var/opt/rootco-jekyll:
+  file.directory:
+    - user: root
+    - group:root
+    - makedirs: true
+
+/etc/systemd/system/rootco-jekyll.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-jekyll.service
+
+/etc/systemd/system/rootco-jekyll.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-jekyll.timer
+    - require:
+      - file: /etc/systemd/system/rootco-jekyll.service
+
+rootco-jeykll.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-jekyll.timer
+
+/etc/systemd/system/rootco-jekyll-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-jeykll.service
+    - template: jinja
+
+/etc/systemd/system/rootco-jekyll-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-jekyll-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-jeykll-backup.service
+
+rootco-jekyll-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-jekyll-backup.timer
+
+/etc/systemd/system/rootco-web.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-web.service
+
+/var/opt/rootco-web:
+  file.directory:
+    - user: root
+    - group:root
+    - makedirs: true
+
+/var/opt/rootco-web/data:
+  file.symlink:
+    - target: /var/opt/rootco-jekyll/_site
+    - require:
+      - file: /var/opt/rootco-web
+
+rootco-web.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-web.service
+      - file: /var/opt/rootco-web/data
+
+/etc/systemd/system/rootco-web-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-web-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-web-backup.service
+
+rootco-web-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-web-backup.timer
