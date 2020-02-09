@@ -156,7 +156,7 @@ rootco-web.service:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-web.service
-      - file: /var/opt/rootco-web/data
+      - file: /var/opt/rootco-web/htdocs
       - service: rootco-jekyll.service
 
 /etc/systemd/system/rootco-web-backup.service:
