@@ -1,13 +1,6 @@
 base:
   '*':
     - opensuse
-  'luke.rootco.de':
-    - opensuse.server
-    - sshd
-#    - salt.master # Replaced with container
-    - rootco.web # TODO: Replace with container
-    - rootco.git # TODO: Decomission, never used it
-    - znc # TODO: Replace with container
   'ibrokeit.suse.de':
     - opensuse.desktop
     - znc # TODO: Replace with container
