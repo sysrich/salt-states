@@ -218,8 +218,6 @@ rootco-certbot.timer:
 
 /var/opt/rootco-znc:
   file.directory:
-    - user: root
-    - group: root
     - makedirs: true
 
 /etc/systemd/system/rootco-znc.service:
