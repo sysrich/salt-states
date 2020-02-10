@@ -159,7 +159,7 @@ rootco-jekyll-backup.timer:
     - require:
       - cmd: systemctl start rootco-jekyll.service
 
-/var/opt/rootco-web/certbot:
+/var/opt/rootco-web/letsencrypt:
   file.directory:
     - user: root
     - group: root
