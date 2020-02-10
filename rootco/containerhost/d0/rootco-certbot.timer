@@ -1,11 +1,11 @@
 [Unit]
-Description= Timer for renewing certs
+Description=Weekly certificate renewal
 
 [Timer]
-OnBootSec=60s
 OnCalendar=weekly
-RandomizedDelaySec=3600s
+AccuracySec=1m
+RandomizedDelaySec=2h
 Persistent=true
 
 [Install]
-WantedBy=default.target
+WantedBy=timers.target
