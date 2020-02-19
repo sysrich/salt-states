@@ -39,7 +39,7 @@
     - template: jinja
     - contents:
 {% for host_key in salt ['mine.get']('*', 'backer_client_host_key').items() %}
-      - no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1] }}
+      - no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding {{ host_key[1]|tojson }}
 {% endfor %}
 
 /etc/systemd/system/rootco-backer-srv.service:
