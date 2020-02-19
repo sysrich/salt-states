@@ -25,11 +25,6 @@ tlp:
     - require:
       - pkg: laptop.packages
 
-tlp-sleep:
-  service.enabled:
-    - require:
-      - pkg: laptop.packages
-
 /etc/modprobe.d/49-disablenouveau.conf:
   file.managed:
     - user: root
