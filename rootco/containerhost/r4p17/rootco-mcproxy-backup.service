@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup /var/opt/rootco-mcproxy to cloud.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rsync -a /var/opt/rootco-mcproxy root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
