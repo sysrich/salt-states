@@ -4,7 +4,7 @@
     - group: root
     - mode: 640
     - source: salt://rootco/backer/backups.conf
-    - create: False  #NOTE: If ever installing from scratch you need to create this using `snapper -c backups create-config /disk/backer && snapper -c backups setup-quota` first
+    - create: False
     - require:
       - file: /disk/backer
 
@@ -13,7 +13,7 @@
     - device: UUID=9e576eca-0750-4f5f-a78d-b95823ea8348
     - fstype: btrfs
 
-/disk/backer:   # TODO sync to hetzner
+/disk/backer:
   file.exists:
     - require:
       - mount: /disk
