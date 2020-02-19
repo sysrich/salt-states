@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/opensuse/nginx:latest
-ExecStart=/usr/bin/podman run --rm --name rootco-mcproxy -v /var/opt/rootco-web/data:/data -p 80:80/tcp registry.opensuse.org/opensuse/nginx:latest
+ExecStart=/usr/bin/podman run --rm --name rootco-mcproxy -v /var/opt/rootco-mcproxy/data:/data -p 25565:25565 registry.opensuse.org/opensuse/nginx:latest
 ExecStop=/usr/bin/podman stop rootco-mcproxy
 
 [Install]
