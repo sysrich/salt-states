@@ -15,7 +15,10 @@ base:
     - sshd
   'd0.rootco.de':
     - opensuse.microos
-    - rootco.containerhost.d0 # TODO: Port services over
+    - rootco.containerhost.d0
+    - sshd
+  'r4p17.rootco.de':
+    - opensuse.microos
     - sshd
   'iwreckit.suse.de':
     - opensuse.laptop
