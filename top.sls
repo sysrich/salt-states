@@ -19,6 +19,7 @@ base:
     - sshd
   'r4p17.rootco.de':
     - opensuse.microos
+    - rootco.containerhost.r4p17
     - sshd
   'iwreckit.suse.de':
     - opensuse.laptop
