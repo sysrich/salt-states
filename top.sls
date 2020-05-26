@@ -1,9 +1,6 @@
 base:
   '*':
     - opensuse
-  'ibrokeit.suse.de':
-    - opensuse.desktop
-    - znc # TODO: Replace with container
 #  'bb8.rootco.de':     # disabled as not in use, kept for reference
 #    - opensuse.jeos
 #    - sshd
