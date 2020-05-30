@@ -95,7 +95,7 @@ certbot.timer:
     - mode: 644
     - source: salt://rootco/containerhost/r2d2/rootco-photosync.service
 
-/etc/udev/rules.d/70-photosync.rules
+/etc/udev/rules.d/70-photosync.rules:
   file.managed:
     - user: root
     - group: root
