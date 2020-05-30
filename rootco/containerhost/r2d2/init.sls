@@ -88,6 +88,20 @@ certbot.timer:
   service.running:
     - enable: True
 
+/etc/systemd/system/rootco-photosync.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/rootco-photosync.service
+
+/etc/udev/rules.d/70-photosync.rules
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/70-photosync.rules
+
 # TODO fix this broken hot mess
 #/var/opt/sslh/sslh.cfg:
 #  file.managed:
