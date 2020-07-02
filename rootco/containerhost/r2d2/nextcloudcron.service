@@ -1,0 +1,5 @@
+[Unit]
+Description=Nextcloud cron.php job
+
+[Service]
+ExecStart=/usr/bin/podman exec -i --user www-data ncserver php -f /var/www/html/cron.php
