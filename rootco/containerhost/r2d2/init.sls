@@ -89,7 +89,7 @@ nextcloudcron.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/nextcloudcron.service
-      - file: /etc/systemd/system/ncnginxcron.timer
+      - file: /etc/systemd/system/nextcloudcron.timer
 
 /etc/systemd/system/certbot.service:
   file.managed:
