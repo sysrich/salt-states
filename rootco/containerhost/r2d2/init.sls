@@ -33,6 +33,20 @@
     - mode: 644
     - source: salt://rootco/containerhost/r2d2/nextcloud.service
 
+/etc/systemd/system/nextcloudcron.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/nextcloudcron.service
+
+/etc/systemd/system/nextcloudcron.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/nextcloudcron.timer
+
 /etc/systemd/system/ncnginx.service:
   file.managed:
     - user: root
@@ -69,6 +83,13 @@ nextcloud.service:
       - file: /etc/systemd/system/ncnginx.service
       - file: /etc/systemd/system/ncserver.service
       - file: /etc/systemd/system/ncdb.service
+
+nextcloudcron.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/nextcloudcron.service
+      - file: /etc/systemd/system/nextcloudcron.timer
 
 /etc/systemd/system/certbot.service:
   file.managed:
