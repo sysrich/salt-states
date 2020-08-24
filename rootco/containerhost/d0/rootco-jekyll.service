@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-Environment=JEKYLL_VERSION=4.0
+Environment=JEKYLL_VERSION=4.0.1
 ExecStartPre=-/usr/bin/podman pull jekyll/jekyll:${JEKYLL_VERSION}
 ExecStartPre=-/usr/bin/podman run --rm -v /var/opt/rootco-jekyll:/srv/jekyll -it jekyll/jekyll:${JEKYLL_VERSION} git clone https://github.com/sysrich/rootco.de-web.git /srv/jekyll
 ExecStart=/usr/bin/podman run --rm -v /var/opt/rootco-jekyll:/srv/jekyll -it jekyll/jekyll:${JEKYLL_VERSION} git pull
