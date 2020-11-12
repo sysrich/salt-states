@@ -3,7 +3,7 @@ Description=Backup storage to hetzner
 
 [Service]
 Type=oneshot
-ExecStart=rsync --update --progress -a -e 'ssh -p23' /disk/backer/ u221392@u221392.your-storagebox.de:backups-backer/
+ExecStart=rsync --update --progress -a --exclude ".snapshots/" -e 'ssh -p23' /disk/backer/ u221392@u221392.your-storagebox.de:backups-backer/
 ExecStart=systemctl stop nextcloud
 ExecStart=rsync --update --progress -a -e 'ssh -p23' /var/opt/ncserver/ u221392@u221392.your-storagebox.de:backups-ncserver/
 ExecStart=systemctl start nextcloud
