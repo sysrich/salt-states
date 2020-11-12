@@ -59,4 +59,31 @@ rootco-backer-srv.service:
     - require:
       - file: /etc/systemd/system/rootco-backer-srv.service
 
+/etc/systemd/system/rootco-hetzner-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/backer/rootco-hetzner-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-hetzner-backup.service
+
+rootco-hetzner-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-hetzner-backup.timer
+
+/etc/systemd/system/rootco-hetzner-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/backer/rootco-hetzner-backup.service
+
+rootco-hetzner-backup.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-hetzner-backup.service
 
