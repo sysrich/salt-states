@@ -34,8 +34,6 @@ rootco-minecraft-backup.timer:
 
 /var/opt/salt-master:
   file.directory:
-    - user: root
-    - group: 485
     - makedirs: true
 
 /etc/systemd/system/rootco-salt-master.service:

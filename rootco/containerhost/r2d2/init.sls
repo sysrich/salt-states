@@ -15,8 +15,6 @@
 
 /var/opt/ncserver/db:
   file.directory:
-    - user: 999
-    - group: root
     - makedirs: true
     - require:
       - file: /var/opt/ncserver
