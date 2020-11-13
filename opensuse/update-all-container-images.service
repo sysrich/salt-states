@@ -3,5 +3,5 @@ Description=Update all containers on the host
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/podman images --format "{{.Repository}}:{{.Tag}}" | /usr/bin/xargs -L1 podman pull;
+ExecStart=/bin/sh -c '/usr/bin/podman images --format "{{.Repository}}:{{.Tag}}" | /usr/bin/xargs -L1 podman pull;'
 
