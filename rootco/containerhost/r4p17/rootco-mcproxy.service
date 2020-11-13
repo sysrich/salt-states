@@ -3,7 +3,7 @@ Description=rootco.de MC Proxy Service
 After=network-online.target
 
 [Service]
-ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/opensuse/nginx:latest
+ExecStartPre=-/usr/bin/podman rm rootco-mcproxy
 ExecStart=/usr/bin/podman run --rm --name rootco-mcproxy -v /var/opt/rootco-mcproxy/data/etc:/etc/nginx -p 25565:25565 registry.opensuse.org/opensuse/nginx:latest
 ExecStop=/usr/bin/podman stop rootco-mcproxy
 

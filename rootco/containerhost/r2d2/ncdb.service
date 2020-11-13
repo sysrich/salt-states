@@ -5,11 +5,9 @@ After=nextcloud.service
 After=ncserver.service
 
 [Service]
-ExecStartPre=-/usr/bin/podman pull mariadb
 ExecStartPre=-/usr/bin/podman rm ncdb
 ExecStart=/usr/bin/podman run --rm -v /var/opt/ncserver/db:/var/lib/mysql --net=container:ncnginx --name="ncdb" -e MYSQL_ROOT_PASSWORD="rMN;v2tbz@" mariadb
 ExecStop=/usr/bin/podman stop ncdb
-Restart=on-failure
 
 [Install]
 WantedBy=nextcloud.service

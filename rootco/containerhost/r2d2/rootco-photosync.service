@@ -3,7 +3,6 @@ Description=Photosync
 After=network-online.target
 
 [Service]
-ExecStartPre=-/usr/bin/podman pull registry.opensuse.org/home/rbrownsuse/containers/containers/photosync:latest
 ExecStart=/bin/bash -c "/usr/bin/podman run --rm -v /var/opt/photosync:/scratch -e PHOTODEV=$(readlink /dev/photosync) --privileged registry.opensuse.org/home/rbrownsuse/containers/containers/photosync:latest"
 
 [Install]
