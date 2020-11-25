@@ -4,6 +4,8 @@ PartOf=nextcloud.service
 After=nextcloud.service
 
 [Service]
+ExecStartPre=-/usr/bin/podman container rm ncdb
+ExecStartPre=-/usr/bin/podman container rm ncserver
 ExecStartPre=-/usr/bin/podman container rm ncnginx
 ExecStart=/usr/bin/podman run --rm -p 443:443 -v /var/opt/ncserver/nginx/nginx.conf:/etc/nginx/nginx.conf:ro -v /etc/letsencrypt:/etc/certbot:ro -v /disk/nextcloud:/var/www/html:ro --name="ncnginx" nginx
 ExecStop=/usr/bin/podman stop ncnginx
