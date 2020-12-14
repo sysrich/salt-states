@@ -10,7 +10,7 @@
 
 /disk:
   mount.mounted:
-    - device: UUID=9e576eca-0750-4f5f-a78d-b95823ea8348
+    - device: UUID=9f8c7f17-9735-4dfa-9f7a-b9f88cf345f0
     - fstype: btrfs
 
 /disk/backer: 
