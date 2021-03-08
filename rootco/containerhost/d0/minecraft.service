@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 ExecStartPre=-/usr/bin/podman rm mc
-ExecStart=/usr/bin/podman run --rm -e TYPE=FORGE -e EULA=true -e OPS=sysrich -e WHITELIST=sysrich -v /var/opt/minecraft:/data -p 25565:25565 --name "mc" itzg/minecraft-server
+ExecStart=/usr/bin/podman run --rm -e EULA=true -e OPS=sysrich -e WHITELIST=sysrich -v /var/opt/minecraft:/data -p 25565:25565 --name "mc" itzg/minecraft-server
 ExecStop=/usr/bin/podman stop mc
 
 [Install]
