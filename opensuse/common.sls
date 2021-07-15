@@ -10,7 +10,7 @@ myopensuse.packages:
       - zsh
       - csync
       - libcsync-plugin-sftp
-      - command-not-found
+      - scout-command-not-found
       - salt-zsh-completion
       - no-more-secrets
       - screenfetch
