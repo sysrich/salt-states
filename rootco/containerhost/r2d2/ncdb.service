@@ -6,7 +6,7 @@ After=ncserver.service
 
 [Service]
 ExecStartPre=-/usr/bin/podman rm ncdb
-ExecStart=/usr/bin/podman run --rm -v /var/opt/ncserver/db:/var/lib/mysql --net=container:ncnginx --name="ncdb" -e MYSQL_ROOT_PASSWORD="rMN;v2tbz@" mariadb
+ExecStart=/usr/bin/podman run --rm -v /var/opt/ncserver/db:/var/lib/mysql --net=container:ncnginx --name="ncdb" -e MYSQL_ROOT_PASSWORD="rMN;v2tbz@" mariadb --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-read-only-compressed=OFF
 ExecStop=/usr/bin/podman stop ncdb
 
 [Install]
