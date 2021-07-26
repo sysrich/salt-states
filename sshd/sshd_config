@@ -113,7 +113,7 @@ X11Forwarding yes
 #X11UseLocalhost yes
 #PermitTTY yes
 PrintMotd no
-#PrintLastLog yes
+PrintLastLog no
 #TCPKeepAlive yes
 #UseLogin no
 UsePrivilegeSeparation sandbox		# Default for new installations.
