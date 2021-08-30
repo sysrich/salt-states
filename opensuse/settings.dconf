@@ -38,7 +38,7 @@ xkb-options=['terminate:ctrl_alt_bksp']
 {% endif -%}
 
 [org/gnome/shell]
-favorite-apps=['firefox.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'com.gexperts.Tilix.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
+favorite-apps=['chromium-browser.desktop', 'evolution.desktop', 'org.gnome.gedit.desktop', 'org.gnome.Boxes.desktop', 'com.gexperts.Tilix.desktop', 'empathy.desktop', 'hexchat.desktop', 'org.gnome.Nautilus.desktop', 'impress.desktop']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 command='tilix --quake'
