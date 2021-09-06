@@ -55,7 +55,7 @@ bindkey '^T' autosuggest-toggle
 
 alias iosc="osc -A https://api.suse.de"
 alias zypper-twup="sudo screen zypper dup --no-allow-vendor-change"
-
+alias superdup="sudo env ZYPP_SINGLE_RPMTRANS=1 ZYPP_MEDIANETWORK=1 zypper dup"
 # zsh salt completion
 zstyle ':completion:*:salt(|-cp|-call):*' use-cache true
 
