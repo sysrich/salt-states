@@ -3,7 +3,7 @@ Description=Run Speedtest hourly
 
 [Timer]
 OnBootSec=60s
-OnCalendar=daily
+OnCalendar=hourly
 RandomizedDelaySec=300s
 Persistent=true
 Unit=rootco-speedtest-cli.service
