@@ -106,6 +106,29 @@ nextcloudcron.timer:
 certbot.timer:
   service.running:
     - enable: True
+      - file: /etc/systemd/system/certbot.service
+      - file: /etc/systemd/system/certbot.timer
+
+/etc/systemd/system/rootco-speedtest-cli.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/rootco-speedtest-cli.service
+
+/etc/systemd/system/rootco-speedtest-cli.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/rootco-speedtest-cli.timer
+
+rootco-speedtest-cli.timer:
+  service.running:
+    - enable: True
+      - file: /etc/systemd/system/rootco-speedtest-cli.service
+      - file: /etc/systemd/system/rootco-speedtest-cli.timer
+      - file: /disk/nextcloud
 
 /etc/systemd/system/rootco-photosync.service:
   file.managed:

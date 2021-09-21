@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Speedtest hourly
+
+[Timer]
+OnBootSec=60s
+OnCalendar=daily
+RandomizedDelaySec=300s
+Persistent=true
+Unit=rootco-speedtest-cli.service
+
+[Install]
+WantedBy=timers.target
