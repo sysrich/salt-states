@@ -3,4 +3,4 @@ Description=Speedtest job
 
 [Service]
 ExecStart=/usr/bin/podman run -it --rm registry.opensuse.org/home/rbrownsuse/containers/containers/speedtest-cli:latest /usr/bin/speedtest-cli --simple 
-StandardOutput=file:/disk/nextcloud/speedtest.txt
+StandardOutput=file:/disk/nextcloud/speedtest.css
