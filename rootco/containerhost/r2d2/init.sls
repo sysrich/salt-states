@@ -106,6 +106,7 @@ nextcloudcron.timer:
 certbot.timer:
   service.running:
     - enable: True
+    - require:
       - file: /etc/systemd/system/certbot.service
       - file: /etc/systemd/system/certbot.timer
 
@@ -126,6 +127,7 @@ certbot.timer:
 rootco-speedtest-cli.timer:
   service.running:
     - enable: True
+    - require:
       - file: /etc/systemd/system/rootco-speedtest-cli.service
       - file: /etc/systemd/system/rootco-speedtest-cli.timer
       - file: /disk/nextcloud
