@@ -2,7 +2,7 @@
 Description=Run download measurement hourly
 
 [Timer]
-OnCalendar=*-*-* *:04:00
+OnCalendar=*-*-* *:05:00
 RandomizedDelaySec=60s
 Unit=rootco-measure-download.service
 
