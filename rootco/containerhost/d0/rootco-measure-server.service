@@ -1,0 +1,5 @@
+[Unit]
+Description=Measurement Server
+
+[Service]
+ExecStart=/usr/bin/podman run --rm -p 5201:5201 registry.opensuse.org/home/rbrownsuse/containers/containers/iperf:latest /usr/bin/iperf3 -s -1

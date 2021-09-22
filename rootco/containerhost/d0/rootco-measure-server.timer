@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Measurement Server Twice an Hour
+
+[Timer]
+OnCalendar=*-*-* *:04:00
+OnCalendar=*-*-* *:34:00
+Unit=rootco-measure-server.service
+
+[Install]
+WantedBy=timers.target

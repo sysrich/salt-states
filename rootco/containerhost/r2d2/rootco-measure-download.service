@@ -1,0 +1,6 @@
+[Unit]
+Description=Measure download
+
+[Service]
+ExecStart=/usr/local/bin/measure-download.sh
+StandardOutput=file:/disk/nextcloud/dlbw.css

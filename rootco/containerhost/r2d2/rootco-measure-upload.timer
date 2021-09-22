@@ -1,0 +1,10 @@
+[Unit]
+Description=Run upload measurement hourly
+
+[Timer]
+OnCalendar=*-*-* *:34:00
+RandomizedDelaySec=60s
+Unit=rootco-measure-upload.service
+
+[Install]
+WantedBy=timers.target
