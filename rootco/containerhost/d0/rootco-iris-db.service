@@ -1,0 +1,14 @@
+[Unit]
+Description=Mariadb Container Service
+PartOf=rootco-iris.service
+After=rootco-iris.service
+After=rootco-iris.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm irisdb
+ExecStart=/usr/bin/podman run --rm -v /var/opt/iris/db:/var/lib/mysql --net=container:irisweb --name="irisdb" -e MYSQL_ROOT_PASSWORD="qWS]p5bze@" mariadb
+ExecStop=/usr/bin/podman stop irisdb
+
+[Install]
+WantedBy=rootco-iris.service
+

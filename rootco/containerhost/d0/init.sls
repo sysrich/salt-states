@@ -275,3 +275,24 @@ rootco-measure-server.timer:
       - file: /etc/systemd/system/rootco-measure-server.service
       - file: /etc/systemd/system/rootco-measure-server.timer
 
+/var/opt/iris:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
+/var/opt/iris/db:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/iris
+
+/etc/systemd/system/rootco-iris-db.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-iris-db.service
+
