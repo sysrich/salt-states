@@ -328,4 +328,49 @@ rootco-iris.service:
       - file: /var/opt/iris/html
       - file: /var/opt/iris/db
 
+/etc/systemd/system/rootco-minecraft-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-minecraft-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-iris-web-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-iris-web-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-iris-web-backup.service
+
+rootco-iris-web-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-iris-web-backup.timer
+
+/etc/systemd/system/rootco-iris-db-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-iris-db-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-iris-db-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-iris-db-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-iris-db-backup.service
+
+rootco-iris-db-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-iris-db-backup.timer
 
