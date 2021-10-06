@@ -1,0 +1,7 @@
+[Unit]
+Description=Backup /var/opt/ncserver/db to cloud.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/usr/bin/podman exec -it ncdb mysqldump --all-databases --password="rMN;v2tbz@" | xz > /var/opt/ncserver/db/ncdbdump.xz'
+ExecStart=/usr/bin/rsync -a /var/opt/ncserver/db/ncdbdump.xz root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

@@ -184,6 +184,29 @@ rootco-measure-download.timer:
     - mode: 644
     - source: salt://rootco/containerhost/r2d2/70-photosync.rules
 
+/etc/systemd/system/ncdb-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/ncdb-backup.service
+    - template: jinja
+
+/etc/systemd/system/ncdb-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/ncdb-backup.timer
+    - require:
+      - file: /etc/systemd/system/ncdb-backup.service
+
+ncdb-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/ncdb-backup.timer
+
 # TODO fix this broken hot mess
 #/var/opt/sslh/sslh.cfg:
 #  file.managed:

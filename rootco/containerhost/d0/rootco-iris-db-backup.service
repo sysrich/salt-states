@@ -3,5 +3,5 @@ Description=Backup /var/opt/iris/db to cloud.dyn.rootco.de
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'podman exec -it rootco-iris-db mysqldump --all-databases --password=qWS]p5bze@ | xz > /var/opt/iris/db/irisdbdump.xz'
+ExecStart=/bin/sh -c '/usr/bin/podman exec -it rootco-iris-db mysqldump --all-databases --password=qWS]p5bze@ | xz > /var/opt/iris/db/irisdbdump.xz'
 ExecStart=/usr/bin/rsync -a /var/opt/iris/db/irisdbdump.xz root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
