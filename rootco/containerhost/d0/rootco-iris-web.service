@@ -1,0 +1,13 @@
+[Unit]
+Description=Iris Web Service
+PartOf=rootco-iris.service
+After=rootco-iris.service
+Before=rootco-iris-db.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm rootco-iris-web
+ExecStart=/usr/bin/podman run --rm --name rootco-iris-web -v /var/opt/iris/html:/var/www/html -p 8080:80/tcp -e WORDPRESS_DB_USER="iriswordpress" -e WORDPRESS_DB_PASSWORD="WaWP02@1!-" -e WORDPRESS_DB_HOST="127.0.0.1" -e WORDPRESS_DB_NAME="iriswordpress" wordpress
+ExecStop=/usr/bin/podman stop rootco-iris-web
+
+[Install]
+WantedBy=rootco-iris.service
