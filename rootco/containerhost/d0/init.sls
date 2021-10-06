@@ -328,12 +328,12 @@ rootco-iris.service:
       - file: /var/opt/iris/html
       - file: /var/opt/iris/db
 
-/etc/systemd/system/rootco-minecraft-backup.service:
+/etc/systemd/system/rootco-iris-web-backup.service:
   file.managed:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/containerhost/d0/rootco-minecraft-backup.service
+    - source: salt://rootco/containerhost/d0/rootco-iris-web-backup.service
     - template: jinja
 
 /etc/systemd/system/rootco-iris-web-backup.timer:
