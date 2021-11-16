@@ -19,6 +19,8 @@
     - contents:
       - "cloud.dyn.rootco.de ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeqEDWXOwIjp16/qE8lR9+U4Mc0sOslggs4I0ayGf9DEfBj2RZ9Gv/s9jE2JhWtcUDyxzHlZBB79dSUzMAet2s="
       - "[u221392.your-storagebox.de]:23,[116.202.54.214]:23 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICf9svRenC/PLKIL9nk6K/pxQgoiFC41wTNvoIncOxs"
+      - "[cloud.dyn.rootco.de]:80 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKi9KfbC/t5DE95Hy1y6nLNa7hKBLcPcB2WpEiEBXclt"
+
 
 touch /root/.ssh/id_rsa.pub:
   cmd.run:
