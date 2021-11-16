@@ -2,7 +2,6 @@
 Description=Iris Web Service
 PartOf=rootco-iris.service
 After=rootco-iris.service
-Before=rootco-iris-db.service
 
 [Service]
 ExecStartPre=-/usr/bin/podman rm rootco-iris-web

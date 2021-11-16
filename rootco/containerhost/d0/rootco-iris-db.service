@@ -6,6 +6,7 @@ After=rootco-iris-web.service
 
 [Service]
 ExecStartPre=-/usr/bin/podman rm rootco-iris-db
+ExecStartPre=/bin/sleep 10
 ExecStart=/usr/bin/podman run --rm -v /var/opt/iris/db:/var/lib/mysql --net=container:rootco-iris-web --name="rootco-iris-db" -e MYSQL_ROOT_PASSWORD="qWS]p5bze@" mariadb
 ExecStop=/usr/bin/podman stop rootco-iris-db
 
