@@ -327,8 +327,6 @@ rootco-iris.service:
       - file: /etc/systemd/system/rootco-iris-web.service
       - file: /var/opt/iris/html
       - file: /var/opt/iris/db
-      - file: /etc/systemd/system/rootco-coaching-web.service
-      - file: /var/opt/coaching/html
 
 /etc/systemd/system/rootco-iris-web-backup.service:
   file.managed:
@@ -382,6 +380,14 @@ rootco-iris-db-backup.timer:
     - group: root
     - makedirs: true
 
+/var/opt/coaching/db:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/coaching
+
 /var/opt/coaching/html:
   file.directory:
     - user: root
@@ -389,6 +395,30 @@ rootco-iris-db-backup.timer:
     - makedirs: true
     - require:
       - file: /var/opt/coaching
+
+/etc/systemd/system/rootco-coaching.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching.service
+
+rootco-coaching.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-coaching.service
+      - file: /etc/systemd/system/rootco-coaching-db.service
+      - file: /etc/systemd/system/rootco-coaching-web.service
+      - file: /var/opt/coaching/html
+      - file: /var/opt/coaching/db
+
+/etc/systemd/system/rootco-coaching-db.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching-db.service
 
 /etc/systemd/system/rootco-coaching-web.service:
   file.managed:
@@ -419,3 +449,28 @@ rootco-coaching-web-backup.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-coaching-web-backup.timer
+
+/etc/systemd/system/rootco-coaching-db-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-coaching-db-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching-db-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-coaching-db-backup.service
+
+rootco-coaching-db-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-coaching-db-backup.timer
+
+

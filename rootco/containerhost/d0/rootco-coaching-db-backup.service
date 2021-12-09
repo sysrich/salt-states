@@ -1,0 +1,7 @@
+[Unit]
+Description=Backup /var/opt/coaching/db to cloud.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/usr/bin/podman exec -it rootco-coaching-db mysqldump --all-databases --password=cWS]p5bze@ | xz > /var/opt/coaching/db/coachingdbdump.xz'
+ExecStart=/usr/bin/rsync -a /var/opt/coaching/db/coachingdbdump.xz root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

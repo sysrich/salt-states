@@ -1,0 +1,15 @@
+[Unit]
+Description=Mariadb Container Service
+PartOf=rootco-coaching.service
+After=rootco-coaching.service
+After=rootco-coaching-web.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm rootco-coaching-db
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/podman run --rm -v /var/opt/coaching/db:/var/lib/mysql --net=container:rootco-coaching-web --name="rootco-coaching-db" -e MYSQL_ROOT_PASSWORD="cWS]p5bze@" mariadb
+ExecStop=/usr/bin/podman stop rootco-coaching-db
+
+[Install]
+WantedBy=rootco-coaching.service
+
