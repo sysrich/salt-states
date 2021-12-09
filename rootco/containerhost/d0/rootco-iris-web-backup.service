@@ -3,4 +3,4 @@ Description=Backup /var/opt/iris/html to cloud.dyn.rootco.de
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/rsync -a /var/opt/iris/html root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
+ExecStart=/usr/bin/rsync -a /var/opt/iris/html root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/iris/

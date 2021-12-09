@@ -1,0 +1,14 @@
+[Unit]
+Description=Coaching Web Service
+PartOf=rootco-iris.service
+After=rootco-iris.service
+After=rootco-iris-web.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm rootco-coaching-web
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/podman run --rm --name rootco-coaching-web -v /var/opt/coaching/html:/var/www/html --net=container:rootco-iris-web -p 8081:80/tcp -e WORDPRESS_DB_USER="coachingwordpress" -e WORDPRESS_DB_PASSWORD="WaWP02@2!-" -e WORDPRESS_DB_HOST="127.0.0.1" -e WORDPRESS_DB_NAME="coachingwordpress" wordpress
+ExecStop=/usr/bin/podman stop rootco-coaching-web
+
+[Install]
+WantedBy=rootco-iris.service

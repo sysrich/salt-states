@@ -327,6 +327,8 @@ rootco-iris.service:
       - file: /etc/systemd/system/rootco-iris-web.service
       - file: /var/opt/iris/html
       - file: /var/opt/iris/db
+      - file: /etc/systemd/system/rootco-coaching-web.service
+      - file: /var/opt/coaching/html
 
 /etc/systemd/system/rootco-iris-web-backup.service:
   file.managed:
@@ -374,3 +376,46 @@ rootco-iris-db-backup.timer:
     - require:
       - file: /etc/systemd/system/rootco-iris-db-backup.timer
 
+/var/opt/coaching:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
+/var/opt/coaching/html:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/coaching
+
+/etc/systemd/system/rootco-coaching-web.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching-web.service
+
+/etc/systemd/system/rootco-coaching-web-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching-web-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-coaching-web-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-coaching-web-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-coaching-web-backup.service
+
+rootco-coaching-web-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-coaching-web-backup.timer

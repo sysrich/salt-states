@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup /var/opt/coaching/html to cloud.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rsync -a /var/opt/coaching/html root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/coaching/
