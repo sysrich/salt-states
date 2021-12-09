@@ -455,7 +455,7 @@ rootco-coaching-web-backup.timer:
     - user: root
     - group: root
     - mode: 644
-    - source: salt://rootco/containerhost/d0/rootco-coaching-backup.service
+    - source: salt://rootco/containerhost/d0/rootco-coaching-db-backup.service
     - template: jinja
 
 /etc/systemd/system/rootco-coaching-db-backup.timer:
