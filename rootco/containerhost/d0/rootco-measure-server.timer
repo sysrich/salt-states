@@ -1,9 +1,9 @@
 [Unit]
-Description=Run Measurement Server Twice an Hour
+Description=Run Measurement Server Twice a Day
 
 [Timer]
-OnCalendar=*-*-* *:04:00
-OnCalendar=*-*-* *:34:00
+OnCalendar=*-*-* 00:04:00
+OnCalendar=*-*-* 00:34:00
 Unit=rootco-measure-server.service
 
 [Install]

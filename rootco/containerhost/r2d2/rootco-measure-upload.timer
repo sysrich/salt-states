@@ -1,8 +1,8 @@
 [Unit]
-Description=Run upload measurement hourly
+Description=Run upload measurement daily
 
 [Timer]
-OnCalendar=*-*-* *:35:00
+OnCalendar=*-*-* 00:35:00
 RandomizedDelaySec=60s
 Unit=rootco-measure-upload.service
 
