@@ -1,5 +1,0 @@
-[Unit]
-Description=Measure upload
-
-[Service]
-ExecStart=/usr/local/bin/measure-upload.sh

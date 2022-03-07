@@ -254,27 +254,6 @@ rootco-znc-backup.timer:
     - require:
       - file: /etc/systemd/system/rootco-znc-backup.timer
 
-/etc/systemd/system/rootco-measure-server.service:
-  file.managed:
-    - user: root
-    - group: root
-    - mode: 644
-    - source: salt://rootco/containerhost/d0/rootco-measure-server.service
-
-/etc/systemd/system/rootco-measure-server.timer:
-  file.managed:
-    - user: root
-    - group: root
-    - mode: 644
-    - source: salt://rootco/containerhost/d0/rootco-measure-server.timer
-
-rootco-measure-server.timer:
-  service.running:
-    - enable: True
-    - require:
-      - file: /etc/systemd/system/rootco-measure-server.service
-      - file: /etc/systemd/system/rootco-measure-server.timer
-
 /var/opt/iris:
   file.directory:
     - user: root
