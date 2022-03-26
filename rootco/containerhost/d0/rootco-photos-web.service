@@ -1,0 +1,12 @@
+[Unit]
+Description=Photos Web Service
+PartOf=rootco-photos.service
+After=rootco-photos.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm rootco-photos-web
+ExecStart=/usr/bin/podman run --rm --name rootco-photos-web -v /var/opt/photos/html:/var/www/html -p 8082:80/tcp -e WORDPRESS_DB_USER="photoswordpress" -e WORDPRESS_DB_PASSWORD="PgAF24!5@-" -e WORDPRESS_DB_HOST="127.0.0.1" -e WORDPRESS_DB_NAME="photoswordpress" wordpress
+ExecStop=/usr/bin/podman stop rootco-photos-web
+
+[Install]
+WantedBy=rootco-photos.service
