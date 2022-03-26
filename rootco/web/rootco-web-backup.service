@@ -1,6 +1,0 @@
-[Unit]
-Description=Backup /srv/www  to cloud.dyn.rootco.de
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/rsync -a /srv/www root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
