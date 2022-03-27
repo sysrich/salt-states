@@ -452,4 +452,102 @@ rootco-coaching-db-backup.timer:
     - require:
       - file: /etc/systemd/system/rootco-coaching-db-backup.timer
 
+/var/opt/photos:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
+/var/opt/photos/db:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/photos
+
+/var/opt/photos/html:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/photos
+
+/etc/systemd/system/rootco-photos.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos.service
+
+rootco-photos.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-photos.service
+      - file: /etc/systemd/system/rootco-photos-db.service
+      - file: /etc/systemd/system/rootco-photos-web.service
+      - file: /var/opt/photos/html
+      - file: /var/opt/photos/db
+
+/etc/systemd/system/rootco-photos-db.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos-db.service
+
+/etc/systemd/system/rootco-photos-web.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos-web.service
+
+/etc/systemd/system/rootco-photos-web-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos-web-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-photos-web-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos-web-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-photos-web-backup.service
+
+rootco-photos-web-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-photos-web-backup.timer
+
+/etc/systemd/system/rootco-photos-db-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos-db-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-photos-db-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-photos-db-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-photos-db-backup.service
+
+rootco-photos-db-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-photos-db-backup.timer
 
