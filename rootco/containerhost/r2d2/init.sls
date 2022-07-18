@@ -147,6 +147,17 @@ ncdb-backup.timer:
     - require:
       - file: /etc/systemd/system/ncdb-backup.timer
 
+/etc/systemd/system/rootco-sslh.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/r2d2/staging-bot.service
+
+staging-bot.service:
+  service.running:
+    - enable: True
+
 # TODO fix this broken hot mess
 #/var/opt/sslh/sslh.cfg:
 #  file.managed:
