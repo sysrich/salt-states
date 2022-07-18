@@ -147,7 +147,7 @@ ncdb-backup.timer:
     - require:
       - file: /etc/systemd/system/ncdb-backup.timer
 
-/etc/systemd/system/rootco-sslh.service:
+/etc/systemd/system/staging-bot.service:
   file.managed:
     - user: root
     - group: root
