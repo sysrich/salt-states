@@ -1,0 +1,7 @@
+[Unit]
+Description=Backup /var/opt/opera/db to cloud.dyn.rootco.de
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/usr/bin/podman exec -it rootco-opera-db mysqldump --all-databases --password=qWS]p5bze@ | xz > /var/opt/opera/db/operadbdump.xz'
+ExecStart=/usr/bin/rsync -a /var/opt/opera/db/operadbdump.xz root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/

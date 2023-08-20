@@ -1,0 +1,15 @@
+[Unit]
+Description=Mariadb Container Service
+PartOf=rootco-opera.service
+After=rootco-opera.service
+After=rootco-opera-web.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm rootco-opera-db
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/podman run --rm -v /var/opt/opera/db:/var/lib/mysql --net=container:rootco-opera-web --name="rootco-opera-db" -e MYSQL_ROOT_PASSWORD="qWS]p5bze@" mariadb
+ExecStop=/usr/bin/podman stop rootco-opera-db
+
+[Install]
+WantedBy=rootco-opera.service
+

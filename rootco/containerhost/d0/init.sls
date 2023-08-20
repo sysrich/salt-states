@@ -516,4 +516,103 @@ rootco-photos-db-backup.timer:
     - enable: True
     - require:
       - file: /etc/systemd/system/rootco-photos-db-backup.timer
+      
+/var/opt/opera:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+
+/var/opt/opera/db:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/opera
+
+/var/opt/opera/html:
+  file.directory:
+    - user: root
+    - group: root
+    - makedirs: true
+    - require:
+      - file: /var/opt/opera
+
+/etc/systemd/system/rootco-opera-db.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera-db.service
+
+/etc/systemd/system/rootco-opera-web.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera-web.service
+
+/etc/systemd/system/rootco-opera.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera.service
+
+rootco-opera.service:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-opera.service
+      - file: /etc/systemd/system/rootco-opera-db.service
+      - file: /etc/systemd/system/rootco-opera-web.service
+      - file: /var/opt/opera/html
+      - file: /var/opt/opera/db
+
+/etc/systemd/system/rootco-opera-web-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera-web-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-opera-web-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera-web-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-opera-web-backup.service
+
+rootco-opera-web-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-opera-web-backup.timer
+
+/etc/systemd/system/rootco-opera-db-backup.service:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera-db-backup.service
+    - template: jinja
+
+/etc/systemd/system/rootco-opera-db-backup.timer:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: 644
+    - source: salt://rootco/containerhost/d0/rootco-opera-db-backup.timer
+    - require:
+      - file: /etc/systemd/system/rootco-opera-db-backup.service
+
+rootco-opera-db-backup.timer:
+  service.running:
+    - enable: True
+    - require:
+      - file: /etc/systemd/system/rootco-opera-db-backup.timer
 

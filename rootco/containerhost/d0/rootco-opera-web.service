@@ -1,0 +1,12 @@
+[Unit]
+Description=opera Web Service
+PartOf=rootco-opera.service
+After=rootco-opera.service
+
+[Service]
+ExecStartPre=-/usr/bin/podman rm rootco-opera-web
+ExecStart=/usr/bin/podman run --rm --name rootco-opera-web -v /var/opt/opera/html:/var/www/html -p 8080:80/tcp -e WORDPRESS_DB_USER="operawordpress" -e WORDPRESS_DB_PASSWORD="WaWP02@1!-" -e WORDPRESS_DB_HOST="127.0.0.1" -e WORDPRESS_DB_NAME="operawordpress" wordpress
+ExecStop=/usr/bin/podman stop rootco-opera-web
+
+[Install]
+WantedBy=rootco-opera.service
