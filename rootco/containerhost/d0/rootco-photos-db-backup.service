@@ -3,5 +3,5 @@ Description=Backup /var/opt/photos/db to cloud.dyn.rootco.de
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c '/usr/bin/podman exec -it rootco-photos-db mysqldump --all-databases --password=cG]Wa7@ef | xz > /var/opt/photos/db/photosdbdump.xz'
+ExecStart=/bin/sh -c '/usr/bin/podman exec -it rootco-photos-db mariadb-dump --all-databases --password=cG]Wa7@ef | xz > /var/opt/photos/db/photosdbdump.xz'
 ExecStart=/usr/bin/rsync -a /var/opt/photos/db/photosdbdump.xz root@cloud.dyn.rootco.de:/backups/{{ salt['grains.get']('id') }}/
