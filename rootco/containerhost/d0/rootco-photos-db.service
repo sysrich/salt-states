@@ -7,7 +7,7 @@ After=rootco-photos-web.service
 [Service]
 ExecStartPre=-/usr/bin/podman rm rootco-photos-db
 ExecStartPre=/bin/sleep 10
-ExecStart=/usr/bin/podman run --rm -v /var/opt/photos/db:/var/lib/mysql --net=container:rootco-photos-web --name="rootco-photos-db" -e MYSQL_ROOT_PASSWORD="cG]Wa7@ef" mariadb
+ExecStart=/usr/bin/podman run --rm -v /var/opt/photos/db:/var/lib/mysql --net=container:rootco-photos-web --name="rootco-photos-db" -e MYSQL_ROOT_PASSWORD="cG]Wa7@ef" mariadb --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-read-only-compressed=OFF
 ExecStop=/usr/bin/podman stop rootco-photos-db
 
 [Install]
