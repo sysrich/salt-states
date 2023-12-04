@@ -6,7 +6,8 @@ After=rootco-coaching-web.service
 
 [Service]
 ExecStartPre=-/usr/bin/podman rm rootco-coaching-db
-ExecStartPre=/bin/sleep 10
+ExecStartPre=-/usr/bin/rm /var/opt/coaching/db/tc.log
+ExecStartPre=/usr/bin/sleep 10
 ExecStart=/usr/bin/podman run --rm -v /var/opt/coaching/db:/var/lib/mysql --net=container:rootco-coaching-web --name="rootco-coaching-db" -e MYSQL_ROOT_PASSWORD="cWS]p5bze@" mariadb --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-read-only-compressed=OFF
 ExecStop=/usr/bin/podman stop rootco-coaching-db
 

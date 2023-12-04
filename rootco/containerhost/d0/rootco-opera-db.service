@@ -6,7 +6,8 @@ After=rootco-opera-web.service
 
 [Service]
 ExecStartPre=-/usr/bin/podman rm rootco-opera-db
-ExecStartPre=/bin/sleep 10
+ExecStartPre=-/usr/bin/rm /var/opt/opera/db/tc.log
+ExecStartPre=/usr/bin/sleep 10
 ExecStart=/usr/bin/podman run --rm -v /var/opt/opera/db:/var/lib/mysql --net=container:rootco-opera-web --name="rootco-opera-db" -e MYSQL_ROOT_PASSWORD="qWS]p5bze@" mariadb --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-read-only-compressed=OFF
 ExecStop=/usr/bin/podman stop rootco-opera-db
 
